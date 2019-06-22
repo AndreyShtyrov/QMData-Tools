@@ -1,4 +1,4 @@
-﻿# Date_Extractor
+﻿# QMData-Tools
 
 1. Installing a virtual environment on the miniconda for the program    
 1.1 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh    
