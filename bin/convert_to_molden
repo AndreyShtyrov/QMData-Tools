@@ -1,0 +1,53 @@
+#!/usr/bin/env python
+
+import os, sys
+from reanet import reanet_parser
+from openmolcas import molden_parser
+file_out = "opt.molden"
+if len(sys.argv) == 2:
+    file_name = sys.argv[1]
+elif len(sys.argv) > 2 and "-l" in sys.argv:
+    file_name = sys.argv[1]
+    file_out = sys.argv[2]
+elif len(sys.argv) > 2:
+    file_name = sys.argv[1]
+    file_out = sys.argv[2]
+else:
+    print("write file name")
+    exit(1)
+
+if "-l" not in sys.argv:
+    parser = reanet_parser(file_name)
+    get_optimization_step = parser.get_optimization_step()
+else:
+    parser = reanet_parser(file_name)
+    get_optimization_step = parser.get_minimum_from_sub_dimentions()
+
+list_of_tuple_charges_coords = []
+list_of_force = []
+list_of_critries = []
+list_of_energys = []
+while True:
+    try:
+        charges, coords, energy, force, criteries = next(get_optimization_step)
+        i = 0
+        list_coords = []
+        for i in range(round(len(coords)/3)):
+            cartezian_coords = coords[i*3: i*3 + 3]
+            tuple_charges_coords = {"charges": charges[i], "coords": cartezian_coords}
+            list_coords.append(tuple_charges_coords)
+        list_of_tuple_charges_coords.append(list_coords)
+        list_force = []
+        for i in range(round(len(force)/3)):
+            list_force.append(force[i*3: i*3 + 3])
+        list_of_force.append(list_force)
+        list_of_critries.append(criteries)
+        list_of_energys.append(energy)
+    except StopIteration:
+        break
+lines_of_file = molden_parser.write_optimization_molden(list_of_energys, list_of_tuple_charges_coords, list_of_force, list_of_critries)
+with open(file_out, "w") as molden_file:
+    molden_file.writelines(lines_of_file)
+
+
+

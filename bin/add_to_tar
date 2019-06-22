@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+import os, sys
+import tarfile
+save_check_files = False
+if len(sys.argv) > 1:
+    if sys.argv[1] is "chk":
+        save_check_files = True
+if __name__ == '__main__':
+    main_dir = os.environ["HOME"]
+    if os.path.isfile(main_dir +"/get20.tar"):
+        with tarfile.open(main_dir +"/get20.tar", "w:gz") as tar:
+            source_dir = os.getcwd()
+            tar.add(source_dir)

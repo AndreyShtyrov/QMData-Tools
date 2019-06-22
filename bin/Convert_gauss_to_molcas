@@ -1,0 +1,46 @@
+#!/usr/bin/env python
+
+import sys
+from utils import parser
+import numpy as np
+
+Charge_in_Name = [
+    "-",
+    "H",
+    "He",
+    "Li",
+    "Be",
+    "B",
+    "C",
+    "N",
+    "O",
+    "F",
+    "Ne",
+]
+
+
+if sys.argv[1] is not "":
+    coord_file = parser(sys.argv[1])
+    lines = coord_file.get_all()
+    coord = []
+    charges = []
+    ind = 0
+    for line in lines:
+        charges.append(int(line.split()[0]))
+        coord.extend(map(float, line.split()[1:4]))
+        ind = ind + 1
+    coord = np.array(coord)
+
+    with open("coord.txt", "w") as out_file:
+        line = "  {0}".format(str(ind))
+        out_file.write(line + "\n")
+        out_file.write("\n")
+
+        ind = 0
+        for charge in charges:
+            line = "{0}".format(str(Charge_in_Name[charge]))
+            line = line + "   {:10.7f}".format(coord[ind])
+            line = line + "   {:10.7f}".format(coord[ind + 1])
+            line = line + "   {:10.7f}".format(coord[ind + 2])
+            ind = ind + 3
+            out_file.write(line + "\n")

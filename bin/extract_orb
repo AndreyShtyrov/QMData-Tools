@@ -1,0 +1,41 @@
+#!/usr/bin/env python
+import os, sys
+from gaussian09 import g09_parser, gaussian_chk_parser
+from openmolcas import open_parser, molden_parser
+from termcolor import colored, cprint
+
+
+if sys.argv[1] == "chk":
+    text = input(" Write chk file\n")
+    chk_file = gaussian_chk_parser(text)
+    text = input("write from which line read mo orb or write no\n")
+    if text != "no":
+        mo_orb, _ = chk_file.get_Mo_coeficent()
+    else:
+        mo_orb, _ = chk_file.get_Mo_coeficent()
+
+    while True:
+        text = input("Do you want to switch orbitals?\n")
+        if text.lower() == "Yes".lower():
+            text_orb = input("Type two numbers of orbitals from index 0, those separated by :\n")
+            try:
+                index1 = int(text_orb.split(":")[0])
+                index2 = int(text_orb.split(":")[1])
+                temp_value = mo_orb[index1]
+                mo_orb[index1] = mo_orb[index2]
+                mo_orb[index2] = temp_value
+            except ValueError and IndexError:
+                print("In correct input")
+        else:
+            break
+
+    orbs = g09_parser("opt.out")
+    lines = orbs.write_input_orb(mo_orb)
+    with open("tail_orb.txt", "w") as tail_orb:
+        tail_orb.writelines(lines)
+elif sys.argv[1] == "molden":
+    molden_file = molden_parser("opt.scf.molden")
+    mo_orb = molden_file.get_mo()
+    open_molcas_file = open_parser.write_input_orb(mo_orb)
+    with open("tail_orb.txt", "w") as tail_orb:
+        tail_orb.writelines(open_molcas_file)

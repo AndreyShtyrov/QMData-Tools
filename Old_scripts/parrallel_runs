@@ -1,0 +1,133 @@
+#!/usr/bin/env python
+
+import os, sys
+from threading import Thread
+from abc import ABCMeta, abstractclassmethod
+
+
+class general_parallel_threads(Thread):
+    """
+    A threading example
+    """
+    def __init__(self):
+        """Инициализация потока"""
+        Thread.__init__(self)
+        self.main_path = os.getcwd()
+        self.path = NotImplementedError
+
+    def run(self):
+        raise NotImplementedError
+
+class thread_sh(general_parallel_threads):
+    def __init__(self, path_job_input_files, job_name, path_to_script="$HOME/bin/mg09D"):
+        super().__init__()
+        self.inputpath = self.main_path + "/" + path_job_input_files
+        self.path_to_script = path_to_script
+        self.job_name = job_name
+
+
+    def read_hostfile(self):
+        with open(self.inputpath + "/" + "hostfile", "r") as hostfile:
+            line = next(hostfile)
+            line = line.replace("\n", "r")
+        return line
+
+
+    def run(self):
+        line = self.read_hostfile()
+        os.system(self.path_to_script + " " + self.job_name + " " + self.inputpath)
+
+
+def start_job_on_nodes():
+    with open(sys.argv[1], "r") as inputfile:
+        job_list = iter(inputfile.readlines())
+
+    thread_list = []
+    for job in job_list:
+        path_job = job.replace("\n", "")
+        print(job)
+        if len(path_job.split()) == 2:
+            thread_list.append(thread_sh(path_job.split()[0], path_job.split()[1]))
+        else:
+            thread_list.append(thread_sh(path_job.split()[0], path_job.split()[1], path_job.split()[2]))
+
+
+    for job in thread_list:
+        try:
+            job.start()
+        except StopIteration:
+            pass
+
+def generat_sbatch_header(number, path_to_script):
+    sbatch_run_script_head = '#!/bin/bash\n' \
+    '#SBATCH -N1                       # 1 node, 4 tasks\n' \
+    '#SBATCH --time=24:00:00                # time limit: hh hours\n' \
+    '#SBATCH --account=hpce3_Nikolaev_0     # account name\n' \
+    '#SBATCH --mem=111GB\n' \
+    '#SBATCH --export=ALL                   # export all current environment variables\n' \
+    '#SBATCH --no-requeue                   # no requeing of the job if something goes wrong\n' \
+    '#SBATCH --job-name=pull_{number}\n' \
+    '#SBATCH --partition=knl_usr_prod       # possibly, the queue (or partition) that can be used\n' \
+    '#SBATCH --cpus-per-task=1\n' \
+    '\n' \
+    'cd $SLURM_SUBMIT_DIR\n'
+    'export OMP_NUM_THREADS=1\n' \
+    '\n'
+    with open("run_script" + str(number) + ".sh", "w") as run_script_file:
+        run_script_file.writelines(sbatch_run_script_head.format(number=number))
+        run_script_file.write("python " + path_to_script + " job_list" + str(number) + ".txt")
+
+
+def prepare_all_nessary_files():
+    if sys.argv[1] != "onlyrun":
+        os.system("tar -tvf {0} > listTar.txt".format(sys.argv[1]))
+        number = 0
+        acc = 0
+        job_list = []
+        with open("listTar.txt", "r") as dirlist:
+            for dir in dirlist:
+                if ".inp" in dir:
+                    short_line = dir.split()[5]
+                    job_name = short_line.split("/")[-1]
+                    short_line = short_line.replace(job_name, "")
+                    job_list.append(short_line + " " + job_name.split(".inp")[0] + " $HOME/bin/mMLCS\n")
+                    if acc == SPLIT_NUMBER_JOBS:
+                        generat_sbatch_header(number, "$HOME/bin/parrallel_runs")
+                        acc = 0
+                        with open("job_list" + str(number) + ".txt", "w") as write_file:
+                            write_file.writelines(job_list)
+                        job_list = []
+                        number = number + 1
+                    acc = acc + 1
+            generat_sbatch_header(number, "$HOME/bin/parrallel_runs")
+            with open("job_list" + str(number) + ".txt", "w") as write_file:
+                write_file.writelines(job_list)
+    else:
+        for file in os.listdir():
+            if "run_script" in file:
+                os.system("sbatch " + file)
+
+def start_job_on_nodes_by_index(index):
+    with open(sys.argv[1], "r") as inputfile:
+        job_list = iter(inputfile.readlines())
+    job = job_list[ index ]
+    path_job = job.replace("\n", "")
+    print(job)
+    if len(path_job.split()) == 2:
+        if len(path_job.split()) == 2:
+            thread = thread_sh(path_job.split()[0], path_job.split()[1])
+        else:
+            thread = thread_sh(path_job.split()[0], path_job.split()[1], path_job.split()[2])
+    try:
+        thread.start()
+    except StopIteration:
+        pass
+
+
+if __name__ == '__main__':
+    MAIN_HOST_NAME = ""
+    SPLIT_NUMBER_JOBS = 4
+    if MAIN_HOST_NAME != os.environ['HOSTNAME']:
+        start_job_on_nodes()
+    else:
+        prepare_all_nessary_files()

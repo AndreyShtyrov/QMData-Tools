@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/a_shtyrov/miniconda3/bin/check_optimization", line 40, in <module>
+    _, _, energy, _, eign, crit, pr_eign = next(generator_get_opt_inter)
+  File "/home/a_shtyrov/miniconda3/lib/python3.6/site-packages/gaussian09/gaussian09.py", line 33, in get_optimizaition_iteration
+    for part_of_file in self._get_berny_section():
+  File "/home/a_shtyrov/miniconda3/lib/python3.6/site-packages/gaussian09/gaussian09.py", line 123, in _get_berny_section
+    part_of_file.extend(part1)
+AttributeError: 'NoneType' object has no attribute 'extend'
+
+

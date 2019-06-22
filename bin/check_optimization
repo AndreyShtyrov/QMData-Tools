@@ -1,0 +1,45 @@
+#!/usr/bin/env python
+
+from gaussian09 import g09_parser
+from termcolor import colored, cprint
+
+
+def print_opt_properties(Nstep, energy, prev_Energy, eign, crit, first_eign_main_contribution = None):
+    if prev_Energy != 100000:
+        energy_change = (prev_Energy - energy) * 627.5
+    else:
+        energy_change = '       ---'
+    if not prev_Energy > energy:
+        text = colored("{:10.6f}".format(energy), 'red')
+        text2 = colored("{:10.1f}".format(energy_change), 'red')
+    else:
+        text = colored("{:10.6f}".format(energy), 'green')
+        if energy_change != '       ---':
+            text2 = colored("{:10.1f}".format(energy_change), 'green')
+        else:
+            text2 = colored(energy_change, 'green')
+    if eign[0] == 0.0:
+        text_eig1 = colored("  {:*^17}".format("GradDes"), 'red')
+    else:
+        text_eig1 = colored("{:10.5f}".format(eign[0]) + "| " + "{:10.5f}".format(eign[1]), 'green')
+    cprint(str(Nstep) + ": Eel" + text + " dEel=" + text2 + ": RMS Force" "{:10.5f}".format(
+        crit[0][0]) + ", EigV" + text_eig1)
+    if pr_eign is not None:
+        text = colored("Eigen vectors  1 : " + pr_eign[0][0] + " = " + "{:10.3f}".format(pr_eign[0][1]) + " | " + "2 : " + pr_eign[1][0] + " = "
+               + "{:10.3f}".format(pr_eign[1][1]) + " | " + "3 : " + pr_eign[2][0] + " = " + "{:10.3f}".format(pr_eign[2][1]), 'magenta')
+        cprint(text)
+    Nstep = Nstep + 1
+    return Nstep, energy
+
+
+optimization_file = g09_parser("opt.out")
+generator_get_opt_inter = optimization_file.get_optimizaition_iteration()
+acc = 1
+prev_Energy = 100000
+while True:
+    try:
+        _, _, energy, _, eign, crit, pr_eign = next(generator_get_opt_inter)
+        acc, prev_Energy = print_opt_properties(acc, energy, prev_Energy, eign, crit, pr_eign)
+    except StopIteration:
+        print("End_of_Opt")
+        break

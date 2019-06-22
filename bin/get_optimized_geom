@@ -1,0 +1,33 @@
+#!/usr/bin/env python
+import os, sys
+from gaussian09 import g09_parser
+from termcolor import colored, cprint
+
+def find_and_and_write(outfile):
+    calc = g09_parser(outfile)
+    generator_get_opt_inter = calc.get_optimazed_geom()
+    acc = 0
+    while True:
+        try:
+            charges, coord = next(generator_get_opt_inter)
+            with open("./coord.xyz", "w") as write_file:
+                iter_charge = iter(charges)
+                iter_coord = iter(coord)
+                for ch in iter_charge:
+                    line = str(ch) + "  " + str(next(iter_coord)) + " " + str(next(iter_coord)) + " " + str(
+                        next(iter_coord))
+                    write_file.write(line + "\n")
+                acc = acc + 1
+        except StopIteration:
+            print("End_of_Opt")
+            break
+
+def read_geom(inputfile):
+    result = []
+    with open(inputfile) as line_mass:
+        for line in line_mass:
+            result.append()
+
+if len(sys.argv) > 1:
+    output_file = sys.argv[1]
+find_and_and_write(output_file)

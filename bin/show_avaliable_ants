@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+import os
+
+def generate_avail_names(main_name, first_number, final_number):
+    result = []
+    for i in range(first_number, final_number + 1):
+        if i < 10:
+            name = main_name + "0" + str(i)
+        else:
+            name = main_name + str(i)
+        result.append(name)
+    return result
+
+def get_free_ants(def_ants_list : list, queue_command):
+    os.system(queue_command + " > job_list.txt")
+    with open("job_list.txt", "r") as input_file:
+        for line in input_file:
+            ant = line.replace("/n", "").split()[7]
+            if ant in def_ants_list:
+                def_ants_list.remove(ant)
+    os.remove("job_list.txt")
+    return def_ants_list
+
+if __name__ == '__main__':
+    def_ant_list = generate_avail_names("ant",1,17)
+    print(def_ant_list)
+    free_ants = get_free_ants(def_ant_list, "squeue")
+    print(def_ant_list)
