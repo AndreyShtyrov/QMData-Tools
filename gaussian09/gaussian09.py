@@ -1,16 +1,8 @@
-from utils.listanalyser import ListAnalyser
+from utils.listanalyser import ListAnalyser, get_first_number, ListReader
 import numpy as np
 from termcolor import colored, cprint
 
-def get_first_number(line: str):
-    line = line.replace("=", "")
-    line = line.replace(",", "")
-    int_list = line.split()
-    for i in int_list:
-        try:
-            return int(i)
-        except:
-            pass
+
 
 
 class g09_parser(ListAnalyser):
@@ -21,14 +13,20 @@ class g09_parser(ListAnalyser):
                           "Opt_cylc_end": {"GradGradGradGradGradGradGrad"},
                           "method": "#",
                           "opt_geom_start": {"Input orientation:", "Standard orientation:", "Z-Matrix orientation:"},
-                          "opt_geom_end": {"----------------------------------------------"}}
+                          "opt_geom_end": {"----------------------------------------------"},
+                          "force_start": {"Forces (Hartrees/Bohr)"},
+                          "force_end": {"-------------------------------------------------------------------"},
+                          "crit_start": "Item               Value",
+                          "crit_end": "Predicted change in Energy=",
+                          "EigV_opt": "Eigenvalues ---",
+                          }
         self.nroots = 1
         self.pt = False
         self.root = 0
         self.emperic = False
         self.casscf = False
 
-    def get_energy(self, lines):
+    def get_energy(self, lines) -> float:
         if self.casscf:
             pass
         elif self.root is not 1 and not self.casscf:
@@ -66,8 +64,57 @@ class g09_parser(ListAnalyser):
         elif "MINDO3" in line:
             self.emperic = True
 
-    def get_force(self, lines):
+    def get_force(self, lines) -> np.ndarray:
+        LR = ListReader(lines)
+        LR.go_by_keys(*self.stop_keys["force_start"])
+        LR.get_next_lines(2)
+        part = LR.get_all_by_keys(*self.stop_keys["force_end"])
+        result = []
+        for line in part:
+            result.extend(map(float, line.change("\n" , "").split()[2:]))
+        return np.array(result)
+
+    def get_coord(self, lines) -> tuple:
+        LR = ListReader(lines)
+        LR.go_by_keys(self.stop_keys["opt_geom_start"])
+        LR.go_by_keys("--------------------------")
+        LR.get_next_lines(3)
+        part = LR.get_all_by_keys(self.stop_keys["opt_geom_end"])
+        charges = []
+        coords = []
+        for line in part:
+            charges.append(line.split()[1])
+            coords.extend(map(float, line.change["\n", ""].split()[3:]))
+        return charges, np.array(coords)
+
+    def get_criteria(self, lines) -> dict:
+        result = dict()
+        LR = ListReader(lines)
+        LR.go_by_keys(self.stop_keys["crit_start"])
+        part = LR.get_all_by_keys(self.stop_keys["crit_end"])
+        for line in part:
+            result.update({line.split()[0] + " " + line.split()[1]: line.split()[2]})
+        return result
+
+    def get_EigV_optimization(self, lines) -> np.ndarray:
+        part = []
+        LR = ListReader(lines)
+        line = LR.go_by_keys(self.stop_keys["EigV_opt"])
+        part.append(line)
+        part = LR.get_all_if_keys(self.stop_keys["EigV_opt"])
+        result = []
+        for line in part:
+            result.extend(map(float, line.change("\n", "").split()[2:]))
+        return np.array(result)
+
+    def get_MO(self, lines):
         pass
+
+    def get_hessian(self, lines):
+        pass
+
+
+
 
 
 
@@ -79,6 +126,8 @@ class g09_parser(ListAnalyser):
                 charges, coord = self._get_geom(iterable)
                 yield charges, coord
         return
+
+
 
     def get_optimizaition_iteration(self):
         try:

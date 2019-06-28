@@ -4,6 +4,16 @@ def decorate_list_in_iter(func):
         return func(iterable, *arg2)
     return shell_function
 
+def get_first_number(line: str):
+    line = line.replace("=", "")
+    line = line.replace(",", "")
+    int_list = line.split()
+    for i in int_list:
+        try:
+            return int(i)
+        except:
+            pass
+
 class ListAnalyser(object):
 
     def __init__(self):
@@ -42,13 +52,22 @@ class ListAnalyser(object):
         for line in iterable:
             if not self._buffer:
                 self._buffer = []
-            self._buffer.append(line)
             if self._is_keys_in_line(line, *keys):
                 try:
                     return self._return_buffer()
                 except IndexError:
                     return
+            self._buffer.append(line)
         return
+
+    def _get_all_if_keys(self, iterable, *keys):
+        result = []
+        for line in iterable:
+            if self._is_keys_in_line(line, *keys):
+                result.append(line)
+            else:
+                break
+        return result
 
     def _go_by_keys(self, iterable, *keys):
         for line in iterable:
@@ -91,3 +110,34 @@ class ListAnalyser(object):
         result = self._buffer
         self._buffer = None
         return result
+
+
+class ListReader(ListAnalyser):
+
+    def __init__(self, iterable):
+        super().__init__()
+        self.iterable = iterable
+
+    def add(self, iterable) -> None:
+        self.iterable = iterable
+
+    def get_all_by_end(self) -> list:
+        return self._get_all_by_end(self.iterable)
+
+    def get_all_by_end_and_keys(self, *keys) -> list:
+        return self._get_all_by_end_and_keys(self.iterable, *keys)
+
+    def go_by_keys(self, *keys) -> list:
+        return self._go_by_keys(self.iterable, *keys)
+
+    def yield_part(self, iterable, start_keys, stop_keys) -> list:
+        yield from self._yield_part(self.iterable, start_keys, stop_keys)
+
+    def get_next_lines(self, number) -> list:
+        return self._get_next_lines(self.iterable, number)
+
+    def get_all_by_keys(self, *keys) -> list:
+        return self._get_all_by_keys(self.iterable, *keys)
+
+    def get_all_if_keys(self, *keys):
+        return self._get_all_if_keys(self.iterable, *keys)

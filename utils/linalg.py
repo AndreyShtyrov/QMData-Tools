@@ -65,20 +65,20 @@ def calculate_axis_of_inertions(charges, coords):
     Izz = sum(map(lambda c, x, y: MASS_CONST[c] * (x*x + y*y), charges, rX, rY))
 
     Inertion = np.zeros((3, 3))
-    Inertion[0,0] = Ixx
-    Inertion[0,1] = Ixy
-    Inertion[0,2] = Ixz
-    Inertion[1,0] = Iyx
-    Inertion[1,1] = Iyy
-    Inertion[1,2] = Iyz
-    Inertion[2,0] = Izx
-    Inertion[2,1] = Izy
-    Inertion[2,2] = Izz
+    Inertion[0, 0] = Ixx
+    Inertion[0, 1] = Ixy
+    Inertion[0, 2] = Ixz
+    Inertion[1, 0] = Iyx
+    Inertion[1, 1] = Iyy
+    Inertion[1, 2] = Iyz
+    Inertion[2, 0] = Izx
+    Inertion[2, 1] = Izy
+    Inertion[2, 2] = Izz
 
     return Inertion
 
 
-def calculate_translation_vect(charges):
+def calculate_translation_vector(charges):
     D1 = np.zeros(len(charges)*3)
     D2 = np.zeros(len(charges)*3)
     D3 = np.zeros(len(charges)*3)
@@ -132,14 +132,12 @@ def internal_coords(struct, masses, charges):
         D[4][i::3] = (P[:, 2] * X[i, 0] - P[:, 0] * X[i, 2]) * np.sqrt(masses)
         D[5][i::3] = (P[:, 0] * X[i, 1] - P[:, 1] * X[i, 0]) * np.sqrt(masses)
 
-    del_index = []
+    result = []
     for i in range(len(D)):
         if D[i][0] is "nan" or lg.norm(D[i]) < 1.0e-12:
-            del_index.append(i)
+            pass
         else:
-            D[i] = D[i] / np.linalg.norm(D[i])
-    if del_index:
-        for i in del_index:
-            del(D[i])
-    return separete_basis(np.stack(D, axis=1))[:, len(D):]
+            result.append(D[i] / np.linalg.norm(D[i]))
+    result = np.array(result)
+    return separete_basis(np.stack(result, axis=1))[:, len(result):]
 
