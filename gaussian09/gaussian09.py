@@ -17,8 +17,10 @@ class g09_parser(ListAnalyser):
                           "force_start": {"Forces (Hartrees/Bohr)"},
                           "force_end": {"-------------------------------------------------------------------"},
                           "crit_start": "Item               Value",
-                          "crit_end": "Predicted change in Energy=",
+                          "crit_end": "Predicted replace in Energy=",
                           "EigV_opt": "Eigenvalues ---",
+                          "pop_start": "Population analysis using the SCF density.",
+                          "pop_end": {"Alpha  occ. eigenvalues --"},
                           }
         self.nroots = 1
         self.pt = False
@@ -71,7 +73,7 @@ class g09_parser(ListAnalyser):
         part = LR.get_all_by_keys(*self.stop_keys["force_end"])
         result = []
         for line in part:
-            result.extend(map(float, line.change("\n" , "").split()[2:]))
+            result.extend(map(float, line.replace("\n" , "").split()[2:]))
         return np.array(result)
 
     def get_coord(self, lines) -> tuple:
@@ -84,7 +86,7 @@ class g09_parser(ListAnalyser):
         coords = []
         for line in part:
             charges.append(line.split()[1])
-            coords.extend(map(float, line.change["\n", ""].split()[3:]))
+            coords.extend(map(float, line.replace["\n", ""].split()[3:]))
         return charges, np.array(coords)
 
     def get_criteria(self, lines) -> dict:
@@ -104,13 +106,61 @@ class g09_parser(ListAnalyser):
         part = LR.get_all_if_keys(self.stop_keys["EigV_opt"])
         result = []
         for line in part:
-            result.extend(map(float, line.change("\n", "").split()[2:]))
+            result.extend(map(float, line.replace("\n", "").split()[2:]))
         return np.array(result)
 
     def get_MO(self, lines):
-        pass
+        LR = ListReader(lines)
+        line = LR.go_by_keys(self.stop_keys["pop_end"])
+        coeff = []
+        coeff.extend(map(float, line.replace("\n", "").split()[5:]))
+        part = LR.get_all_if_keys(*self.stop_keys["pop_end"])
+        for line in part:
+            coeff.extend(map(float, line.replace("\n", "").split()[5:]))
+        n_basis = len(coeff)
+        MO = np.zeros((n_basis, n_basis))
+
+        LR.go_by_keys("Molecular Orbital Coefficients:")
+        LR.get_next_lines(3)
+        for i in range(int(n_basis/5)):
+            MO_vect = np.zeros((5, n_basis))
+            part = LR.get_all_by_keys("Eigenvalues --")
+            part = part.reverse()
+            part = iter(part)
+            j = 0
+            for line in part:
+                if len(line.split()) == 5:
+                    break
+                elif len(line.split()) == 9:
+                    MO[i: i+5, j] = line.replace("\n", "").split()[5:]
+                else:
+                    MO[i: i + 5, j] = line.replace("\n", "").split()[3:]
+                j = j + 1
+        last_orb = n_basis % 5
+        part = LR.get_all_by_keys("orbital", "pop")
+        j = 0
+        for line in part:
+            if len(line.split()) == last_orb + 4:
+                MO[i: i + 5, j] = line.replace("\n", "").split()[5:]
+            else:
+                MO[i: i + 5, j] = line.replace("\n", "").split()[3:]
+            j = j + 1
+        for i in MO.shape[0]:
+            for j in MO.shape[1]:
+                MO[i, j] = float(MO[i, j])
+        return coeff, MO
+
+
+
+
 
     def get_hessian(self, lines):
+        LR = ListReader(lines)
+        LR.go_by_keys("The second derivative matrix:")
+        LR.get_next_lines(1)
+        part = LR.get_all_by_keys("ITU=  0")
+        for line in part:
+            pass
         pass
 
 

@@ -127,7 +127,7 @@ class ListReader(ListAnalyser):
     def get_all_by_end_and_keys(self, *keys) -> list:
         return self._get_all_by_end_and_keys(self.iterable, *keys)
 
-    def go_by_keys(self, *keys) -> list:
+    def go_by_keys(self, *keys) -> str:
         return self._go_by_keys(self.iterable, *keys)
 
     def yield_part(self, iterable, start_keys, stop_keys) -> list:
