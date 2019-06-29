@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="" />
+    <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaussian09/gaussian09.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaussian09/gaussian09.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/listanalyser.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/listanalyser.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,21 +51,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/listanalyser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
+            <state relative-caret-position="445">
+              <caret line="120" column="29" lean-forward="true" selection-start-line="120" selection-start-column="29" selection-end-line="120" selection-end-column="29" />
               <folding>
                 <element signature="e#201#385#0" />
-                <element signature="e#311#404#0" />
-                <element signature="e#480#567#0" />
-                <element signature="e#625#746#0" />
-                <element signature="e#805#1044#0" />
-                <element signature="e#1713#1863#0" />
-                <element signature="e#1481#1596#0" />
-                <element signature="e#1648#1792#0" />
-                <element signature="e#1862#2335#0" />
-                <element signature="e#2402#2477#0" />
-                <element signature="e#2528#2618#0" />
-                <element signature="e#2658#2729#0" />
               </folding>
             </state>
           </provider>
@@ -84,15 +77,29 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gaussian09/gaussian09.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="64" selection-start-line="17" selection-start-column="64" selection-end-line="17" selection-end-column="64" />
+            <state relative-caret-position="428">
+              <caret line="361" column="17" selection-start-line="361" selection-start-column="17" selection-end-line="361" selection-end-column="17" />
               <folding>
-                <element signature="e#0#43#0" expanded="true" />
                 <element signature="e#1404#1948#0" />
-                <element signature="e#4572#5991#0" />
-                <element signature="e#2988#3638#0" />
-                <element signature="e#3684#4702#0" />
-                <element signature="e#8872#9322#0" />
+                <element signature="e#1995#2901#0" />
+                <element signature="e#2957#3279#0" />
+                <element signature="e#3330#3781#0" />
+                <element signature="e#3834#4128#0" />
+                <element signature="e#4196#4533#0" />
+                <element signature="e#4572#6099#0" />
+                <element signature="e#6147#7223#0" />
+                <element signature="e#6806#7167#0" />
+                <element signature="e#6563#6881#0" />
+                <element signature="e#6936#7586#0" />
+                <element signature="e#7632#8650#0" />
+                <element signature="e#8713#9309#0" />
+                <element signature="e#9403#10214#0" />
+                <element signature="e#10266#10641#0" />
+                <element signature="e#10691#11002#0" />
+                <element signature="e#11046#11376#0" />
+                <element signature="e#11422#11905#0" />
+                <element signature="e#11949#12115#0" />
+                <element signature="e#12159#12787#0" />
               </folding>
             </state>
           </provider>
@@ -101,7 +108,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Old_scripts/Calc_freq.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
+            <state relative-caret-position="493">
               <caret line="56" selection-start-line="56" selection-end-line="56" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
@@ -146,35 +153,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="QMData-Tools" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QMData-Tools" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QMData-Tools" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QMData-Tools" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QMData-Tools" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QMData-Tools" type="462c0819:PsiDirectoryNode" />
-              <item name="gaussian09" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QMData-Tools" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QMData-Tools" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -225,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561735786311</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Setup">
+      <created>1561736193160</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1561736193160</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -302,28 +288,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Old_scripts/parrallel_runs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Old_scripts/Calc_freq.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <element signature="e#306#693#0" />
-            <element signature="e#726#1455#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Old_scripts/prepare_job_list.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/linalg.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -336,38 +300,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Old_scripts/prepare_job_list.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Old_scripts/parrallel_runs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Old_scripts/Calc_freq.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#306#693#0" />
+            <element signature="e#726#1455#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/utils/listanalyser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
+        <state relative-caret-position="445">
+          <caret line="120" column="29" lean-forward="true" selection-start-line="120" selection-start-column="29" selection-end-line="120" selection-end-column="29" />
           <folding>
             <element signature="e#201#385#0" />
-            <element signature="e#311#404#0" />
-            <element signature="e#480#567#0" />
-            <element signature="e#625#746#0" />
-            <element signature="e#805#1044#0" />
-            <element signature="e#1713#1863#0" />
-            <element signature="e#1481#1596#0" />
-            <element signature="e#1648#1792#0" />
-            <element signature="e#1862#2335#0" />
-            <element signature="e#2402#2477#0" />
-            <element signature="e#2528#2618#0" />
-            <element signature="e#2658#2729#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gaussian09/gaussian09.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="64" selection-start-line="17" selection-start-column="64" selection-end-line="17" selection-end-column="64" />
+        <state relative-caret-position="428">
+          <caret line="361" column="17" selection-start-line="361" selection-start-column="17" selection-end-line="361" selection-end-column="17" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
             <element signature="e#1404#1948#0" />
-            <element signature="e#4572#5991#0" />
-            <element signature="e#2988#3638#0" />
-            <element signature="e#3684#4702#0" />
-            <element signature="e#8872#9322#0" />
+            <element signature="e#1995#2901#0" />
+            <element signature="e#2957#3279#0" />
+            <element signature="e#3330#3781#0" />
+            <element signature="e#3834#4128#0" />
+            <element signature="e#4196#4533#0" />
+            <element signature="e#4572#6099#0" />
+            <element signature="e#6147#7223#0" />
+            <element signature="e#6806#7167#0" />
+            <element signature="e#6563#6881#0" />
+            <element signature="e#6936#7586#0" />
+            <element signature="e#7632#8650#0" />
+            <element signature="e#8713#9309#0" />
+            <element signature="e#9403#10214#0" />
+            <element signature="e#10266#10641#0" />
+            <element signature="e#10691#11002#0" />
+            <element signature="e#11046#11376#0" />
+            <element signature="e#11422#11905#0" />
+            <element signature="e#11949#12115#0" />
+            <element signature="e#12159#12787#0" />
           </folding>
         </state>
       </provider>

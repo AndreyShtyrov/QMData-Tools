@@ -6,9 +6,9 @@ from termcolor import colored, cprint
 
 
 class g09_parser(ListAnalyser):
-    def __init__(self, main_method):
+    def __init__(self, lines):
         super().__init__()
-        self.main_method = main_method
+        self.main_method = None
         self.stop_keys = {"Opt_cylc_start": {"Berny optimization."},
                           "Opt_cylc_end": {"GradGradGradGradGradGradGrad"},
                           "method": "#",
@@ -20,13 +20,15 @@ class g09_parser(ListAnalyser):
                           "crit_end": "Predicted replace in Energy=",
                           "EigV_opt": "Eigenvalues ---",
                           "pop_start": "Population analysis using the SCF density.",
-                          "pop_end": {"Alpha  occ. eigenvalues --"},
+                          "pop_end": {"Alpha  occ. eigenvalues --", "Alpha virt. eigenvalues --"},
                           }
         self.nroots = 1
         self.pt = False
         self.root = 0
         self.emperic = False
         self.casscf = False
+        self.define_methods(lines)
+
 
     def get_energy(self, lines) -> float:
         if self.casscf:
@@ -123,9 +125,7 @@ class g09_parser(ListAnalyser):
         LR.go_by_keys("Molecular Orbital Coefficients:")
         LR.get_next_lines(3)
         for i in range(int(n_basis/5)):
-            MO_vect = np.zeros((5, n_basis))
             part = LR.get_all_by_keys("Eigenvalues --")
-            part = part.reverse()
             part = iter(part)
             j = 0
             for line in part:
@@ -139,34 +139,56 @@ class g09_parser(ListAnalyser):
         last_orb = n_basis % 5
         part = LR.get_all_by_keys("orbital", "pop")
         j = 0
+        i = n_basis/5 - 1
+        res = n_basis % 5
         for line in part:
             if len(line.split()) == last_orb + 4:
-                MO[i: i + 5, j] = line.replace("\n", "").split()[5:]
+                MO[i: i + res, j] = line.replace("\n", "").split()[5:]
             else:
-                MO[i: i + 5, j] = line.replace("\n", "").split()[3:]
+                MO[i: i + res, j] = line.replace("\n", "").split()[3:]
             j = j + 1
         for i in MO.shape[0]:
             for j in MO.shape[1]:
                 MO[i, j] = float(MO[i, j])
         return coeff, MO
 
-
-
-
-
     def get_hessian(self, lines):
         LR = ListReader(lines)
         LR.go_by_keys("The second derivative matrix:")
         LR.get_next_lines(1)
         part = LR.get_all_by_keys("ITU=  0")
-        for line in part:
-            pass
-        pass
-
-
-
-
-
+        part1 = iter(part)
+        next(part1)
+        n = 0
+        for i in part1:
+            try:
+                _ = int(i.split()[1])
+            except:
+                break
+            n = n + 1
+        part = iter(part)
+        next(part)
+        hessian = np.zeros((n, n))
+        i = 0
+        shifts = int(n / 5)
+        if n % 5 != 0:
+            shifts = shifts + 1
+        for j in range(shifts):
+            for i in range(j*5, n):
+                try:
+                    line = next(part)
+                    line = line.replace("\n", "")
+                    l = i
+                    if l > 5:
+                        l = 5
+                    hessian[i + j*5, j*5: j*5 + l] = map(float, line.split()[1:])
+                except StopIteration:
+                    break
+            next(part)
+        for i in range(n):
+            for j in range(i):
+                hessian[i, j] = hessian[j, i]
+        return hessian
 
     def get_optimazed_geom(self):
         for part_of_file in self._get_berny_section():
@@ -241,9 +263,6 @@ class g09_parser(ListAnalyser):
                 result.append([projection, float(values.split()[index])])
                 index = index + 1
             return result
-
-    def _get_force(self, iterable):
-        pass
 
     def _get_berny_section(self):
         part_of_file = []
@@ -336,14 +355,10 @@ class g09_parser(ListAnalyser):
             self.main_method = "nopt2"
 
 if __name__ == '__main__':
-    calc = g09_parser("opt.out")
-    print(calc.get_energy())
-    generator_get_opt_inter = calc.get_optimizaition_iteration()
-    while True:
-        try:
-            _, _, energy, _, eig, crit = next(generator_get_opt_inter)
-            print("{:10.6f}".format(energy)+": " "{:10.5f}".format(crit[0][0])+ ", "+ "{:10.5f}".format(eig[1]) + "| " + "{:10.5f}".format(eig[0]))
-        except StopIteration:
-            print("End_of_Opt")
-            break
+    with open("opt.out", "r") as gaussin_file:
+        g09 = g09_parser(g09_parser)
+    with open("opt.out", "r") as gaussin_file:
+        energy = g09.get_energy(gaussin_file)
+    print(energy)
+
 

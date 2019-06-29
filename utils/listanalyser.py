@@ -116,7 +116,7 @@ class ListReader(ListAnalyser):
 
     def __init__(self, iterable):
         super().__init__()
-        self.iterable = iterable
+        self.iterable = iter(iterable)
 
     def add(self, iterable) -> None:
         self.iterable = iterable
