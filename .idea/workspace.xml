@@ -4,7 +4,7 @@
     <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gaussian09/gaussian09.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaussian09/gaussian09.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/listanalyser.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/listanalyser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaussian09/gaussian09_chk.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaussian09/gaussian09_chk.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/listanalyser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="52" selection-start-line="52" selection-end-line="52" />
+            <state relative-caret-position="782">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
               <folding>
                 <element signature="e#201#385#0" />
               </folding>
@@ -87,25 +87,18 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Old_scripts/parrallel_runs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gaussian09/gaussian09.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="110" column="49" selection-start-line="110" selection-start-column="49" selection-end-line="110" selection-end-column="49" />
+            <state relative-caret-position="331">
+              <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
               <folding>
+                <element signature="e#206#1415#0" />
+                <element signature="e#1995#2901#0" />
                 <element signature="e#2957#3279#0" />
+                <element signature="e#3391#3844#0" />
                 <element signature="e#3897#4193#0" />
-                <element signature="e#6147#7223#0" />
-                <element signature="e#6806#7167#0" />
+                <element signature="e#4261#4600#0" />
                 <element signature="e#6563#6881#0" />
                 <element signature="e#6936#7586#0" />
                 <element signature="e#7632#8650#0" />
@@ -117,6 +110,18 @@
                 <element signature="e#11422#11905#0" />
                 <element signature="e#11949#12115#0" />
                 <element signature="e#12159#12787#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gaussian09/gaussian09_chk.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -158,13 +163,14 @@
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/utils/linalg.py" />
         <option value="$PROJECT_DIR$/utils/listanalyser.py" />
+        <option value="$PROJECT_DIR$/gaussian09/gaussian09_chk.py" />
         <option value="$PROJECT_DIR$/gaussian09/gaussian09.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="y" value="-12" />
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
     <option name="width" value="1944" />
     <option name="height" value="1044" />
   </component>
@@ -182,11 +188,6 @@
               <item name="QMData-Tools" type="b2602c69:ProjectViewProjectNode" />
               <item name="QMData-Tools" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="QMData-Tools" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QMData-Tools" type="462c0819:PsiDirectoryNode" />
-              <item name="gaussian09" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -195,7 +196,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="E:/WORK_SPACE/OneDrive/00-Projects/03-Tempory_Directory/test-rot-tr-div/01-diatoms/01-HH" />
+    <property name="last_opened_file_path" value="E:/WORK_SPACE/OneDrive/00-Projects/01-Final_Results/08-Edine/02-Part_of_Edinu/02-B2PlypD/02-st/05-freq" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -240,7 +241,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="E:/WORK_SPACE/OneDrive/00-Projects/03-Tempory_Directory/test-rot-tr-div/01-diatoms/01-HH" />
+      <option name="WORKING_DIRECTORY" value="E:/WORK_SPACE/OneDrive/00-Projects/01-Final_Results/08-Edine/02-Part_of_Edinu/02-B2PlypD/02-st/05-freq" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -305,7 +306,21 @@
       <option name="project" value="LOCAL" />
       <updated>1561810303209</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Refactor g09_parser code">
+      <created>1561812171277</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1561812171277</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Refactor g09_parser code">
+      <created>1561815687070</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1561815687070</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -317,8 +332,8 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32978722" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39893618" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32978722" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39893618" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -365,16 +380,77 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/gaussian09/gaussian09.py</url>
-          <line>362</line>
-          <option name="timeStamp" value="11" />
+          <line>153</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/gaussian09/gaussian09.py</url>
-          <line>86</line>
-          <option name="timeStamp" value="13" />
+          <line>146</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/gaussian09/gaussian09.py</url>
+          <line>140</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>res is 0</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>hessian[i + j*5, j*5: j*5 + ]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>hessian[i + j*5, j*5: j*5 + 0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>hessian[i + j*5, j*5: j*5 + 1]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>hessian[i + j*5, j*5: j*5 + 3]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>hessian[i + j*5, j*5: j*5 + 2]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>hessian[i + j*5, j*5: j*5 + l]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>[x for x in map(float, line.split()[1:])]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>int(i.split()[2])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>map(float, line.replace(&quot;\n&quot;, &quot;&quot;).split()[5:])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Old_scripts/parrallel_runs">
@@ -404,16 +480,6 @@
             <element signature="e#984#1207#0" />
             <element signature="e#1266#1790#0" />
             <element signature="e#1843#2002#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/listanalyser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-          <folding>
-            <element signature="e#201#385#0" />
           </folding>
         </state>
       </provider>
@@ -455,15 +521,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/utils/listanalyser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="e#201#385#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gaussian09/gaussian09_chk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gaussian09/gaussian09.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="110" column="49" selection-start-line="110" selection-start-column="49" selection-end-line="110" selection-end-column="49" />
+        <state relative-caret-position="331">
+          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
           <folding>
+            <element signature="e#206#1415#0" />
+            <element signature="e#1995#2901#0" />
             <element signature="e#2957#3279#0" />
+            <element signature="e#3391#3844#0" />
             <element signature="e#3897#4193#0" />
-            <element signature="e#6147#7223#0" />
-            <element signature="e#6806#7167#0" />
+            <element signature="e#4261#4600#0" />
             <element signature="e#6563#6881#0" />
             <element signature="e#6936#7586#0" />
             <element signature="e#7632#8650#0" />

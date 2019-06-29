@@ -27,7 +27,7 @@ class g09_parser(ListAnalyser):
         self.casscf = False
         self.define_methods(lines)
 
-    def get_energy(self, lines) -> float:
+    def get_energy(self, lines):
         if self.casscf:
             pass
         elif self.nroots is not 1 and not self.casscf:
@@ -39,7 +39,7 @@ class g09_parser(ListAnalyser):
             line = self._go_by_keys(lines, "SCF Done:")
             return float(line.split()[4])
         elif self.nroots is 1 and self.pt2:
-            line = self._go_by_keys(lines, "E(PMP2)=")
+            line = self._go_by_keys(lines, "E(PMP2)=", "E2(B2PLYPD)")
             return float(line.split()[-1].replace("D", "E"))
 
     def define_methods(self, lines):
@@ -139,12 +139,13 @@ class g09_parser(ListAnalyser):
         j = 0
         i = int(n_basis/5)
         res = n_basis % 5
-        for line in part:
-            if len(line.split()) == last_orb + 4:
-                MO[i * 5: i * 5 + res, j] = line.replace("\n", "").split()[4:]
-            else:
-                MO[i * 5: i * 5 + res, j] = line.replace("\n", "").split()[2:]
-            j = j + 1
+        if res is not 0:
+            for line in part:
+                if len(line.split()) == last_orb + 4:
+                    MO[i * 5: i * 5 + res, j] = line.replace("\n", "").split()[4:]
+                else:
+                    MO[i * 5: i * 5 + res, j] = line.replace("\n", "").split()[2:]
+                j = j + 1
         for i in range(MO.shape[0]):
             for j in range(MO.shape[1]):
                 MO[i, j] = float(MO[i, j])
@@ -357,16 +358,18 @@ if __name__ == '__main__':
     with open("opt.out", "r") as gaussin_file:
         energy = g09.get_energy(gaussin_file)
     print(energy)
-    with open("opt.out", "r") as gaussin_file:
-        charge, coord = g09.get_coord(gaussin_file)
-    print(coord)
-    with open("opt.out", "r") as gaussin_file:
-        force = g09.get_force(gaussin_file)
-    print(force)
-    with open("opt.out", "r") as gaussin_file:
-        orb = g09.get_MO(gaussin_file)
-        hessian = g09.get_hessian(gaussin_file)
-    print(hessian)
+    if False:
+        with open("opt.out", "r") as gaussin_file:
+            charge, coord = g09.get_coord(gaussin_file)
+        print(coord)
+        with open("opt.out", "r") as gaussin_file:
+            force = g09.get_force(gaussin_file)
+        print(force)
+        with open("opt.out", "r") as gaussin_file:
+            orb = g09.get_MO(gaussin_file)
+            print(orb)
+            hessian = g09.get_hessian(gaussin_file)
+            print(hessian)
     with open("opt.out", "r") as gaussin_file:
         crit = g09.get_criteria(gaussin_file)
     print(crit)

@@ -15,8 +15,6 @@ class gaussian_chk_parser(parser):
         self.go_to_key("Cartesian Force Constants")
         part_of_file = self.get_all_by_key("Dipole Moment")
 
-
-
     def get_energy(self):
         self.go_to_key("Total Energy")
         result = self.last_line.split()[-1]
