@@ -23,7 +23,7 @@ class g09_parser(ListAnalyser):
                           "pop_end": {"Alpha  occ. eigenvalues --", "Alpha virt. eigenvalues --"},
                           }
         self.nroots = 1
-        self.pt = False
+        self.pt2 = False
         self.root = 0
         self.emperic = False
         self.casscf = False
@@ -33,15 +33,15 @@ class g09_parser(ListAnalyser):
     def get_energy(self, lines) -> float:
         if self.casscf:
             pass
-        elif self.root is not 1 and not self.casscf:
+        elif self.nroots is not 1 and not self.casscf:
             pass
         elif self.emperic:
             line = self._go_by_keys(lines, "Energy=")
             return float(line.split()[1].replace("D", "E"))
-        elif self.root is 1 and not self.pt:
+        elif self.nroots is 1 and not self.pt2:
             line = self._go_by_keys(lines, "SCF Done:")
             return float(line.split()[4])
-        elif self.root is 1 and self.pt2:
+        elif self.nroots is 1 and self.pt2:
             line = self._go_by_keys(lines, "E(PMP2)=")
             return float(line.split()[-1].replace("D", "E"))
 
@@ -80,22 +80,22 @@ class g09_parser(ListAnalyser):
 
     def get_coord(self, lines) -> tuple:
         LR = ListReader(lines)
-        LR.go_by_keys(self.stop_keys["opt_geom_start"])
+        LR.go_by_keys(*self.stop_keys["opt_geom_start"])
         LR.go_by_keys("--------------------------")
         LR.get_next_lines(3)
-        part = LR.get_all_by_keys(self.stop_keys["opt_geom_end"])
+        part = LR.get_all_by_keys(*self.stop_keys["opt_geom_end"])
         charges = []
         coords = []
         for line in part:
             charges.append(line.split()[1])
-            coords.extend(map(float, line.replace["\n", ""].split()[3:]))
+            coords.extend(map(float, line.replace("\n", "").split()[3:]))
         return charges, np.array(coords)
 
     def get_criteria(self, lines) -> dict:
         result = dict()
         LR = ListReader(lines)
-        LR.go_by_keys(self.stop_keys["crit_start"])
-        part = LR.get_all_by_keys(self.stop_keys["crit_end"])
+        LR.go_by_keys(*self.stop_keys["crit_start"])
+        part = LR.get_all_by_keys(*self.stop_keys["crit_end"])
         for line in part:
             result.update({line.split()[0] + " " + line.split()[1]: line.split()[2]})
         return result
@@ -103,9 +103,9 @@ class g09_parser(ListAnalyser):
     def get_EigV_optimization(self, lines) -> np.ndarray:
         part = []
         LR = ListReader(lines)
-        line = LR.go_by_keys(self.stop_keys["EigV_opt"])
+        line = LR.go_by_keys(*self.stop_keys["EigV_opt"])
         part.append(line)
-        part = LR.get_all_if_keys(self.stop_keys["EigV_opt"])
+        part = LR.get_all_if_keys(*self.stop_keys["EigV_opt"])
         result = []
         for line in part:
             result.extend(map(float, line.replace("\n", "").split()[2:]))
@@ -113,7 +113,7 @@ class g09_parser(ListAnalyser):
 
     def get_MO(self, lines):
         LR = ListReader(lines)
-        line = LR.go_by_keys(self.stop_keys["pop_end"])
+        line = LR.go_by_keys(*self.stop_keys["pop_end"])
         coeff = []
         coeff.extend(map(float, line.replace("\n", "").split()[5:]))
         part = LR.get_all_if_keys(*self.stop_keys["pop_end"])
@@ -356,9 +356,12 @@ class g09_parser(ListAnalyser):
 
 if __name__ == '__main__':
     with open("opt.out", "r") as gaussin_file:
-        g09 = g09_parser(g09_parser)
+        g09 = g09_parser(gaussin_file)
     with open("opt.out", "r") as gaussin_file:
         energy = g09.get_energy(gaussin_file)
     print(energy)
+    with open("opt.out", "r") as gaussin_file:
+        coord = g09.get_coord(gaussin_file)
+    print(coord)
 
 

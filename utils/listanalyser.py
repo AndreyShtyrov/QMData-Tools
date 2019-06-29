@@ -43,7 +43,7 @@ class ListAnalyser(object):
             self._buffer = []
         for i in range(number):
             try:
-                self._buffer = next(iterable)
+                self._buffer.append(next(iterable))
             except StopIteration:
                 return
         return self._return_buffer()
