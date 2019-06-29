@@ -3,23 +3,21 @@ import numpy as np
 from termcolor import colored, cprint
 
 
-
-
 class g09_parser(ListAnalyser):
     def __init__(self, lines):
         super().__init__()
         self.main_method = None
         self.stop_keys = {"Opt_cylc_start": {"Berny optimization."},
                           "Opt_cylc_end": {"GradGradGradGradGradGradGrad"},
-                          "method": "#",
+                          "method": {"#"},
                           "opt_geom_start": {"Input orientation:", "Standard orientation:", "Z-Matrix orientation:"},
                           "opt_geom_end": {"----------------------------------------------"},
                           "force_start": {"Forces (Hartrees/Bohr)"},
                           "force_end": {"-------------------------------------------------------------------"},
-                          "crit_start": "Item               Value",
-                          "crit_end": "Predicted replace in Energy=",
-                          "EigV_opt": "Eigenvalues ---",
-                          "pop_start": "Population analysis using the SCF density.",
+                          "crit_start": {"Item               Value"},
+                          "crit_end": {"Predicted change"},
+                          "EigV_opt": {"Eigenvalues ---"},
+                          "pop_start": {"Population analysis using the SCF density."},
                           "pop_end": {"Alpha  occ. eigenvalues --", "Alpha virt. eigenvalues --"},
                           }
         self.nroots = 1
@@ -28,7 +26,6 @@ class g09_parser(ListAnalyser):
         self.emperic = False
         self.casscf = False
         self.define_methods(lines)
-
 
     def get_energy(self, lines) -> float:
         if self.casscf:
@@ -46,7 +43,7 @@ class g09_parser(ListAnalyser):
             return float(line.split()[-1].replace("D", "E"))
 
     def define_methods(self, lines):
-        line = self._go_by_keys(lines, self.stop_keys["method"])
+        line = self._go_by_keys(lines, *self.stop_keys["method"])
         if "CASSCF" in line.upper():
             self.casscf = True
             if "NROOT" in line.upper():
@@ -102,11 +99,12 @@ class g09_parser(ListAnalyser):
 
     def get_EigV_optimization(self, lines) -> np.ndarray:
         part = []
+        result = []
         LR = ListReader(lines)
         line = LR.go_by_keys(*self.stop_keys["EigV_opt"])
+        result.extend(map(float, line.replace("\n", "").split()[2:]))
         part.append(line)
         part = LR.get_all_if_keys(*self.stop_keys["EigV_opt"])
-        result = []
         for line in part:
             result.extend(map(float, line.replace("\n", "").split()[2:]))
         return np.array(result)
@@ -115,40 +113,40 @@ class g09_parser(ListAnalyser):
         LR = ListReader(lines)
         line = LR.go_by_keys(*self.stop_keys["pop_end"])
         coeff = []
-        coeff.extend(map(float, line.replace("\n", "").split()[5:]))
+        coeff.extend(map(float, line.replace("\n", "").split()[4:]))
         part = LR.get_all_if_keys(*self.stop_keys["pop_end"])
         for line in part:
-            coeff.extend(map(float, line.replace("\n", "").split()[5:]))
+            coeff.extend(map(float, line.replace("\n", "").split()[4:]))
         n_basis = len(coeff)
         MO = np.zeros((n_basis, n_basis))
-
-        LR.go_by_keys("Molecular Orbital Coefficients:")
         LR.get_next_lines(3)
         for i in range(int(n_basis/5)):
             part = LR.get_all_by_keys("Eigenvalues --")
             part = iter(part)
             j = 0
             for line in part:
+                if j == n_basis:
+                    break
                 if len(line.split()) == 5:
                     break
                 elif len(line.split()) == 9:
-                    MO[i: i+5, j] = line.replace("\n", "").split()[5:]
+                    MO[i * 5: i * 5 + 5, j] = line.replace("\n", "").split()[4:]
                 else:
-                    MO[i: i + 5, j] = line.replace("\n", "").split()[3:]
+                    MO[i * 5: i * 5 + 5, j] = line.replace("\n", "").split()[2:]
                 j = j + 1
         last_orb = n_basis % 5
-        part = LR.get_all_by_keys("orbital", "pop")
+        part = LR.get_all_by_keys("orbital", "pop", "Density Matrix:")
         j = 0
-        i = n_basis/5 - 1
+        i = int(n_basis/5)
         res = n_basis % 5
         for line in part:
             if len(line.split()) == last_orb + 4:
-                MO[i: i + res, j] = line.replace("\n", "").split()[5:]
+                MO[i * 5: i * 5 + res, j] = line.replace("\n", "").split()[4:]
             else:
-                MO[i: i + res, j] = line.replace("\n", "").split()[3:]
+                MO[i * 5: i * 5 + res, j] = line.replace("\n", "").split()[2:]
             j = j + 1
-        for i in MO.shape[0]:
-            for j in MO.shape[1]:
+        for i in range(MO.shape[0]):
+            for j in range(MO.shape[1]):
                 MO[i, j] = float(MO[i, j])
         return coeff, MO
 
@@ -158,36 +156,37 @@ class g09_parser(ListAnalyser):
         LR.get_next_lines(1)
         part = LR.get_all_by_keys("ITU=  0")
         part1 = iter(part)
-        next(part1)
         n = 0
         for i in part1:
             try:
-                _ = int(i.split()[1])
+                _ = float(i.split()[1])
             except:
                 break
             n = n + 1
         part = iter(part)
-        next(part)
         hessian = np.zeros((n, n))
         i = 0
         shifts = int(n / 5)
         if n % 5 != 0:
             shifts = shifts + 1
         for j in range(shifts):
-            for i in range(j*5, n):
+            for i in range(n - j*5):
                 try:
                     line = next(part)
                     line = line.replace("\n", "")
-                    l = i
+                    l = i + 1
                     if l > 5:
                         l = 5
-                    hessian[i + j*5, j*5: j*5 + l] = map(float, line.split()[1:])
+                    hessian[i + j*5, j*5: j*5 + l] = [x for x in map(float, line.split()[1:])]
                 except StopIteration:
                     break
-            next(part)
+            try:
+                next(part)
+            except StopIteration:
+                break
         for i in range(n):
             for j in range(i):
-                hessian[i, j] = hessian[j, i]
+                hessian[j, i] = hessian[i, j]
         return hessian
 
     def get_optimazed_geom(self):
@@ -198,8 +197,6 @@ class g09_parser(ListAnalyser):
                 charges, coord = self._get_geom(iterable)
                 yield charges, coord
         return
-
-
 
     def get_optimizaition_iteration(self):
         try:
@@ -361,7 +358,21 @@ if __name__ == '__main__':
         energy = g09.get_energy(gaussin_file)
     print(energy)
     with open("opt.out", "r") as gaussin_file:
-        coord = g09.get_coord(gaussin_file)
+        charge, coord = g09.get_coord(gaussin_file)
     print(coord)
+    with open("opt.out", "r") as gaussin_file:
+        force = g09.get_force(gaussin_file)
+    print(force)
+    with open("opt.out", "r") as gaussin_file:
+        orb = g09.get_MO(gaussin_file)
+        hessian = g09.get_hessian(gaussin_file)
+    print(hessian)
+    with open("opt.out", "r") as gaussin_file:
+        crit = g09.get_criteria(gaussin_file)
+    print(crit)
+    with open("opt.out", "r") as gaussin_file:
+        crit = g09.get_EigV_optimization(gaussin_file)
+    print(crit)
+
 
 

@@ -116,6 +116,7 @@ class ListReader(ListAnalyser):
 
     def __init__(self, iterable):
         super().__init__()
+        self._last_line = None
         self.iterable = iter(iterable)
 
     def add(self, iterable) -> None:
@@ -128,7 +129,8 @@ class ListReader(ListAnalyser):
         return self._get_all_by_end_and_keys(self.iterable, *keys)
 
     def go_by_keys(self, *keys) -> str:
-        return self._go_by_keys(self.iterable, *keys)
+        self._last_line = self._go_by_keys(self.iterable, *keys)
+        return self._last_line
 
     def yield_part(self, iterable, start_keys, stop_keys) -> list:
         yield from self._yield_part(self.iterable, start_keys, stop_keys)
