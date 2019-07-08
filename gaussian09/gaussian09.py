@@ -1,31 +1,38 @@
 from utils.listanalyser import ListAnalyser, get_first_number, ListReader
 import numpy as np
-from termcolor import colored, cprint
+
 
 
 class g09_parser(ListAnalyser):
+    stop_keys = {"Opt_cylc_start": {"Berny optimization."},
+                      "Opt_cylc_end": {"GradGradGradGradGradGradGrad"},
+                      "method": {"#"},
+                      "opt_geom_start": {"Input orientation:", "Standard orientation:", "Z-Matrix orientation:"},
+                      "opt_geom_end": {"----------------------------------------------"},
+                      "force_start": {"Forces (Hartrees/Bohr)"},
+                      "force_end": {"-------------------------------------------------------------------"},
+                      "crit_start": {"Item               Value"},
+                      "crit_end": {"Predicted change"},
+                      "EigV_opt": {"Eigenvalues ---"},
+                      "pop_start": {"Population analysis using the SCF density."},
+                      "pop_end": {"Alpha  occ. eigenvalues --", "Alpha virt. eigenvalues --"},
+                      "opt_cylc": {"start": {"Berny optimization."},
+                                   "end": {"GradGradGradGradGradGradGrad"}}
+                      }
+
     def __init__(self, lines):
         super().__init__()
         self.main_method = None
-        self.stop_keys = {"Opt_cylc_start": {"Berny optimization."},
-                          "Opt_cylc_end": {"GradGradGradGradGradGradGrad"},
-                          "method": {"#"},
-                          "opt_geom_start": {"Input orientation:", "Standard orientation:", "Z-Matrix orientation:"},
-                          "opt_geom_end": {"----------------------------------------------"},
-                          "force_start": {"Forces (Hartrees/Bohr)"},
-                          "force_end": {"-------------------------------------------------------------------"},
-                          "crit_start": {"Item               Value"},
-                          "crit_end": {"Predicted change"},
-                          "EigV_opt": {"Eigenvalues ---"},
-                          "pop_start": {"Population analysis using the SCF density."},
-                          "pop_end": {"Alpha  occ. eigenvalues --", "Alpha virt. eigenvalues --"},
-                          }
         self.nroots = 1
         self.pt2 = False
         self.root = 0
         self.emperic = False
         self.casscf = False
         self.define_methods(lines)
+
+    @classmethod
+    def get_stop_key(cls, name):
+        return cls.stop_keys[name]
 
     def get_energy(self, lines):
         if self.casscf:

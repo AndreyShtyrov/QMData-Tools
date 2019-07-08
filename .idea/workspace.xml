@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/QMData-Tools.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/QMData-Tools.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/QM_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/QM_parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gaussian09/gaussian09.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaussian09/gaussian09.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaussian09/gaussian09_chk.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaussian09/gaussian09_chk.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,28 +14,30 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/gaussian09/gaussian09.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="119">
+                    <caret line="7" column="71" lean-forward="true" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
+                    <folding>
+                      <element signature="e#0#73#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/setup.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/linalg.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -51,7 +55,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/openmolcas/molden.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-153">
+            <state>
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -73,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/listanalyser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="54" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="290">
+              <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
               <folding>
                 <element signature="e#201#385#0" />
               </folding>
@@ -88,28 +92,29 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gaussian09/gaussian09.py">
+        <entry file="file://$PROJECT_DIR$/common/QM_parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+            <state relative-caret-position="306">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
               <folding>
-                <element signature="e#206#1415#0" />
-                <element signature="e#1995#2901#0" />
-                <element signature="e#2957#3279#0" />
-                <element signature="e#3391#3844#0" />
-                <element signature="e#3897#4193#0" />
-                <element signature="e#4261#4600#0" />
-                <element signature="e#6563#6881#0" />
-                <element signature="e#6936#7586#0" />
-                <element signature="e#7632#8650#0" />
-                <element signature="e#8713#9309#0" />
-                <element signature="e#9403#10214#0" />
-                <element signature="e#10266#10641#0" />
-                <element signature="e#10691#11002#0" />
-                <element signature="e#11046#11376#0" />
-                <element signature="e#11422#11905#0" />
-                <element signature="e#11949#12115#0" />
-                <element signature="e#12159#12787#0" />
+                <element signature="e#0#44#0" expanded="true" />
+                <element signature="e#202#206#0" />
+                <element signature="e#1295#1757#0" />
+                <element signature="e#1019#1387#0" />
+                <element signature="e#2419#2423#0" />
+                <element signature="e#1674#2425#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/check_optimization">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+              <folding>
+                <element signature="e#23#56#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -118,7 +123,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gaussian09/gaussian09_chk.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
+            <state relative-caret-position="255">
               <caret line="16" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
@@ -148,6 +153,7 @@
       <find>change</find>
       <find>(self.st</find>
       <find>replace[</find>
+      <find>Opt_c</find>
     </findStrings>
     <replaceStrings>
       <replace>replace</replace>
@@ -155,6 +161,7 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="REBASE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -165,6 +172,7 @@
         <option value="$PROJECT_DIR$/utils/listanalyser.py" />
         <option value="$PROJECT_DIR$/gaussian09/gaussian09_chk.py" />
         <option value="$PROJECT_DIR$/gaussian09/gaussian09.py" />
+        <option value="$PROJECT_DIR$/common/QM_parser.py" />
       </list>
     </option>
   </component>
@@ -180,7 +188,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -188,14 +195,31 @@
               <item name="QMData-Tools" type="b2602c69:ProjectViewProjectNode" />
               <item name="QMData-Tools" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="QMData-Tools" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QMData-Tools" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QMData-Tools" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QMData-Tools" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QMData-Tools" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QMData-Tools" type="462c0819:PsiDirectoryNode" />
+              <item name="gaussian09" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="E:/WORK_SPACE/OneDrive/00-Projects/01-Final_Results/08-Edine/02-Part_of_Edinu/02-B2PlypD/02-st/05-freq" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -224,6 +248,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gaussian09/gaussian09.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -245,6 +270,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gaussian09/gaussian09.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -270,6 +296,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561205543090</updated>
+      <workItem from="1562170208403" duration="946000" />
+      <workItem from="1562329388877" duration="7888000" />
     </task>
     <task id="LOCAL-00001" summary="Setup">
       <created>1561205987880</created>
@@ -323,11 +351,14 @@
     <option name="localTasksCounter" value="8" />
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="8834000" />
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15409055" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.15724947" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -341,18 +372,22 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="SciView" order="4" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15409055" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15724947" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32978722" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39893618" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -360,10 +395,17 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="SciView" order="4" />
     </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Setup" />
@@ -380,17 +422,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/gaussian09/gaussian09.py</url>
-          <line>153</line>
+          <line>160</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/gaussian09/gaussian09.py</url>
-          <line>146</line>
+          <line>153</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/gaussian09/gaussian09.py</url>
-          <line>140</line>
+          <line>147</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
@@ -460,15 +502,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Old_scripts/Calc_freq.py">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        <state>
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <element signature="e#306#693#0" />
-            <element signature="e#726#1455#0" />
+            <element signature="e#0#44#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
@@ -484,6 +530,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/openmolcas/molden.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gaussian09/gaussian09_chk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Old_scripts/Calc_freq.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#306#693#0" />
+            <element signature="e#726#1455#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/check_optimization">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+          <folding>
+            <element signature="e#23#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Old_scripts/prepare_job_list.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/listanalyser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
+          <folding>
+            <element signature="e#201#385#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/openmolcas/openmolcas.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -493,76 +593,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/openmolcas/molden.py">
+    <entry file="file://$PROJECT_DIR$/common/QM_parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Old_scripts/prepare_job_list.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="306">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/listanalyser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-          <folding>
-            <element signature="e#201#385#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaussian09/gaussian09_chk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#202#206#0" />
+            <element signature="e#1295#1757#0" />
+            <element signature="e#1019#1387#0" />
+            <element signature="e#2419#2423#0" />
+            <element signature="e#1674#2425#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gaussian09/gaussian09.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+        <state relative-caret-position="119">
+          <caret line="7" column="71" lean-forward="true" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
           <folding>
-            <element signature="e#206#1415#0" />
-            <element signature="e#1995#2901#0" />
-            <element signature="e#2957#3279#0" />
-            <element signature="e#3391#3844#0" />
-            <element signature="e#3897#4193#0" />
-            <element signature="e#4261#4600#0" />
-            <element signature="e#6563#6881#0" />
-            <element signature="e#6936#7586#0" />
-            <element signature="e#7632#8650#0" />
-            <element signature="e#8713#9309#0" />
-            <element signature="e#9403#10214#0" />
-            <element signature="e#10266#10641#0" />
-            <element signature="e#10691#11002#0" />
-            <element signature="e#11046#11376#0" />
-            <element signature="e#11422#11905#0" />
-            <element signature="e#11949#12115#0" />
-            <element signature="e#12159#12787#0" />
+            <element signature="e#0#73#0" expanded="true" />
           </folding>
         </state>
       </provider>
