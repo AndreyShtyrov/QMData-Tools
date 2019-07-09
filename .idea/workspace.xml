@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/QMData-Tools.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/QMData-Tools.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/QM_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/QM_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaussian09/gaussian09.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaussian09/gaussian09.py" afterDir="false" />
-    </list>
+    <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,7 +291,7 @@
       <option name="presentableId" value="Default" />
       <updated>1561205543090</updated>
       <workItem from="1562170208403" duration="946000" />
-      <workItem from="1562329388877" duration="7888000" />
+      <workItem from="1562329388877" duration="14597000" />
     </task>
     <task id="LOCAL-00001" summary="Setup">
       <created>1561205987880</created>
@@ -348,15 +342,21 @@
       <option name="project" value="LOCAL" />
       <updated>1561815687070</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Refactor g09_parser code">
+      <created>1562618574854</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1562618574854</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8834000" />
+    <option name="totallyTimeSpent" value="15543000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.15724947" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -593,6 +593,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gaussian09/gaussian09.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="71" lean-forward="true" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/common/QM_parser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -604,16 +614,6 @@
             <element signature="e#1019#1387#0" />
             <element signature="e#2419#2423#0" />
             <element signature="e#1674#2425#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaussian09/gaussian09.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="71" lean-forward="true" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
           </folding>
         </state>
       </provider>
