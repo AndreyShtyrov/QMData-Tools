@@ -66,7 +66,8 @@ class parser(object):
             LR = ListReader(open_file)
             if "pre_key" in stop_key.keys():
                 LR.go_by_keys(*stop_key["pre_key"])
-            part = LR.get_all_by_end_and_keys(*stop_key["start"])
+            part = []
+            part.extend(LR.get_all_by_end_and_keys(*stop_key["start"]))
             part.extend(LR.get_all_by_end_and_keys(*stop_key["end"]))
             while part is not []:
                 energy = self.parser.get_energy(part)
