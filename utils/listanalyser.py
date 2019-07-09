@@ -98,8 +98,11 @@ class ListAnalyser(object):
                 return
 
     def _get_all_by_end_and_keys(self, iterable, *keys):
-        self._get_all_by_keys(iterable, *keys)
-        return self._return_buffer()
+        result = self._get_all_by_keys(iterable, *keys)
+        if result:
+            return result
+        else:
+            return self._return_buffer()
 
     def _get_all_by_end(self, iterable):
         for l in iterable:

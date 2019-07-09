@@ -2,8 +2,9 @@ from gaussian09.gaussian09 import g09_parser
 from utils.listanalyser import ListAnalyser, get_first_number, ListReader
 
 
-class parser():
-    def ___init__(self, file_name):
+class parser(object):
+
+    def __init__(self, file_name):
         self.parser = g09_parser
         self.file_name = file_name
         self.check_term(self.file_name)
@@ -60,22 +61,26 @@ class parser():
         pass
 
     def _get_opt_iterations(self):
-        stop_key = self.parser.get_stop_key("opt_cycle")
+        stop_key = self.parser.get_stop_key("opt_cycl")
         with open(self.file_name, "r") as open_file:
             LR = ListReader(open_file)
-            LR.go_by_keys(*stop_key["start"])
-            part = LR.get_all_by_end_and_keys(*stop_key["end"])
-            while part is []:
+            if "pre_key" in stop_key.keys():
+                LR.go_by_keys(*stop_key["pre_key"])
+            part = LR.get_all_by_end_and_keys(*stop_key["start"])
+            part.extend(LR.get_all_by_end_and_keys(*stop_key["end"]))
+            while part is not []:
                 energy = self.parser.get_energy(part)
                 charges, coords = self.parser.get_coord(part)
                 forces = self.parser.get_force(part)
                 criteries = self.parser.get_criteria(part)
                 eing = self.parser.get_criteria(part)
                 yield energy, charges, coords, forces, criteries, eing
-                LR.go_by_keys(*stop_key["start"])
-                part = LR.get_all_by_end_and_keys(*stop_key["end"])
+                part = []
+                part.extend(LR.get_all_by_end_and_keys(*stop_key["start"]))
+                part.extend(LR.get_all_by_end_and_keys(*stop_key["end"]))
 
 
 if __name__ == '__main__':
     p = parser("opt.out")
     optimization = p.get_optimization_geometry()
+    print(optimization)

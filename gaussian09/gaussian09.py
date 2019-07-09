@@ -16,7 +16,8 @@ class g09_parser(ListAnalyser):
                       "EigV_opt": {"Eigenvalues ---"},
                       "pop_start": {"Population analysis using the SCF density."},
                       "pop_end": {"Alpha  occ. eigenvalues --", "Alpha virt. eigenvalues --"},
-                      "opt_cylc": {"start": {"Berny optimization."},
+                      "opt_cycl": {"start": {"Berny optimization."},
+                                   "pre_key": {"Initialization pass."},
                                    "end": {"GradGradGradGradGradGradGrad"}}
                       }
 
@@ -35,6 +36,7 @@ class g09_parser(ListAnalyser):
         return cls.stop_keys[name]
 
     def get_energy(self, lines):
+        LR = ListReader(lines)
         if self.casscf:
             pass
         elif self.nroots is not 1 and not self.casscf:
@@ -43,10 +45,10 @@ class g09_parser(ListAnalyser):
             line = self._go_by_keys(lines, "Energy=")
             return float(line.split()[1].replace("D", "E"))
         elif self.nroots is 1 and not self.pt2:
-            line = self._go_by_keys(lines, "SCF Done:")
+            line = LR.go_by_keys("SCF Done:")
             return float(line.split()[4])
         elif self.nroots is 1 and self.pt2:
-            line = self._go_by_keys(lines, "E(PMP2)=", "E2(B2PLYPD)")
+            line = LR.go_by_keys("E(PMP2)=", "E2(B2PLYPD)")
             return float(line.split()[-1].replace("D", "E"))
 
     def define_methods(self, lines):
@@ -100,9 +102,12 @@ class g09_parser(ListAnalyser):
         LR = ListReader(lines)
         LR.go_by_keys(*self.stop_keys["crit_start"])
         part = LR.get_all_by_keys(*self.stop_keys["crit_end"])
-        for line in part:
-            result.update({line.split()[0] + " " + line.split()[1]: line.split()[2]})
-        return result
+        try:
+            for line in part:
+                result.update({line.split()[0] + " " + line.split()[1]: line.split()[2]})
+            return result
+        except:
+            return np.nan
 
     def get_EigV_optimization(self, lines) -> np.ndarray:
         part = []
@@ -220,10 +225,9 @@ class g09_parser(ListAnalyser):
                 yield charge, geom, energy, force, eing, crit, pr_eing
         except StopIteration:
             return
-
-    def write_input_orb(self, orb):
-        lines = []
-        lines.append("(3E20.8)\n")
+    @staticmethod
+    def write_input_orb(orb):
+        lines = ["(3E20.8)\n"]
         num = 1
         for mo in orb:
             lines.append(str(num) + "\n")
