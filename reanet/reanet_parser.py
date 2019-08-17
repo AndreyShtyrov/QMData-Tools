@@ -1,5 +1,5 @@
 from utils.parser import parser, ListAnalyser
-
+import os
 class reanet_parser(parser):
 
     def __init__(self, file):
@@ -45,6 +45,27 @@ class reanet_parser(parser):
                     break
             grads.extend(list_with_deleted_symbols)
         return grads
+
+    @staticmethod
+    def save_hessian(file, matrix):
+        if os.path.isfile(file):
+            os.remove(file)
+        with open(file, "w") as write_file:
+            accum = 0
+            line = ""
+            for i in range(matrix.shape[0]):
+                for j in range(matrix.shape[1]):
+                    if accum < 5:
+                        line = line + "{:10.7f}".format(matrix[i, j]) + " "
+                        accum = accum + 1
+                    elif accum == 5:
+                        line = line + "\n"
+                        write_file.write(line)
+                        line = ""
+                        line = line + "{:10.7f}".format(matrix[i, j]) + " "
+                        accum = 1
+            line = line + "\n"
+            write_file.write(line)
 
     def _get_norma_grad(self):
         self.go_to_key("grad norm:", "grad:")

@@ -47,6 +47,7 @@ class template2(template):
         super().__init__()
         self.tem = template()
         self.c = 3
+        self.zeros_example = np.zeros((150, 150))
 
     def get(self):
         return self.a
@@ -82,5 +83,7 @@ def read_save_q(path_to_transformation: pathlib.Path):
 
 basis, struct1 = read_save_transform(pathlib.Path("./tt"))
 print(type(basis))
+
+
 
 
