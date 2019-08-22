@@ -22,15 +22,9 @@ with open(temp_path / "temp", "r") as f:
 result.extend(coord)
 result.append("\n")
 main_path = Path.cwd()
-
+main_path = main_path / "01-RAMAN"
+main_path.mkdir()
 with open(main_path / "opt.inp", "w") as f:
     f.writelines(result)
-
-
-
-
-
-
-
 
 

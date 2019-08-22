@@ -211,14 +211,11 @@ class g09_parser(ListAnalyser):
         part.extend(LR.get_all_by_end_and_keys(*self.stop_keys["opt_cycl"]["start"]))
         while not part is []:
             yield part
-            temp = LR.get_all_by_end_and_keys(*self.stop_keys["opt_cycl"]["start"])
-            part = temp
+            part = LR.get_all_by_end_and_keys(*self.stop_keys["opt_cycl"]["start"])
             temp = LR.get_all_by_end_and_keys(*self.stop_keys["opt_cycl"]["start"])
             try:
                 part.extend(temp)
             except:
-                if part is not None:
-                    yield part
                 break
         return
 
