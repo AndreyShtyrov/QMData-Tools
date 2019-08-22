@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Old_scripts/calc_grid_CASSCF.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Old_scripts/calc_hessian_from_bagel_freq.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Old_scripts/rep_temp.py" afterDir="false" />
+    <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="Refactor g09_parser code">
+      <change afterPath="$PROJECT_DIR$/Old_scripts/make_input.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Old_scripts/conver_to_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/Old_scripts/conver_to_json.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reanet/reanet_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/reanet/reanet_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaussian09/gaussian09.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaussian09/gaussian09.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,21 +15,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Old_scripts/rep_temp.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="20" lean-forward="true" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#16#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Old_scripts/calc_hessian_from_bagel_freq.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1309">
+            <state relative-caret-position="502">
               <caret line="82" column="53" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="53" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -42,46 +27,54 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reanet/reanet_parser.py">
+        <entry file="file://$PROJECT_DIR$/Old_scripts/calc_grid_CASSCF.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+            <state relative-caret-position="394">
+              <caret line="83" selection-start-line="83" selection-end-line="83" />
               <folding>
-                <element signature="e#0#45#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/reshape_hessian">
+        <entry file="file://$PROJECT_DIR$/Old_scripts/Calc_hessian.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="28" selection-start-line="28" selection-end-line="45" selection-end-column="30" />
+            <state>
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Old_scripts/calc_grid_CASSCF.py">
+        <entry file="file://$PROJECT_DIR$/Old_scripts/make_input.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
+            <state relative-caret-position="238">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gaussian09/gaussian09_chk.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
-                <element signature="e#1440#2363#0" />
+                <element signature="e#0#31#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/listanalyser.py">
+        <entry file="file://$PROJECT_DIR$/Old_scripts/analyse_path.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2346">
-              <caret line="146" column="29" selection-start-line="146" selection-start-column="29" selection-end-line="146" selection-end-column="29" />
+            <state>
               <folding>
-                <element signature="e#201#385#0" />
+                <element signature="e#0#14#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -90,9 +83,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gaussian09/gaussian09.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="109">
+              <caret line="224" column="38" selection-start-line="224" selection-start-column="38" selection-end-line="224" selection-end-column="38" />
               <folding>
                 <element signature="e#0#73#0" expanded="true" />
+                <element signature="e#1654#2231#0" />
+                <element signature="e#2278#3185#0" />
+                <element signature="e#3241#3563#0" />
+                <element signature="e#3614#4067#0" />
+                <element signature="e#4120#4483#0" />
+                <element signature="e#4551#4960#0" />
+                <element signature="e#4999#6622#0" />
+                <element signature="e#6666#7815#0" />
+                <element signature="e#7868#8615#0" />
+                <element signature="e#8668#9025#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Old_scripts/continue_traj.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Old_scripts/conver_to_json.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="377">
+              <caret line="63" column="62" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
+              <folding>
+                <element signature="e#272#628#0" />
+                <element signature="e#1484#2010#0" />
               </folding>
             </state>
           </provider>
@@ -105,28 +133,6 @@
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Old_scripts/Calc_freq.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="7" selection-end-column="40" />
-              <folding>
-                <element signature="e#306#693#0" />
-                <element signature="e#726#1455#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/codecs.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5236">
-              <caret line="309" selection-start-line="309" selection-end-line="309" />
             </state>
           </provider>
         </entry>
@@ -145,6 +151,7 @@
       <find>change</find>
       <find>(self.st</find>
       <find>replace[</find>
+      <find>opt_cycl</find>
     </findStrings>
     <replaceStrings>
       <replace>replace</replace>
@@ -161,13 +168,16 @@
         <option value="$PROJECT_DIR$/reanet/reanet_parser.py" />
         <option value="$PROJECT_DIR$/Old_scripts/calc_hessian_from_bagel_freq.py" />
         <option value="$PROJECT_DIR$/Old_scripts/calc_grid_CASSCF.py" />
+        <option value="$PROJECT_DIR$/gaussian09/gaussian09.py" />
+        <option value="$PROJECT_DIR$/Old_scripts/make_input.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="948" />
+    <option name="x" value="658" />
+    <option name="y" value="376" />
     <option name="width" value="981" />
-    <option name="height" value="1032" />
+    <option name="height" value="975" />
   </component>
   <component name="ProjectId" id="1PVOlWMiTNYQcj5eylvOr48fx0r" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -176,7 +186,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -187,7 +196,7 @@
             <path>
               <item name="QMData-Tools" type="b2602c69:ProjectViewProjectNode" />
               <item name="QMData-Tools" type="462c0819:PsiDirectoryNode" />
-              <item name="Old_scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="gaussian09" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QMData-Tools" type="b2602c69:ProjectViewProjectNode" />
@@ -198,12 +207,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/WORK_SPACE/OneDrive/00-Projects/01-Final_Results/04-photo_active_switches_AQ/55-AQ/35-M11-VDZ/04-trans-diport23/01-RAMAN" />
+    <property name="last_opened_file_path" value="E:/WORK_SPACE/OneDrive/00-Projects/01-Final_Results/04-photo_active_switches_AQ/55-AQ/35-M11-VDZ/11-cis" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -249,12 +259,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="E:/WORK_SPACE/OneDrive/00-Projects/01-Final_Results/04-photo_active_switches_AQ/55-AQ/35-M11-VDZ/04-trans-diport23/01-RAMAN" />
+      <option name="WORKING_DIRECTORY" value="E:/WORK_SPACE/OneDrive/00-Projects/01-Final_Results/04-photo_active_switches_AQ/55-AQ/35-M11-VDZ/11-cis" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Old_scripts/rep_temp.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Old_scripts/make_input.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -358,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565712806938</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Refactor g09_parser code">
+      <created>1566054634247</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1566054634247</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -564,42 +581,12 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Old_scripts/Calc_hessian.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Old_scripts/conver_to_json.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="63" column="62" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
-          <folding>
-            <element signature="e#272#628#0" />
-            <element signature="e#1484#2010#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Old_scripts/rep_temp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="20" lean-forward="true" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        <state relative-caret-position="51">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Old_scripts/calc_hessian_from_bagel_freq.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="82" column="53" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -631,21 +618,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gaussian09/gaussian09.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Old_scripts/calculate_stat_sum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="5236">
+          <caret line="309" selection-start-line="309" selection-end-line="309" />
         </state>
       </provider>
     </entry>
@@ -660,21 +636,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/codecs.py">
+    <entry file="file://$PROJECT_DIR$/Old_scripts/calc_grid_CASSCF.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5236">
-          <caret line="309" selection-start-line="309" selection-end-line="309" />
+        <state relative-caret-position="394">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Old_scripts/calc_grid_CASSCF.py">
+    <entry file="file://$PROJECT_DIR$/Old_scripts/Calc_hessian.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
+        <state>
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#1440#2363#0" />
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Old_scripts/calc_hessian_from_bagel_freq.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="82" column="53" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Old_scripts/calculate_stat_sum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Old_scripts/analyse_path.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Old_scripts/conver_to_json.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="63" column="62" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
+          <folding>
+            <element signature="e#272#628#0" />
+            <element signature="e#1484#2010#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gaussian09/gaussian09_chk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gaussian09/gaussian09.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="224" column="38" selection-start-line="224" selection-start-column="38" selection-end-line="224" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+            <element signature="e#1654#2231#0" />
+            <element signature="e#2278#3185#0" />
+            <element signature="e#3241#3563#0" />
+            <element signature="e#3614#4067#0" />
+            <element signature="e#4120#4483#0" />
+            <element signature="e#4551#4960#0" />
+            <element signature="e#4999#6622#0" />
+            <element signature="e#6666#7815#0" />
+            <element signature="e#7868#8615#0" />
+            <element signature="e#8668#9025#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Old_scripts/continue_traj.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Old_scripts/make_input.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
