@@ -204,36 +204,36 @@ class g09_parser(ListAnalyser):
 
     def get_berny_section(self, iterable):
         LR = ListReader(iterable)
-        LR.go_by_keys(self.stop_keys["opt_cycle"]["start"])
-        LR.go_by_keys(self.stop_keys["opt_cycle"]["start"])
+        LR.go_by_keys(*self.stop_keys["opt_cycl"]["start"])
+        LR.go_by_keys(*self.stop_keys["opt_cycl"]["start"])
         part = []
-        part = LR.get_all_by_end_and_keys(self.stop_keys["opt_cycle"]["start"])
-        part.extend(LR.get_all_by_end_and_keys(self.stop_keys["opt_cycle"]["start"]))
+        part = LR.get_all_by_end_and_keys(*self.stop_keys["opt_cycl"]["start"])
+        part.extend(LR.get_all_by_end_and_keys(*self.stop_keys["opt_cycl"]["start"]))
         while not part is []:
             yield part
-            temp = LR.get_all_by_end_and_keys(self.stop_keys["opt_cycle"]["start"])
+            temp = LR.get_all_by_end_and_keys(*self.stop_keys["opt_cycl"]["start"])
             part = temp
-            temp = LR.get_all_by_end_and_keys(self.stop_keys["opt_cycle"]["start"])
+            temp = LR.get_all_by_end_and_keys(*self.stop_keys["opt_cycl"]["start"])
             try:
                 part.extend(temp)
             except:
-                if part is not[]:
+                if part is not None:
                     yield part
                 break
         return
 
     def get_last_geom(self, iterable):
-        berny_sections = get_first_number(iterable)
+        berny_sections = self.get_berny_section(iterable)
         for i in berny_sections:
-            charge, coords = self.get_geom(i)
+            charge, coords = self.get_coord(i)
         return charge, coords
 
     def get_optimization_step(self, iterable):
-        berny_sections = get_first_number(iterable)
+        berny_sections = self.get_berny_section(iterable)
         for i in berny_sections:
             energy = self.get_energy(i)
             grads = self.get_force(i)
-            charge, coords = self.get_geom(i)
+            charge, coords = self.get_coord(i)
             criteria = self.get_criteria(i)
             EigV = self.get_EigV_optimization(i)
             yield charge, coords, energy, grads, criteria, EigV
