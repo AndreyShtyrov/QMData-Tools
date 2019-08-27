@@ -1,6 +1,11 @@
 import pathlib
 import numpy as np
 from utils.molecul_property import read_coord
+from Old_scripts.calc_hessian_from_bagel_freq import *
+with open("file.txt", "r") as f:
+    _, grad = get_geometry_from_bagel(get_section_with_grad_iter(f))
+
+
 
 charges, coords = read_coord()
 n_dims = len(charges) * 3
@@ -32,8 +37,8 @@ for i in range(n_dims):
     list_pos_g.append(np.array(grad))
 for i in range(n_dims):
     for j in range(n_dims):
-        hessian[i,j] = 0.5 * ((list_pos_g[i][j] - list_neg_g[i][j])/ t_shift  + (list_pos_g[j][i] - list_neg_g[j][i])/ t_shift)
-hessian = hessian * (0.41999/0.420285)
+        hessian[i,j] = 0.5 * ((list_pos_g[i][j] - list_neg_g[i][j])/ t_shift + (list_pos_g[j][i] - list_neg_g[j][i])/ t_shift)
+
 with open("hess.txt", "w") as write_file:
     line = ""
     for i in range(n_dims):

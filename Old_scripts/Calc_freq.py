@@ -2,7 +2,6 @@ import pathlib
 import numpy as np
 import numpy.linalg as lg
 import scipy as sl
-import math
 from utils.listanalyser import ListAnalyser
 from utils.linalg import *
 from Constants.physics import MASS_CONST, CI
@@ -64,9 +63,8 @@ if __name__ == '__main__':
     new_basis = internal_coords(coords, [MASS_CONST[i] for i in charges], charges)
 
     hess = new_basis.T.dot(hessian).dot(new_basis)
-#    hess = hessian
+
     s, u = lg.eigh(hess)
-#    normal_modes = u
     normal_modes = new_basis.dot(u)
 
     s = s * 627.5 * convector_const ** 2 * 4184 / (10 ** 5 * 6.022)
@@ -85,15 +83,16 @@ if __name__ == '__main__':
     print(freq)
     print("**********")
 
-
+    factor_list = []
     for i in range(normal_modes.shape[1]):
         normal_modes[:, i] = normal_modes[:, i] / d
 #        print(normal_modes[:, i])
         factor = sum(map(lambda x: x ** 2, normal_modes[:, i]))
         factor = 1 / factor
+        factor_list.append(factor)
+        normal_modes = normal_modes[:, i] * math.sqrt(factor)
         print(normal_modes[:, i] * math.sqrt(factor))
         print(factor)
         print(freq[i])
         print("***")
-
 

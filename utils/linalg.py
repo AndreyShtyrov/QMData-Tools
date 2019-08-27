@@ -18,6 +18,7 @@ def separete_basis(first_part):
     basis, r = np.linalg.qr(basis)
     return basis
 
+
 def vector_mult(vector1, vecort2):
     x = vector1[1] * vecort2[2] - vector1[2] * vecort2[1]
     y = vector1[2] * vecort2[0] - vector1[0] * vecort2[2]
@@ -25,11 +26,13 @@ def vector_mult(vector1, vecort2):
     result = np.array([x, y, z])
     return result/ lg.norm(result)
 
+
 def get_arrays_by_components(coords):
     X = np.array([coords[i*3] for i in range(int(len(coords)/3))])
     Y = np.array([coords[i*3 + 1] for i in range(int(len(coords)/3))])
     Z = np.array([coords[i*3 + 2] for i in range(int(len(coords)/3))])
     return X, Y, Z
+
 
 def calculate_center_of_mass(charges: list, coords):
     rX, rY, rZ = get_arrays_by_components(coords)
@@ -44,6 +47,7 @@ def calculate_center_of_mass(charges: list, coords):
     print( "center mass" + str(center_of_mass))
     return center_of_mass
 
+
 def shift_centor_of_coord(coords, new_centor):
     i = 0
     new_coord = np.zeros(len(coords))
@@ -51,6 +55,7 @@ def shift_centor_of_coord(coords, new_centor):
         new_coord[i] = comp - new_centor[int(i % 3)]
         i = i + 1
     return new_coord
+
 
 def calculate_axis_of_inertions(charges, coords):
     rX, rY, rZ = get_arrays_by_components(coords)
