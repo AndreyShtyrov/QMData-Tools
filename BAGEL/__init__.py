@@ -7,9 +7,9 @@ def convert_geom(charges: np.ndarray, coords: np.ndarray):
     result = dict({"geometry" : geom})
     for i in range(len(charges)):
         line = {"atom": CHARGES_TO_MASS[charges[i]],
-                "xyz": [coords[i*3: i*3 + 2]]}
+                "xyz": [coords[i*3: i*3 + 3]]}
         result["geometry"].append(line)
-    return json.dumps(result)
+    return json.dumps(result, indent=2)
 
 if __name__ == '__main__':
     charges = [1, 1]
