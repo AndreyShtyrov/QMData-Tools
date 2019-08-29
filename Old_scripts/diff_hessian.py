@@ -37,7 +37,7 @@ for i in range(n_dims):
     list_pos_g.append(np.array(grad))
 for i in range(n_dims):
     for j in range(n_dims):
-        hessian[i,j] = 0.5 * ((list_pos_g[i][j] - list_neg_g[i][j])/ t_shift + (list_pos_g[j][i] - list_neg_g[j][i])/ t_shift)
+        hessian[i, j] = 0.5 * ((list_pos_g[i][j] - list_neg_g[i][j])/ t_shift + (list_pos_g[j][i] - list_neg_g[j][i])/ t_shift)
 
 with open("hess.txt", "w") as write_file:
     line = ""
