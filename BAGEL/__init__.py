@@ -168,7 +168,7 @@ class bagel_config():
             "title": self.method,
             "charge": self.charge,
             "nact": self.n_act,
-            "nclosed": int(self.n_orb - (self.n_el//2)),
+            "nclosed": int(self.n_orb - (self.n_el //2) - (self.charge // 2)),
             "nstate": self.n_state
         }
 
