@@ -4,7 +4,7 @@ import setuptools
 
 setuptools.setup(
     name='QMData-Tools',
-    version='v0.5.5',
+    version='v0.5.6',
     author='Andronet',
     author_email='',
     packages=['bin', 'utils', 'gaussian09', 'reanet', 'openmolcas', 'Constants', 'orca', 'Old_scripts'],
@@ -13,6 +13,6 @@ setuptools.setup(
              'bin/reshape_hessian', 'bin/show_avaliable_ants', 'bin/convert_to_molden', 'bin/get_optimized_geom',
              'Old_scripts/calculate_stat_sum.py', 'Old_scripts/Calc_freq.py', 'Old_scripts/diff_hessian.py'],
     license='',
-    install_requires=['numpy', 'termcolor', 'pathlib', 'json' ],
+    install_requires=['numpy', 'termcolor', 'pathlib' ],
     description=''
 )
