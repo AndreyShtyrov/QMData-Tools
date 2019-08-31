@@ -97,9 +97,6 @@ class bagel_config():
         self.mult = (n_el % 2) + 1
 
 
-    def make_input(self):
-        if self.method is "casscf":
-            self.make_casscf()
 
     def make_make_molsp(self):
         inp_file = dict()
