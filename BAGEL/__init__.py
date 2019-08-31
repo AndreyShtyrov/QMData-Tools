@@ -11,7 +11,7 @@ def convert_geom(charges: np.ndarray, coords: np.ndarray):
     result = dict({"geometry": geom})
     for i in range(len(charges)):
         line = {"atom": CHARGES_TO_MASS[charges[i]],
-                "xyz": [coords[i*3: i*3 + 3]]}
+                "xyz": [coords[i*3: i*3 + 3].tolist()]}
         result["geometry"].append(line)
     return result
 
@@ -135,7 +135,7 @@ class bagel_config():
             "title": self.method,
             "charge": self.charge,
             "nact": 2,
-            "nclosed": self.n_orb - 1,
+            "nclosed": int(self.n_orb - 1),
             "nstate": 2
         }
 
@@ -161,7 +161,5 @@ class bagel_config():
 
 
 if __name__ == '__main__':
-    charges = [1, 1]
-    coords = [0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
-    with open("save.txt", "w") as f:
-        f.writelines(convert_geom(charges, coords))
+    bg = bagel_config()
+    bg.make_calculations_molsp()
