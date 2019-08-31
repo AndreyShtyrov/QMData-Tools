@@ -25,3 +25,18 @@ def read_xyz(file):
             coords.extend([float(x) for x in line.split()[1:]])
 
         return np.array(charges), np.array(coords)
+
+def save_geom_xyz(charges: list, coords, comment = ""):
+    result = []
+    n_atoms = len(charges)
+    if comment is not "":
+        result.append(str(n_atoms) + "\n")
+        result.append(comment + "\n")
+    for j in range(n_atoms):
+        line = str(charges[j]) + " "
+        line = line + "{:>15.7f}".format(coords[3 * j])
+        line = line + "{:>15.7f}".format(coords[3 * j + 1])
+        line = line + "{:>15.7f}".format(coords[3 * j + 2])
+        line = line + "\n"
+        result.append(line)
+    return result

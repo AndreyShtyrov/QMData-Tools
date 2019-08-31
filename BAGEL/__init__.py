@@ -11,7 +11,7 @@ def convert_geom(charges: np.ndarray, coords: np.ndarray):
     result = dict({"geometry": geom})
     for i in range(len(charges)):
         line = {"atom": CHARGES_TO_MASS[charges[i]],
-                "xyz": [coords[i*3: i*3 + 3].tolist()]}
+                "xyz": coords[i*3: i*3 + 3].tolist()}
         result["geometry"].append(line)
     return result
 

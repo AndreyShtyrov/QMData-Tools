@@ -1,0 +1,43 @@
+#!/usr/bin/env python
+
+import pathlib
+import numpy as np
+import shutil
+import argparse
+from common.utils import *
+
+convector_const = 1.889725989
+general_path = pathlib.Path.cwd()
+charges, xyz_coord = read_xyz(general_path / "coord.xyz")
+xyz_coord_in_borh = xyz_coord * convector_const
+n_atoms = len(charges)
+
+parser = argparse.ArgumentParser(description=" It is creat pull of shifted geometries"
+                                             "numerical hessian calculations save in angst")
+parser.add_argument("-shift", default=0.01,
+                    type=float,
+                    help="set custom shift in borh default: 0.01 borh")
+args = parser.parse_args()
+shift = args.shift
+
+def check_remake_dirs(work_dir: pathlib):
+    if work_dir.is_dir():
+        shutil.rmtree(str(work_dir))
+        work_dir.mkdir()
+    else:
+        work_dir.mkdir()
+
+
+for i in range(1, 3 * n_atoms + 1):
+    for sign in [-1, 1]:
+        work_dir = general_path / ("hessian_step" + str(sign * i))
+        check_remake_dirs(work_dir)
+
+        shifts = np.zeros(3 * n_atoms)
+        shifts[i - 1] = sign * shift
+        local_geom = xyz_coord_in_borh + shifts
+        local_geom = local_geom / convector_const
+        coord_lines = save_geom_xyz(charges, local_geom)
+
+        with open(str(work_dir / "coord.xyz"), "w") as coord_file:
+            coord_file.writelines(coord_lines)
