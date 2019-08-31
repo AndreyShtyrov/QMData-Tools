@@ -95,6 +95,13 @@ class bagel_config():
         n_el = sum(ch)
         self.n_orb = n_el // 2
         self.mult = (n_el % 2) + 1
+        self.n_el = 2
+        self.n_act = 2
+        self.n_state = 2
+        self.target = 1
+        if pathlib.Path("template").is_file():
+            self.load_value_from_template()
+
 
 
 
@@ -130,18 +137,45 @@ class bagel_config():
             "orbitals": True
         }
 
+    def load_value_from_template(self):
+        with open("template", "r") as f:
+            for line in f:
+                if "active" in line:
+                    line = line.split("=")[-1]
+                    line.replace("\n", "").replace(" ", "")
+                    self.n_act = int(line.split(":")[0])
+                    self.n_el = int(line.split(":")[1])
+                if "charge" in line:
+                    line = line.split("=")[-1]
+                    line.replace("\n", "").replace(" ", "")
+                    self.charge = int(line)
+                    self.mult = int(((self.n_el - self.charge) % 2) + 1)
+                if "mult" in line:
+                    line = line.split("=")[-1]
+                    line.replace("\n", "").replace(" ", "")
+                    self.mult = int(line)
+                if "nstate" in line:
+                    line = line.split("=")[-1]
+                    line.replace("\n", "").replace(" ", "")
+                    self.n_state = int(line)
+                if "target" in line:
+                    line = line.split("=")[-1]
+                    line.replace("\n", "").replace(" ", "")
+                    self.target = int(line)
+
     def make_calculations_molsp(self):
         method = {
             "title": self.method,
             "charge": self.charge,
-            "nact": 2,
-            "nclosed": int(self.n_orb - 1),
-            "nstate": 2
+            "nact": self.n_act,
+            "nclosed": int(self.n_orb - (self.n_el//2)),
+            "nstate": self.n_state
         }
 
         calc = {
             "title": "force",
             "dipole": True,
+            "target": self.target,
             "method": method
         }
 
