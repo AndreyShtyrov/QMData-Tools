@@ -103,6 +103,8 @@ class bagel_config():
         self.target = 1
         self.load = True
         self.save = False
+        self.path_to_basis = None
+        self.basis = "3-12g"
         self.method = "casscf"
         self.type_job = "force"
 
@@ -113,10 +115,22 @@ class bagel_config():
 
     def make_make_molsp(self):
         inp_file = dict()
+        if self.path_to_basis:
+            basis = self.basis
+            if self.basis == "3-21g" or self.basis == "sto-3g" or self.basis == "6-31g":
+                df_basis = "svp-jkfit"
+            else:
+                df_basis = self.basis + "-jkfit"
+        else:
+            basis = self.path_to_basis + self.basis + ".json"
+            if self.basis == "3-21g" or self.basis == "sto-3g" or self.basis == "6-31g":
+                df_basis = self.path_to_basis + "svp-jkfit.json"
+            else:
+                df_basis = self.path_to_basis + self.basis + "-jkfit.json"
         molecule = {
             "title": "molecule",
-            "basis": "3-21g",
-            "df_basis": "svp-jkfit",
+            "basis": basis,
+            "df_basis": df_basis,
             "angstrom": True
         }
         molecule.update(self._coords)
@@ -166,6 +180,8 @@ class bagel_config():
                     self.type_job = str(value).lower()
                 if "method" in key:
                     self.method = str(value).lower()
+                if "basis" in key:
+                    self.basis = str(value).lower()
 
     def convert_file_in_dict(self, file_name)-> dict:
         result = dict()
@@ -247,8 +263,6 @@ class bagel_config():
                 calc = self.make_grads_mosp(self.make_casscf_molsp())
             else:
                 calc = self.make_grads_mosp(calc)
-
-
 
         if self.save is True:
             inp_file["bagel"].append(self.save_orb())
