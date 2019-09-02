@@ -106,7 +106,7 @@ class bagel_config():
         self.load = True
         self.save = False
         self.path_to_basis = None
-        self.basis = "3-12g"
+        self.basis = "3-21g"
         self.method = "casscf"
         self.type_job = "force"
 
