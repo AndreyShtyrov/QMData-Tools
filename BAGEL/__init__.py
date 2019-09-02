@@ -96,8 +96,8 @@ class bagel_config():
         self._coords = convert_geom(ch, co)
         n_el = sum(ch)
         self.alert = None
-        self.n_orb = n_el // 2
-        self.mult = (n_el % 2) + 1
+        self.n_orb = int(n_el // 2)
+        self.mult = int((n_el % 2) + 1)
         self.n_el = 2
         self.n_act = 2
         self.file = None
@@ -111,7 +111,7 @@ class bagel_config():
         self.type_job = "force"
 
         path_to_default_settings = pathlib.Path.home()/".default_bagel_settings"
-        if path_to_default_settings.is_file:
+        if path_to_default_settings.is_file():
             config_from_file = self.convert_file_in_dict(path_to_default_settings)
             self.load_value_from_template(config_from_file)
             with open(pathlib.Path/"path_to_bagel_basis", "r") as f:
@@ -123,7 +123,7 @@ class bagel_config():
         self.load_value_from_template(config)
 
     def formate_basis(self):
-        if self.path_to_basis:
+        if not self.path_to_basis:
             basis = self.basis
             if self.basis == "3-21g" or self.basis == "sto-3g" or self.basis == "6-31g":
                 df_basis = "svp-jkfit"
@@ -291,7 +291,10 @@ class bagel_config():
 
     def make_input_body(self):
         inp_file = {"bagel": []}
-        inp_file["bagel"].append(self.make_make_molsp())
+        if self.file:
+            inp_file["bagel"].append(self.start_from_file())
+        else:
+            inp_file["bagel"].append(self.make_make_molsp())
         if pathlib.Path("orb.archive").is_file():
             inp_file["bagel"].append(self.read_orb())
 
@@ -304,10 +307,10 @@ class bagel_config():
         elif self.method == "nevpt2":
             inp_file["bagel"].append(self.make_casscf_molsp())
             calc = self.make_nevpt2_molsp()
+        elif self.method == "hf":
+            calc = self.make_scf()
 
-        if calc:
-            inp_file["bagel"].append(calc)
-        else:
+        if not calc:
             print("Undefine method")
             exit(2)
 
@@ -317,6 +320,7 @@ class bagel_config():
                 calc = self.make_grads_mosp(self.make_casscf_molsp())
             else:
                 calc = self.make_grads_mosp(calc)
+        inp_file["bagel"].append(calc)
 
         if self.save is True:
             inp_file["bagel"].append(self.save_orb())

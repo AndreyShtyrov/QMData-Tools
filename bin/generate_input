@@ -16,7 +16,7 @@ parser.add_argument("-alert", type=list, help="orbitals in acitve space")
 parser.add_argument("-file", type=str, help="file from that would start program: molden, archive")
 
 
-atributes = ["active", "charge", "mult", "save", "n_state", "targe", "method", "type_job", "basis", "alert"]
+atributes = ["active", "charge", "mult", "save", "n_state", "targe", "method", "type_job", "basis", "alert", "file"]
 config = dict()
 args = parser.parse_args()
 for atr_name in atributes:
