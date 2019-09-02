@@ -3,7 +3,7 @@ from BAGEL import bagel_config
 import argparse
 
 parser = argparse.ArgumentParser(description= " generate input files")
-parser.add_argument("-method", type=str, default="casscf", help="set method of calc available : casscf, nevpt2, caspt2")
+parser.add_argument("-method", type=str, default="casscf", help="set method of calc available : casscf, nevpt2, caspt2, hf")
 parser.add_argument("-basis", type=str, help="set basis of calculations")
 parser.add_argument("-type_job", type=str, default="force", help="set type of calc available: energy, force")
 parser.add_argument("-active", type=str, help="set custom acitve space in format n_el:n_orbs")
@@ -12,9 +12,11 @@ parser.add_argument("-mult", type=int, help="set custom mult")
 parser.add_argument("-save", type=bool, help="set it is should save orbitals in the end of calc")
 parser.add_argument("-n_state", type=int, help="set number of states in SA or MS calc")
 parser.add_argument("-target", type=int, help="set root of interest, numeration start from 0")
+parser.add_argument("-alert", type=list, help="orbitals in acitve space")
+parser.add_argument("-file", type=str, help="file from that would start program: molden, archive")
 
 
-atributes = ["active", "charge", "mult", "save", "n_state", "targe", "method", "type_job", "basis"]
+atributes = ["active", "charge", "mult", "save", "n_state", "targe", "method", "type_job", "basis", "alert"]
 config = dict()
 args = parser.parse_args()
 for atr_name in atributes:

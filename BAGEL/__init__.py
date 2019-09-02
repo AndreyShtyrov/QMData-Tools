@@ -95,10 +95,12 @@ class bagel_config():
         ch, co = read_xyz(coord_file)
         self._coords = convert_geom(ch, co)
         n_el = sum(ch)
+        self.alert = None
         self.n_orb = n_el // 2
         self.mult = (n_el % 2) + 1
         self.n_el = 2
         self.n_act = 2
+        self.file = None
         self.n_state = 2
         self.target = 1
         self.load = True
@@ -108,13 +110,19 @@ class bagel_config():
         self.method = "casscf"
         self.type_job = "force"
 
+        path_to_default_settings = pathlib.Path.home()/".default_bagel_settings"
+        if path_to_default_settings.is_file:
+            config_from_file = self.convert_file_in_dict(path_to_default_settings)
+            self.load_value_from_template(config_from_file)
+            with open(pathlib.Path/"path_to_bagel_basis", "r") as f:
+                self.path_to_basis = str(next(f)).replace("\n", "")
+
         if pathlib.Path("template").is_file():
             config_from_file = self.convert_file_in_dict((pathlib.Path("template")))
             self.load_value_from_template(config_from_file)
         self.load_value_from_template(config)
 
-    def make_make_molsp(self):
-        inp_file = dict()
+    def formate_basis(self):
         if self.path_to_basis:
             basis = self.basis
             if self.basis == "3-21g" or self.basis == "sto-3g" or self.basis == "6-31g":
@@ -127,6 +135,11 @@ class bagel_config():
                 df_basis = self.path_to_basis + "svp-jkfit.json"
             else:
                 df_basis = self.path_to_basis + self.basis + "-jkfit.json"
+        return basis, df_basis
+
+    def make_make_molsp(self):
+        basis, df_basis = self.formate_basis()
+
         molecule = {
             "title": "molecule",
             "basis": basis,
@@ -135,6 +148,20 @@ class bagel_config():
         }
         molecule.update(self._coords)
         return molecule
+
+    def start_from_file(self):
+        _, df_basis = self.formate_basis()
+        if self.file == "molden":
+            return {
+                "title": "molecule",
+                "basis": "molden",
+                "df_basis": df_basis
+            }
+        elif self.file == "archive":
+            return {
+            "title": "load_ref",
+            "file": "orb"
+            }
 
     def read_orb(self):
         return {
@@ -182,6 +209,12 @@ class bagel_config():
                     self.method = str(value).lower()
                 if "basis" in key:
                     self.basis = str(value).lower()
+                if "path_to_bagel_basis" in "key":
+                    self.basis = str(value).lower()
+                if "alert" in key:
+                    self.alert = [ int(i) for i in value]
+                if "file" in key:
+                    self.file = str(value).lower()
 
     def convert_file_in_dict(self, file_name)-> dict:
         result = dict()
@@ -191,6 +224,17 @@ class bagel_config():
         return result
 
     def make_casscf_molsp(self):
+        if self.alert:
+            self.save = True
+            return {
+                "title": "casscf",
+                "charge": self.charge,
+                "nact": self.n_act,
+                "active": self.alert,
+                "fci_algorithm": "knowles",
+                "nclosed": int(self.n_orb - (self.n_el // 2) - (self.charge // 2)),
+                "nstate": self.n_state
+            }
         return {
             "title": "casscf",
             "charge": self.charge,
@@ -226,6 +270,16 @@ class bagel_config():
             }
             result.append(temp)
         return result
+
+    def make_scf(self):
+        method = "uhf"
+        if self.mult is 1:
+            method = "hf"
+        return {
+            "title": method,
+            "charge": self.charge,
+            "nopen": int(self.mult - 1)
+        }
 
     def make_grads_mosp(self, method):
         return {

@@ -4,7 +4,7 @@ import setuptools
 
 setuptools.setup(
     name='QMData-Tools',
-    version='v0.5.12.00011',
+    version='v0.5.12.00012',
     author='Andronet',
     author_email='',
     packages=['bin', 'utils', 'gaussian09', 'reanet', 'openmolcas', 'Constants', 'orca', 'Old_scripts', 'BAGEL',
