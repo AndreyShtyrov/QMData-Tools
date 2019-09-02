@@ -12,7 +12,7 @@ parser.add_argument("-mult", type=int, help="set custom mult")
 parser.add_argument("-save", type=bool, help="set it is should save orbitals in the end of calc")
 parser.add_argument("-n_state", type=int, help="set number of states in SA or MS calc")
 parser.add_argument("-target", type=int, help="set root of interest, numeration start from 0")
-parser.add_argument("-alert", type=list, help="orbitals in acitve space")
+parser.add_argument("-alert", metavar='N', type=int, nargs='+', help="orbitals in acitve space")
 parser.add_argument("-file", type=str, help="file from that would start program: molden, archive")
 
 
