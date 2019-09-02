@@ -220,7 +220,11 @@ class bagel_config():
         result = dict()
         with open(file_name, "r") as f:
             for line in f:
-                result.update({line.split("=")[0]: line.split("=")[-1].replace("\n", "").replace(" ", "")})
+                if  line.split("=")[0].replace(" ", "") == "alert":
+                    result.update({line.split("=")[0]: line.split("=")[-1].replace("\n", "").replace(" ", "").split()})
+                else:
+                    result.update({line.split("=")[0]: line.split("=")[-1].replace("\n", "").replace(" ", "")})
+
         return result
 
     def make_casscf_molsp(self):
@@ -307,6 +311,8 @@ class bagel_config():
         elif self.method == "nevpt2":
             inp_file["bagel"].append(self.make_casscf_molsp())
             calc = self.make_nevpt2_molsp()
+            inp_file["bagel"].extend(calc)
+            calc = self.make_casscf_molsp()
         elif self.method == "hf":
             calc = self.make_scf()
 
@@ -315,11 +321,7 @@ class bagel_config():
             exit(2)
 
         if self.type_job == "force":
-            if self.method == "nevpt2":
-                inp_file["bagel"].append(calc)
-                calc = self.make_grads_mosp(self.make_casscf_molsp())
-            else:
-                calc = self.make_grads_mosp(calc)
+            calc = self.make_grads_mosp(calc)
         inp_file["bagel"].append(calc)
 
         if self.save is True:
