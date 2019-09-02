@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAGEL/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/BAGEL/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/generate_coords_for_hessian_calc" beforeDir="false" afterPath="$PROJECT_DIR$/bin/generate_coords_for_hessian_calc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/generate_input" beforeDir="false" afterPath="$PROJECT_DIR$/bin/generate_input" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/generate_input">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="374">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#22#52#0" expanded="true" />
               </folding>
@@ -75,24 +73,20 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gaussian09/__init__.py">
+        <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="340">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/openmolcas/openmolcas.py">
+        <entry file="file://$PROJECT_DIR$/gaussian09/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
+            <state>
               <folding>
-                <element signature="e#0#45#0" expanded="true" />
-                <element signature="e#320#1195#0" />
+                <element signature="e#0#34#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -181,14 +175,14 @@
         <option value="$PROJECT_DIR$/Old_scripts/Calc_hessian.py" />
         <option value="$PROJECT_DIR$/common/utils.py" />
         <option value="$PROJECT_DIR$/Old_scripts/make_tars_for_calc" />
-        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/Old_scripts/make_tars_for_calc.py" />
         <option value="$PROJECT_DIR$/Constants/physics.py" />
         <option value="$PROJECT_DIR$/reanet/Molpro_interface.py" />
         <option value="$PROJECT_DIR$/openmolcas/openmolcas.py" />
         <option value="$PROJECT_DIR$/BAGEL/__init__.py" />
-        <option value="$PROJECT_DIR$/bin/generate_input" />
         <option value="$PROJECT_DIR$/bin/generate_coords_for_hessian_calc" />
+        <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/bin/generate_input" />
       </list>
     </option>
   </component>
@@ -534,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567421054851</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="upgrate bagel input creater">
+      <created>1567422621477</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1567422621477</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1005,13 +1006,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Constants/physics.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1159,10 +1153,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bin/generate_input">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="374">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="e#22#52#0" expanded="true" />
           </folding>
