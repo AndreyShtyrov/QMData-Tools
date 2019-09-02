@@ -15,7 +15,8 @@ config = dict()
 args = parser.parse_args()
 for atr_name in atributes:
     if hasattr(args, atr_name):
-        config.update({atr_name, getattr(args, atr_name)})
+        if getattr(args, atr_name):
+            config.update({atr_name: getattr(args, atr_name)})
 
 bg = bagel_config(config)
 bg.make_calculations_molsp()
