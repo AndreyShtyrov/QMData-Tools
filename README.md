@@ -7,5 +7,5 @@
 if you choose yes make next or ignore    
 1.4 source ~/.bashrc    
 
-1.5pip install git+https://github.com/AndreyShtyrov/Date_Extractor.git@"version"    
+1.5pip install git+https://github.com/AndreyShtyrov/QMData-Tools.git@"version"    
 
