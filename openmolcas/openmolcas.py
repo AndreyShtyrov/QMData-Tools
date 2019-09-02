@@ -34,7 +34,6 @@ class open_parser(parser):
                 lines.append(line)
         return lines
 
-
     def _check_main_method(self):
         pass
 
@@ -74,7 +73,7 @@ def get_last_geom(path):
     result.append("\n")
     for i in range(coords_number):
         result.append(next(geom_file))
-    return  result
+    return result
 
 def restart_calculations():
     general_path = pathlib.Path.cwd()
@@ -98,11 +97,6 @@ def restart_calculations():
     with open("opt.xyz", "w") as out_geom_file:
         out_geom_file.writelines(coords)
     
-
-
-
-
-
 
 
 

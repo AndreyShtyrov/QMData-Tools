@@ -4,13 +4,14 @@ from common.utils import *
 import pathlib
 import numpy as np
 import json
+from types import ModuleType
 
 
 def convert_geom(charges: np.ndarray, coords: np.ndarray):
     geom = []
     result = dict({"geometry": geom})
     for i in range(len(charges)):
-        line = {"atom": CHARGES_TO_MASS[charges[i]],
+        line = {"atom": CHARGES_TO_SYMBOLS[charges[i]],
                 "xyz": coords[i*3: i*3 + 3].tolist()}
         result["geometry"].append(line)
     return result
@@ -87,11 +88,12 @@ class bagel_config():
     charge = 0
     mult = 1
 
-    def __init__(self):
+    def __init__(self, config: dict):
         coord_file = pathlib.Path("coord.xyz")
-        if coord_file.is_file():
-            ch, co = read_xyz(coord_file)
-            self._coords = convert_geom(ch, co)
+        assert coord_file.is_file()
+
+        ch, co = read_xyz(coord_file)
+        self._coords = convert_geom(ch, co)
         n_el = sum(ch)
         self.n_orb = n_el // 2
         self.mult = (n_el % 2) + 1
@@ -99,10 +101,13 @@ class bagel_config():
         self.n_act = 2
         self.n_state = 2
         self.target = 1
+        self.load = True
+        self.save = False
+
         if pathlib.Path("template").is_file():
-            self.load_value_from_template()
-
-
+            config_from_file = self.convert_file_in_dict((pathlib.Path("template")))
+            self.load_value_from_template(config_from_file)
+        self.load_value_from_template(config)
 
 
     def make_make_molsp(self):
@@ -129,7 +134,6 @@ class bagel_config():
             "file": "orb"
         }
 
-
     def save_molden(self):
         return {
             "title": "print",
@@ -137,31 +141,37 @@ class bagel_config():
             "orbitals": True
         }
 
-    def load_value_from_template(self):
-        with open("template", "r") as f:
-            for line in f:
-                if "active" in line:
-                    line = line.split("=")[-1]
-                    line.replace("\n", "").replace(" ", "")
-                    self.n_act = int(line.split(":")[0])
-                    self.n_el = int(line.split(":")[1])
-                if "charge" in line:
-                    line = line.split("=")[-1]
-                    line.replace("\n", "").replace(" ", "")
-                    self.charge = int(line)
+    def load_value_from_template(self, config: dict):
+        if bool(config):
+            for key, value in config.items():
+                if "active" in key:
+                    value = value.replace("\n", "").replace(" ", "")
+                    self.n_act = int(value.split(":")[0])
+                    self.n_el = int(value.split(":")[1])
+                if "charge" in key:
+                    value = value.replace("\n", "").replace(" ", "")
+                    self.charge = int(value)
                     self.mult = int(((self.n_el - self.charge) % 2) + 1)
-                if "mult" in line:
-                    line = line.split("=")[-1]
-                    line.replace("\n", "").replace(" ", "")
-                    self.mult = int(line)
-                if "nstate" in line:
-                    line = line.split("=")[-1]
-                    line.replace("\n", "").replace(" ", "")
-                    self.n_state = int(line)
-                if "target" in line:
-                    line = line.split("=")[-1]
-                    line.replace("\n", "").replace(" ", "")
-                    self.target = int(line)
+                if "mult" in key:
+                    value = value.replace("\n", "").replace(" ", "")
+                    self.mult = int(value)
+                if "nstate" in key:
+                    value.replace("\n", "").replace(" ", "")
+                    self.n_state = int(value)
+                if "target" in key:
+                    value = value.replace("\n", "").replace(" ", "")
+                    self.target = int(value)
+                if "save" in key:
+                    self.save = bool(value.replace("\n", "").replace(" ", ""))
+                if "load" in key:
+                    self.load = bool(value.replace("\n", "").replace(" ", ""))
+
+    def convert_file_in_dict(self, file_name)-> dict:
+        result = dict()
+        with open(file_name, "r") as f:
+            for line in f:
+                result.update({line.split("=")[0], line.split("=")[-1]})
+        return result
 
     def make_calculations_molsp(self):
         method = {
@@ -176,14 +186,28 @@ class bagel_config():
             "title": "force",
             "dipole": True,
             "target": self.target,
-            "method": method
+            "method": [method]
         }
 
         inp_file = {"bagel": []}
         inp_file["bagel"].append(self.make_make_molsp())
-        inp_file["bagel"].append(self.read_orb())
+        if pathlib.Path("orb.archive").is_file():
+            inp_file["bagel"].append(self.read_orb())
         inp_file["bagel"].append(calc)
+        if self.save is True:
+            inp_file["bagel"].append(self.save_orb())
+            inp_file["bagel"].append(self.save_molden())
         self.save_json(inp_file, "opt.json")
+
+    @staticmethod
+    def get_geom_from_bagel_input(file):
+        data = json.load(open(file, "r"))
+        geom = data["bagel"]["molecule"]["geometry"]
+        charges = [ SYMBOLS_TO_CHARGES[i["atom"]] for i in geom]
+        coords = []
+        coords.extend([i["xyz"] for i in geom])
+        return charges, np.array(coords)
+
 
     def save_json(self, data: dict, file_name: str):
         with open(file_name, "w") as f:
@@ -191,9 +215,12 @@ class bagel_config():
 
 
 
-
-
-
 if __name__ == '__main__':
-    bg = bagel_config()
-    bg.make_calculations_molsp()
+    ch, coor = bagel_config.get_geom_from_bagel_input("opt.json")
+    with open("coord.xyz", "w") as f:
+        save_geom_xyz(ch, coor)
+    import gaussian09
+
+
+
+

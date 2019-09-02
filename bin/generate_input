@@ -1,6 +1,20 @@
 #!/usr/bin/env python
 from BAGEL import bagel_config
+import argparse
 
-bg = bagel_config()
+parser = argparse.ArgumentParser(description= " generate input files")
+parser.add_argument("-active", type=str, help="set custom acitve space in format n_el:n_orbs")
+parser.add_argument("-charge", type=int, help="set custom charge")
+parser.add_argument("-mult", type=int, help="set custom mult")
+parser.add_argument("-save", type=bool, help="set it is should save orbitals in the end of calc")
+parser.add_argument("-state", type=int, help="set number of states in SA or MS calc")
+parser.add_argument("-target", type=int, help="set root of interest, numeration start from 0")
+atributes = ["active", "charge", "mult", "save", "state", "targe"]
+config = dict()
+for atr_name in atributes:
+    if hasattr(parser, atr_name):
+        config.update({atr_name, getattr(parser, atr_name)})
+
+bg = bagel_config(config)
 bg.make_calculations_molsp()
 

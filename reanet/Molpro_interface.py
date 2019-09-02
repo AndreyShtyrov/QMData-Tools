@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import os, sys
-from pathlib import path
+from pathlib import Path
 
 
 type_of_calculation = sys.argv[1]
@@ -9,7 +9,7 @@ output_file = sys.argv[3]
 
 os.environ["molpro_dir"]="/usr/local/molpro/molprop_2010_1_linux_x86_64_i8/bin"
 
-path = path.cwd()
+path = Path.cwd()
 main_dir = path.parent.parent
 
 lines_of_input_file = []

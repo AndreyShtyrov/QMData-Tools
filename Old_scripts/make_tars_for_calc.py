@@ -15,14 +15,17 @@ if __name__ == '__main__':
     n_dirs = count_dirs(main_path)
     j = 0
     i = 0
-    n = n_dirs % m
+    n = n_dirs // m
     for dir in main_path.iterdir():
         if dir.is_dir():
             if j == 0:
-                os.system("tar -cvf run" + str(i) + ".tar" + str(dir))
+                os.system("tar -cvf run" + str(i) + ".tar " + str(dir.relative_to(main_path)))
+                j = j + 1
             elif 0 < j < n:
-                os.system("tar -rvf run" + str(i) + ".tar" + str(dir))
+                os.system("tar -rvf run" + str(i) + ".tar " + str(dir.relative_to(main_path)))
+                j = j + 1
             elif j == n:
-                os.system("tar -rvf run" + str(i) + ".tar" + str(dir))
+                os.system("tar -rvf run" + str(i) + ".tar " + str(dir.relative_to(main_path)))
                 i = i + 1
                 j = 0
+
