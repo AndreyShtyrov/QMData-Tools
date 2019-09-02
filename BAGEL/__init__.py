@@ -235,6 +235,12 @@ class bagel_config():
             inp_file["bagel"].append(self.make_casscf_molsp())
             calc = self.make_nevpt2_molsp()
 
+        if calc:
+            inp_file["bagel"].append(calc)
+        else:
+            print("Undefine method")
+            exit(2)
+
         if self.type_job == "force":
             if self.method == "nevpt2":
                 inp_file["bagel"].append(calc)
@@ -242,11 +248,7 @@ class bagel_config():
             else:
                 calc = self.make_grads_mosp(calc)
 
-        if calc:
-            inp_file["bagel"].append(calc)
-        else:
-            print("Undefine method")
-            exit(2)
+
 
         if self.save is True:
             inp_file["bagel"].append(self.save_orb())
