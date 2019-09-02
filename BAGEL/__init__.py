@@ -109,7 +109,6 @@ class bagel_config():
             self.load_value_from_template(config_from_file)
         self.load_value_from_template(config)
 
-
     def make_make_molsp(self):
         inp_file = dict()
         molecule = {
@@ -208,19 +207,13 @@ class bagel_config():
         coords.extend([i["xyz"] for i in geom])
         return charges, np.array(coords)
 
-
     def save_json(self, data: dict, file_name: str):
         with open(file_name, "w") as f:
             f.writelines(json.dumps(data, indent=2))
-
 
 
 if __name__ == '__main__':
     ch, coor = bagel_config.get_geom_from_bagel_input("opt.json")
     with open("coord.xyz", "w") as f:
         save_geom_xyz(ch, coor)
-    import gaussian09
-
-
-
 

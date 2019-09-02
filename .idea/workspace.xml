@@ -4,11 +4,8 @@
     <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BAGEL/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/BAGEL/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Constants/physics.py" beforeDir="false" afterPath="$PROJECT_DIR$/Constants/physics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Old_scripts/make_tars_for_calc.py" beforeDir="false" afterPath="$PROJECT_DIR$/Old_scripts/make_tars_for_calc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/generate_coords_for_hessian_calc" beforeDir="false" afterPath="$PROJECT_DIR$/bin/generate_coords_for_hessian_calc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/generate_input" beforeDir="false" afterPath="$PROJECT_DIR$/bin/generate_input" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openmolcas/openmolcas.py" beforeDir="false" afterPath="$PROJECT_DIR$/openmolcas/openmolcas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reanet/Molpro_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/reanet/Molpro_interface.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,36 +15,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BAGEL/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="93" column="8" lean-forward="true" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
+            <state relative-caret-position="385">
+              <caret line="219" selection-start-line="219" selection-end-line="219" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
                 <element signature="e#210#459#0" />
                 <element signature="e#505#1268#0" />
                 <element signature="e#1302#2295#0" />
                 <element signature="e#2348#2746#0" />
+                <element signature="e#2804#7168#0" />
+                <element signature="e#3038#3668#0" />
                 <element signature="e#3494#3626#0" />
                 <element signature="e#3472#3711#0" />
                 <element signature="e#3745#3858#0" />
                 <element signature="e#3892#3969#0" />
                 <element signature="e#4006#4122#0" />
+                <element signature="e#4474#5650#0" />
                 <element signature="e#5656#5833#0" />
                 <element signature="e#5725#6505#0" />
                 <element signature="e#6094#6354#0" />
-                <element signature="e#6533#6693#0" />
+                <element signature="e#6418#6502#0" />
+                <element signature="e#7199#7330#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/generate_input">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            <state relative-caret-position="357">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="e#22#52#0" expanded="true" />
               </folding>
@@ -63,10 +64,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/generate_coords_for_hessian_calc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="296">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
-                <element signature="e#23#37#0" expanded="true" />
                 <element signature="e#730#848#0" />
                 <element signature="e#891#1361#0" />
               </folding>
@@ -181,14 +181,14 @@
         <option value="$PROJECT_DIR$/Old_scripts/Calc_hessian.py" />
         <option value="$PROJECT_DIR$/common/utils.py" />
         <option value="$PROJECT_DIR$/Old_scripts/make_tars_for_calc" />
-        <option value="$PROJECT_DIR$/bin/generate_coords_for_hessian_calc" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/Old_scripts/make_tars_for_calc.py" />
         <option value="$PROJECT_DIR$/Constants/physics.py" />
         <option value="$PROJECT_DIR$/reanet/Molpro_interface.py" />
         <option value="$PROJECT_DIR$/openmolcas/openmolcas.py" />
-        <option value="$PROJECT_DIR$/bin/generate_input" />
         <option value="$PROJECT_DIR$/BAGEL/__init__.py" />
+        <option value="$PROJECT_DIR$/bin/generate_input" />
+        <option value="$PROJECT_DIR$/bin/generate_coords_for_hessian_calc" />
       </list>
     </option>
   </component>
@@ -211,6 +211,11 @@
             <path>
               <item name="QMData-Tools" type="b2602c69:ProjectViewProjectNode" />
               <item name="QMData-Tools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QMData-Tools" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QMData-Tools" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -522,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567260465667</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="upgrate bagel input creater">
+      <created>1567421054851</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1567421054851</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -670,12 +682,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/BAGEL/__init__.py</url>
-          <line>212</line>
+          <line>210</line>
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/BAGEL/__init__.py</url>
-          <line>176</line>
+          <line>175</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -685,12 +697,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/BAGEL/__init__.py</url>
-          <line>221</line>
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/BAGEL/__init__.py</url>
-          <line>112</line>
+          <line>111</line>
           <option name="timeStamp" value="78" />
         </line-breakpoint>
       </breakpoints>
@@ -1114,12 +1121,38 @@
     <entry file="file://$PROJECT_DIR$/bin/get_optimized_geom">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/BAGEL/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="219" selection-start-line="219" selection-end-line="219" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#210#459#0" />
+            <element signature="e#505#1268#0" />
+            <element signature="e#1302#2295#0" />
+            <element signature="e#2348#2746#0" />
+            <element signature="e#2804#7168#0" />
+            <element signature="e#3038#3668#0" />
+            <element signature="e#3494#3626#0" />
+            <element signature="e#3472#3711#0" />
+            <element signature="e#3745#3858#0" />
+            <element signature="e#3892#3969#0" />
+            <element signature="e#4006#4122#0" />
+            <element signature="e#4474#5650#0" />
+            <element signature="e#5656#5833#0" />
+            <element signature="e#5725#6505#0" />
+            <element signature="e#6094#6354#0" />
+            <element signature="e#6418#6502#0" />
+            <element signature="e#7199#7330#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bin/generate_coords_for_hessian_calc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="296">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
-            <element signature="e#23#37#0" expanded="true" />
             <element signature="e#730#848#0" />
             <element signature="e#891#1361#0" />
           </folding>
@@ -1128,33 +1161,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/generate_input">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="357">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="e#22#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BAGEL/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="93" column="8" lean-forward="true" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <element signature="e#210#459#0" />
-            <element signature="e#505#1268#0" />
-            <element signature="e#1302#2295#0" />
-            <element signature="e#2348#2746#0" />
-            <element signature="e#3494#3626#0" />
-            <element signature="e#3472#3711#0" />
-            <element signature="e#3745#3858#0" />
-            <element signature="e#3892#3969#0" />
-            <element signature="e#4006#4122#0" />
-            <element signature="e#5656#5833#0" />
-            <element signature="e#5725#6505#0" />
-            <element signature="e#6094#6354#0" />
-            <element signature="e#6533#6693#0" />
           </folding>
         </state>
       </provider>
