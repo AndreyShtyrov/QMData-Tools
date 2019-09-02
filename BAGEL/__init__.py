@@ -153,7 +153,7 @@ class bagel_config():
                     self.mult = int(((self.n_el - self.charge) % 2) + 1)
                 if "mult" in key:
                     self.mult = int(value)
-                if "nstate" in key:
+                if "n_state" in key:
                     self.n_state = int(value)
                 if "target" in key:
                     value = value
@@ -233,7 +233,7 @@ class bagel_config():
             calc = self.make_caspt_molsp()
         elif self.method == "nevpt2":
             inp_file["bagel"].append(self.make_casscf_molsp())
-            calc = self.make_newpt2_molsp()
+            calc = self.make_nevpt2_molsp()
 
         if self.type_job == "force":
             if self.method == "nevpt2":
