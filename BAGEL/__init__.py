@@ -193,7 +193,7 @@ class bagel_config():
             "sssr": True
         }
 
-    def make_newpt2_molsp(self):
+    def make_nevpt2_molsp(self):
         result = []
         for i in range(self.n_state):
             temp = {
@@ -231,12 +231,12 @@ class bagel_config():
         elif self.method == "caspt2":
             inp_file["bagel"].append(self.make_casscf_molsp())
             calc = self.make_caspt_molsp()
-        elif self.method == "newpt2":
+        elif self.method == "nevpt2":
             inp_file["bagel"].append(self.make_casscf_molsp())
             calc = self.make_newpt2_molsp()
 
         if self.type_job == "force":
-            if self.method == "newpt2":
+            if self.method == "nevpt2":
                 inp_file["bagel"].append(calc)
                 calc = self.make_grads_mosp(self.make_casscf_molsp())
             else:
