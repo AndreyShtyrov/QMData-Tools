@@ -103,6 +103,8 @@ class bagel_config():
         self.target = 1
         self.load = True
         self.save = False
+        self.method = "casscf"
+        self.type_job = "force"
 
         if pathlib.Path("template").is_file():
             config_from_file = self.convert_file_in_dict((pathlib.Path("template")))
@@ -160,6 +162,10 @@ class bagel_config():
                     self.save = bool(value)
                 if "load" in key:
                     self.load = bool(value)
+                if "type_calc" in key:
+                    self.type_job = str(value).lower()
+                if "method" in key:
+                    self.mehtod = str(value).lower()
 
     def convert_file_in_dict(self, file_name)-> dict:
         result = dict()
@@ -168,27 +174,78 @@ class bagel_config():
                 result.update({line.split("=")[0], line.split("=")[-1].replace("\n", "").replace(" ", "")})
         return result
 
-    def make_calculations_molsp(self):
-        method = {
-            "title": self.method,
+    def make_casscf_molsp(self):
+        return {
+            "title": "casscf",
             "charge": self.charge,
             "nact": self.n_act,
             "nclosed": int(self.n_orb - (self.n_el //2) - (self.charge // 2)),
             "nstate": self.n_state
         }
 
-        calc = {
+    def make_caspt_molsp(self):
+        return {
+            "title": "smith",
+            "method": "caspt2",
+            "ms": True,
+            "xms": True,
+            "sssr": True
+        }
+
+    def make_newpt2_molsp(self):
+        result = []
+        for i in range(self.n_state):
+            temp = {
+                "title": self.method,
+                "charge": self.charge,
+                "nact": self.n_act,
+                "nclosed": int(self.n_orb - (self.n_el // 2) - (self.charge // 2)),
+                "nstate": self.n_state,
+                "thresh": 1.0e-6,
+                "thresh_scf": 1.0e-6,
+                "thresh_fci": 1.0e-7,
+                "istate": i
+            }
+            result.append(temp)
+        return result
+
+    def make_grads_mosp(self, method):
+        return {
             "title": "force",
             "dipole": True,
             "target": self.target,
             "method": [method]
         }
 
+    def make_input_body(self):
         inp_file = {"bagel": []}
         inp_file["bagel"].append(self.make_make_molsp())
         if pathlib.Path("orb.archive").is_file():
             inp_file["bagel"].append(self.read_orb())
-        inp_file["bagel"].append(calc)
+
+        calc = None
+        if self.method in "casscf":
+            calc = self.make_casscf_molsp()
+        elif self.method in "caspt2":
+            inp_file["bagel"].append(self.make_casscf_molsp())
+            calc = self.make_caspt_molsp()
+        if self.method in "newpt2":
+            inp_file["bagel"].append(self.make_casscf_molsp())
+            calc = self.make_newpt2_molsp()
+
+        if self.type_job in "force":
+            if self.method in "newpt2":
+                inp_file["bagel"].append(calc)
+                calc = self.make_grads_mosp(self.make_casscf_molsp())
+            else:
+                calc = self.make_grads_mosp(calc)
+
+        if calc:
+            inp_file["bagel"].append(calc)
+        else:
+            print("Undefine method")
+            exit(2)
+
         if self.save is True:
             inp_file["bagel"].append(self.save_orb())
             inp_file["bagel"].append(self.save_molden())
