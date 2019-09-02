@@ -165,13 +165,13 @@ class bagel_config():
                 if "type_job" in key:
                     self.type_job = str(value).lower()
                 if "method" in key:
-                    self.mehtod = str(value).lower()
+                    self.method = str(value).lower()
 
     def convert_file_in_dict(self, file_name)-> dict:
         result = dict()
         with open(file_name, "r") as f:
             for line in f:
-                result.update({line.split("=")[0], line.split("=")[-1].replace("\n", "").replace(" ", "")})
+                result.update({line.split("=")[0]: line.split("=")[-1].replace("\n", "").replace(" ", "")})
         return result
 
     def make_casscf_molsp(self):
@@ -226,17 +226,17 @@ class bagel_config():
             inp_file["bagel"].append(self.read_orb())
 
         calc = None
-        if self.method in "casscf":
+        if self.method == "casscf":
             calc = self.make_casscf_molsp()
-        elif self.method in "caspt2":
+        elif self.method == "caspt2":
             inp_file["bagel"].append(self.make_casscf_molsp())
             calc = self.make_caspt_molsp()
-        if self.method in "newpt2":
+        elif self.method == "newpt2":
             inp_file["bagel"].append(self.make_casscf_molsp())
             calc = self.make_newpt2_molsp()
 
-        if self.type_job in "force":
-            if self.method in "newpt2":
+        if self.type_job == "force":
+            if self.method == "newpt2":
                 inp_file["bagel"].append(calc)
                 calc = self.make_grads_mosp(self.make_casscf_molsp())
             else:
