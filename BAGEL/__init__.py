@@ -179,6 +179,7 @@ class bagel_config():
             "title": "casscf",
             "charge": self.charge,
             "nact": self.n_act,
+            "fci_algorithm": "knowles",
             "nclosed": int(self.n_orb - (self.n_el //2) - (self.charge // 2)),
             "nstate": self.n_state
         }
@@ -201,6 +202,7 @@ class bagel_config():
                 "nact": self.n_act,
                 "nclosed": int(self.n_orb - (self.n_el // 2) - (self.charge // 2)),
                 "nstate": self.n_state,
+                "maxiter": 80,
                 "thresh": 1.0e-6,
                 "thresh_scf": 1.0e-6,
                 "thresh_fci": 1.0e-7,
