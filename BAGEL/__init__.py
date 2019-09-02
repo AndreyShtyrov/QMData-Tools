@@ -144,32 +144,28 @@ class bagel_config():
         if bool(config):
             for key, value in config.items():
                 if "active" in key:
-                    value = value.replace("\n", "").replace(" ", "")
                     self.n_act = int(value.split(":")[0])
                     self.n_el = int(value.split(":")[1])
                 if "charge" in key:
-                    value = value.replace("\n", "").replace(" ", "")
                     self.charge = int(value)
                     self.mult = int(((self.n_el - self.charge) % 2) + 1)
                 if "mult" in key:
-                    value = value.replace("\n", "").replace(" ", "")
                     self.mult = int(value)
                 if "nstate" in key:
-                    value.replace("\n", "").replace(" ", "")
                     self.n_state = int(value)
                 if "target" in key:
-                    value = value.replace("\n", "").replace(" ", "")
+                    value = value
                     self.target = int(value)
                 if "save" in key:
-                    self.save = bool(value.replace("\n", "").replace(" ", ""))
+                    self.save = bool(value)
                 if "load" in key:
-                    self.load = bool(value.replace("\n", "").replace(" ", ""))
+                    self.load = bool(value)
 
     def convert_file_in_dict(self, file_name)-> dict:
         result = dict()
         with open(file_name, "r") as f:
             for line in f:
-                result.update({line.split("=")[0], line.split("=")[-1]})
+                result.update({line.split("=")[0], line.split("=")[-1].replace("\n", "").replace(" ", "")})
         return result
 
     def make_calculations_molsp(self):

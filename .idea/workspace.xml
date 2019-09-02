@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/generate_input" beforeDir="false" afterPath="$PROJECT_DIR$/bin/generate_input" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAGEL/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/BAGEL/__init__.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,40 +13,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BAGEL/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="219" selection-start-line="219" selection-end-line="219" />
+            <state relative-caret-position="25">
+              <caret line="145" column="35" selection-start-line="145" selection-start-column="35" selection-end-line="145" selection-end-column="35" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
                 <element signature="e#210#459#0" />
                 <element signature="e#505#1268#0" />
                 <element signature="e#1302#2295#0" />
                 <element signature="e#2348#2746#0" />
-                <element signature="e#2804#7168#0" />
                 <element signature="e#3038#3668#0" />
                 <element signature="e#3494#3626#0" />
-                <element signature="e#3472#3711#0" />
-                <element signature="e#3745#3858#0" />
-                <element signature="e#3892#3969#0" />
-                <element signature="e#4006#4122#0" />
-                <element signature="e#4474#5650#0" />
-                <element signature="e#5656#5833#0" />
-                <element signature="e#5725#6505#0" />
                 <element signature="e#6094#6354#0" />
-                <element signature="e#6418#6502#0" />
-                <element signature="e#7199#7330#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/generate_input">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="306">
+              <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
               <folding>
                 <element signature="e#22#52#0" expanded="true" />
               </folding>
@@ -75,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="102">
+              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -179,10 +169,10 @@
         <option value="$PROJECT_DIR$/Constants/physics.py" />
         <option value="$PROJECT_DIR$/reanet/Molpro_interface.py" />
         <option value="$PROJECT_DIR$/openmolcas/openmolcas.py" />
-        <option value="$PROJECT_DIR$/BAGEL/__init__.py" />
         <option value="$PROJECT_DIR$/bin/generate_coords_for_hessian_calc" />
-        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/bin/generate_input" />
+        <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/BAGEL/__init__.py" />
       </list>
     </option>
   </component>
@@ -209,7 +199,7 @@
             <path>
               <item name="QMData-Tools" type="b2602c69:ProjectViewProjectNode" />
               <item name="QMData-Tools" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="BAGEL" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -221,7 +211,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/BAGEL/__init__.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -272,13 +262,13 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BAGEL" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BAGEL/__init__.py" />
-      <option name="PARAMETERS" value="-shift 0.02" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bin/generate_input" />
+      <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -535,7 +525,21 @@
       <option name="project" value="LOCAL" />
       <updated>1567422621477</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="upgrate bagel input creater">
+      <created>1567423243473</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1567423243473</updated>
+    </task>
+    <task id="LOCAL-00035" summary="upgrate bagel input creater">
+      <created>1567423612438</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1567423612438</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -548,7 +552,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.26595744" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.05319149" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.30496454" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -683,12 +687,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/BAGEL/__init__.py</url>
-          <line>210</line>
+          <line>206</line>
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/BAGEL/__init__.py</url>
-          <line>175</line>
+          <line>171</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -697,9 +701,9 @@
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/BAGEL/__init__.py</url>
-          <line>111</line>
-          <option name="timeStamp" value="78" />
+          <url>file://$PROJECT_DIR$/bin/generate_input</url>
+          <line>15</line>
+          <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -713,6 +717,11 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>getattr(args, atr_name)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>type(get_hessian)</expression-string>
         <language-id>Python</language-id>
@@ -750,11 +759,6 @@
       </expression>
       <expression>
         <expression-string>&quot;]}&quot; in line</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>part[-3]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
@@ -1115,33 +1119,6 @@
     <entry file="file://$PROJECT_DIR$/bin/get_optimized_geom">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/BAGEL/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="219" selection-start-line="219" selection-end-line="219" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <element signature="e#210#459#0" />
-            <element signature="e#505#1268#0" />
-            <element signature="e#1302#2295#0" />
-            <element signature="e#2348#2746#0" />
-            <element signature="e#2804#7168#0" />
-            <element signature="e#3038#3668#0" />
-            <element signature="e#3494#3626#0" />
-            <element signature="e#3472#3711#0" />
-            <element signature="e#3745#3858#0" />
-            <element signature="e#3892#3969#0" />
-            <element signature="e#4006#4122#0" />
-            <element signature="e#4474#5650#0" />
-            <element signature="e#5656#5833#0" />
-            <element signature="e#5725#6505#0" />
-            <element signature="e#6094#6354#0" />
-            <element signature="e#6418#6502#0" />
-            <element signature="e#7199#7330#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/generate_coords_for_hessian_calc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
@@ -1153,19 +1130,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
+    <entry file="file://$PROJECT_DIR$/bin/generate_input">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="306">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+          <folding>
+            <element signature="e#22#52#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/generate_input">
+    <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="102">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BAGEL/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="145" column="35" selection-start-line="145" selection-start-column="35" selection-end-line="145" selection-end-column="35" />
           <folding>
-            <element signature="e#22#52#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#210#459#0" />
+            <element signature="e#505#1268#0" />
+            <element signature="e#1302#2295#0" />
+            <element signature="e#2348#2746#0" />
+            <element signature="e#3038#3668#0" />
+            <element signature="e#3494#3626#0" />
+            <element signature="e#6094#6354#0" />
           </folding>
         </state>
       </provider>
