@@ -162,7 +162,7 @@ class bagel_config():
                     self.save = bool(value)
                 if "load" in key:
                     self.load = bool(value)
-                if "type_calc" in key:
+                if "type_job" in key:
                     self.type_job = str(value).lower()
                 if "method" in key:
                     self.mehtod = str(value).lower()
