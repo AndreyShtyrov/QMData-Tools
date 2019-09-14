@@ -4,7 +4,7 @@ import setuptools
 
 setuptools.setup(
     name='QMData-Tools',
-    version='v0.5.12.00025',
+    version='v0.5.12.00027',
     author='Andronet',
     author_email='',
     packages = setuptools.find_packages(),
@@ -14,6 +14,6 @@ setuptools.setup(
              'Old_scripts/calculate_stat_sum.py', 'Old_scripts/Calc_freq.py', 'Old_scripts/diff_hessian.py',
              'bin/generate_coords_for_hessian_calc'],
     license='',
-    install_requires=['numpy', 'termcolor', 'pathlib'],
+    install_requires=['numpy', 'termcolor', 'pathlib','argparse'],
     description=''
 )

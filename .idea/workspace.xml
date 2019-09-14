@@ -2,49 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/Common/Config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ORCA/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAGEL/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BAGEL/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Constants/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Old_scripts/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Constants/physics.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Constants/physics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Old_scripts/Calc_freq.py" beforeDir="false" afterPath="$PROJECT_DIR$/Old_scripts/Calc_freq.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Old_scripts/calc_grid_CASSCF.py" beforeDir="false" afterPath="$PROJECT_DIR$/Old_scripts/calc_grid_CASSCF.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Old_scripts/calc_hessian_from_bagel_freq.py" beforeDir="false" afterPath="$PROJECT_DIR$/Old_scripts/calc_hessian_from_bagel_freq.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Old_scripts/calculate_stat_sum.py" beforeDir="false" afterPath="$PROJECT_DIR$/Old_scripts/calculate_stat_sum.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Old_scripts/diff_hessian.py" beforeDir="false" afterPath="$PROJECT_DIR$/Old_scripts/diff_hessian.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Old_scripts/make_input.py" beforeDir="false" afterPath="$PROJECT_DIR$/Old_scripts/make_input.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Convert_gauss_to_molcas" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Convert_gauss_to_molcas" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/check_optimization" beforeDir="false" afterPath="$PROJECT_DIR$/bin/check_optimization" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/convert_to_molden" beforeDir="false" afterPath="$PROJECT_DIR$/bin/convert_to_molden" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/extract_orb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/extract_orb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/generate_coords_for_hessian_calc" beforeDir="false" afterPath="$PROJECT_DIR$/bin/generate_coords_for_hessian_calc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/BAGEL/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BAGEL/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Common/Config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Common/Config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ORCA/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ORCA/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/generate_input" beforeDir="false" afterPath="$PROJECT_DIR$/bin/generate_input" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/get_optimized_geom" beforeDir="false" afterPath="$PROJECT_DIR$/bin/get_optimized_geom" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/QM_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Common/QM_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Common/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Common/General_Tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaussian09/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Gaussian09/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaussian09/gaussian09.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Gaussian09/Gaussian09.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaussian09/gaussian09_chk.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Gaussian09/Gaussian09_chk.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaussian09/sync_clasters/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Constants/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openmolcas/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OpenMolcas/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openmolcas/molden.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OpenMolcas/Molden.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openmolcas/openmolcas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OpenMolcas/OpenMolcas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orca/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Gaussian09/sync_clasters/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orca/setup_orca.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ORCA/setup_orca.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reanet/Molpro_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ReaNet/Molpro_interface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reanet/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ReaNet/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reanet/reanet_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ReaNet/Reanet_parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/linalg.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Utils/linalg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/listanalyser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/molecul_property.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/parser.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -143,7 +106,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bin/generate_input" />
-      <option name="PARAMETERS" value="" />
+      <option name="PARAMETERS" value="-pgp ORCA -active 6:6 -charge 2 -method cepa -type_job grads" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -156,6 +119,16 @@
         <item itemvalue="Python.gaussian09" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -170,14 +143,9 @@
       <workItem from="1565955968909" duration="873000" />
       <workItem from="1568269509805" duration="5506000" />
       <workItem from="1568372135660" duration="1795000" />
-      <workItem from="1568446814595" duration="1431000" />
-    </task>
-    <task id="LOCAL-00001" summary="Setup">
-      <created>1561205987880</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1561205987880</updated>
+      <workItem from="1568446814595" duration="6198000" />
+      <workItem from="1568474405835" duration="2367000" />
+      <workItem from="1568476815685" duration="3985000" />
     </task>
     <task id="LOCAL-00002" summary="Setup">
       <created>1561733640903</created>
@@ -515,7 +483,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567441379517</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Make some rafactors">
+      <created>1568449787520</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1568449787522</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -553,7 +528,8 @@
     <MESSAGE value="Refactor g09_parser code" />
     <MESSAGE value="add geom convertor" />
     <MESSAGE value="upgrate bagel input creater" />
-    <option name="LAST_COMMIT_MESSAGE" value="upgrate bagel input creater" />
+    <MESSAGE value="Make some rafactors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make some rafactors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -590,73 +566,63 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Old_scripts/calc_hessian_from_bagel_freq.py</url>
-          <line>52</line>
+          <line>50</line>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Old_scripts/calc_hessian_from_bagel_freq.py</url>
-          <line>70</line>
+          <line>68</line>
           <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Old_scripts/Calc_freq.py</url>
-          <line>25</line>
+          <line>22</line>
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>244</line>
+          <line>218</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>93</line>
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>308</line>
+          <line>282</line>
           <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>300</line>
+          <line>274</line>
           <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Source/Common/Config.py</url>
-          <line>40</line>
-          <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>350</line>
+          <line>324</line>
           <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>351</line>
+          <line>325</line>
           <option name="timeStamp" value="96" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>68</line>
+          <line>69</line>
           <option name="timeStamp" value="97" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/bin/generate_input</url>
-          <line>27</line>
-          <option name="timeStamp" value="100" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>123</line>
-          <option name="timeStamp" value="102" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/Common/Config.py</url>
-          <line>51</line>
+          <line>89</line>
           <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/bin/generate_input</url>
+          <line>28</line>
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Source/ORCA/__init__.py</url>
+          <line>134</line>
+          <option name="timeStamp" value="107" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -669,6 +635,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/QMData_Tools$gaussian09.coverage" NAME="gaussian09 Coverage Results" MODIFIED="1568449225025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
+    <SUITE FILE_PATH="coverage/QMData_Tools$gaussian09.coverage" NAME="gaussian09 Coverage Results" MODIFIED="1568480835818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
 </project>

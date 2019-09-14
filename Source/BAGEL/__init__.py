@@ -1,7 +1,7 @@
 from Source.Constants.physics import *
 from Source.Utils.listanalyser import ListReader
-from common.General_Tools import *
-from common.Config import config
+from Source.Common.General_Tools import *
+from Source.Common.Config import config
 import pathlib
 import numpy as np
 import json
@@ -12,7 +12,7 @@ def convert_geom(charges: np.ndarray, coords: np.ndarray):
     result = dict({"geometry": geom})
     for i in range(len(charges)):
         line = {"atom": CHARGES_TO_SYMBOLS[charges[i]],
-                "xyz": coords[i*3: i*3 + 3].tolist()}
+                "xyz": coords[i * 3: i * 3 + 3].tolist()}
         result["geometry"].append(line)
     return result
 
@@ -43,7 +43,8 @@ def get_hessian(iterable):
     LR = ListReader(iterable)
     LR.go_by_keys("++ Symmetrized Mass Weighted Hessian ++")
     LR.get_next_lines(2)
-    part = LR.get_all_by_keys("* Projecting out translational and rotational degrees of freedom", "Mass Weighted Hessian Eigenvalues")
+    part = LR.get_all_by_keys("* Projecting out translational and rotational degrees of freedom",
+                              "Mass Weighted Hessian Eigenvalues")
     temporary = []
     for line in part:
         try:
@@ -55,7 +56,7 @@ def get_hessian(iterable):
                 if "averaged" in line:
                     print(1)
                 temporary.append([float(i) for i in line.replace("\n", "").split()[1:]])
-    ndim = int(math.sqrt((len(temporary)-1) * 6 + len(temporary[-1])))
+    ndim = int(math.sqrt((len(temporary) - 1) * 6 + len(temporary[-1])))
     hessian = np.zeros((ndim, ndim))
     for i in range(len(temporary)):
         for j in range(len(temporary[i])):
@@ -85,44 +86,18 @@ class bagel_config(config):
     mult : multiplecity of system
     """
     method: int = "casscf"
-    charge : int = 0
-    mult : int = 1
-    active : str = "2:2"
-
+    charge: int = 0
+    mult: int = 1
+    active: str = "2:2"
+    _path_to_default_settings: pathlib.Path = pathlib.Path.home() / ".default_bagel_settings"
 
     def __init__(self, config: dict = dict()):
-        coord_file = pathlib.Path("coord.xyz")
-        assert coord_file.is_file()
+        super().__init__(config)
+        self._coords = convert_geom(self._ch, self._co)
 
-        ch, co = read_xyz(coord_file)
-        self._coords = convert_geom(ch, co)
-        n_el = sum(ch)
-        self.alert = None
-        self.n_orb = int(n_el // 2)
-        self.mult = int((n_el % 2) + 1)
-        self.n_el = 2
-        self.n_act = 2
-        self.file = None
-        self.n_state = 2
-        self.target = 1
-        self.load = True
-        self.save = False
-        self.path_to_basis = None
-        self.basis = "3-21g"
-        self.method = "casscf"
-        self.type_job = "force"
-
-        path_to_default_settings = pathlib.Path.home()/".default_bagel_settings"
-        if path_to_default_settings.is_file():
-            config_from_file = self.convert_file_in_dict(path_to_default_settings)
-            self.load_values_from_template(config_from_file)
-            with open(pathlib.Path/"path_to_bagel_basis", "r") as f:
+        if (pathlib.Path() / "path_to_bagel_basis").is_file():
+            with open(pathlib.Path() / "path_to_bagel_basis", "r") as f:
                 self.path_to_basis = str(next(f)).replace("\n", "")
-
-        if pathlib.Path("template").is_file():
-            config_from_file = self.load_file((pathlib.Path("template")))
-            self.load_values_from_template(config_from_file)
-        self.load_values_from_template(config)
 
     def formate_basis(self):
         if not self.path_to_basis:
@@ -161,8 +136,8 @@ class bagel_config(config):
             }
         elif self.file == "archive":
             return {
-            "title": "load_ref",
-            "file": "orb"
+                "title": "load_ref",
+                "file": "orb"
             }
 
     def read_orb(self):
@@ -184,7 +159,6 @@ class bagel_config(config):
             "file": "orbitals.molden",
             "orbitals": True
         }
-
 
     def load_value_from_template(self, config: dict):
         if bool(config):
@@ -215,15 +189,15 @@ class bagel_config(config):
                 if "path_to_bagel_basis" in "key":
                     self.basis = str(value).lower()
                 if "alert" in key:
-                    self.alert = [ int(i) for i in value]
+                    self.alert = [int(i) for i in value]
                 if "file" in key:
                     self.file = str(value).lower()
-                    
-    def convert_file_in_dict(self, file_name)-> dict:
+
+    def convert_file_in_dict(self, file_name) -> dict:
         result = dict()
         with open(file_name, "r") as f:
             for line in f:
-                if  line.split("=")[0].replace(" ", "") == "alert":
+                if line.split("=")[0].replace(" ", "") == "alert":
                     result.update({line.split("=")[0]: line.split("=")[-1].replace("\n", "").replace(" ", "").split()})
                 else:
                     result.update({line.split("=")[0]: line.split("=")[-1].replace("\n", "").replace(" ", "")})
@@ -247,7 +221,7 @@ class bagel_config(config):
             "charge": self.charge,
             "nact": self.n_act,
             "fci_algorithm": "knowles",
-            "nclosed": int(self.n_orb - (self.n_el //2) - (self.charge // 2)),
+            "nclosed": int(self.n_orb - (self.n_el // 2) - (self.charge // 2)),
             "nstate": self.n_state
         }
 
@@ -337,7 +311,7 @@ class bagel_config(config):
     def get_geom_from_bagel_input(file):
         data = json.load(open(file, "r"))
         geom = data["bagel"]["molecule"]["geometry"]
-        charges = [ SYMBOLS_TO_CHARGES[i["atom"]] for i in geom]
+        charges = [SYMBOLS_TO_CHARGES[i["atom"]] for i in geom]
         coords = []
         coords.extend([i["xyz"] for i in geom])
         return charges, np.array(coords)
@@ -354,4 +328,3 @@ if __name__ == '__main__':
 
 #    with open("coord.xyz", "w") as f:
 #        save_geom_xyz(ch, coor)
-

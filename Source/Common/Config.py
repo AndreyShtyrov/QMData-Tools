@@ -1,6 +1,8 @@
 import pathlib
 import yaml
 
+from Source.Common.General_Tools import *
+
 
 class config():
     alert: list = None
@@ -16,20 +18,56 @@ class config():
     basis: str = "sto-3g"
     method: str = "hf"
     type_job: str = "energy"
+    _path_to_default_settings: pathlib.Path = pathlib.Path.home()/".default_settings"
+
+    def __init__(self, config=dict()):
+        coord_file = pathlib.Path("coord.xyz")
+        assert coord_file.is_file()
+
+        self._ch, self._co = read_xyz(coord_file)
+
+        n_el = sum(self._ch)
+        self.alert = None
+        self.n_orb = int(n_el // 2)
+        self.mult = int((n_el % 2) + 1)
+        self.n_el = 2
+        self.n_act = 2
+        self.file = None
+        self.n_state = 2
+        self.target = 1
+        self.load = True
+        self.save = False
+        self.path_to_basis = None
+        self.basis = "3-21g"
+        self.method = "casscf"
+        self.type_job = "force"
+
+        if self._path_to_default_settings.is_file():
+            config_from_file = self.convert_file_in_dict(self._path_to_default_settings)
+            self.load_values_from_template(config_from_file)
+
+        if pathlib.Path("template").is_file():
+            config_from_file = self.load_file((pathlib.Path("template")))
+            self.load_values_from_template(config_from_file)
+        self.load_values_from_template(config)
 
     def load_values_from_template(self, config: dict):
-        parent_class = type(self)
         for attr in config.keys():
-            if attr in parent_class.__annotations__.keys():
+            if attr in self._get_all_default_fields().keys():
                 if isinstance(config[attr], list):
                     setattr(self, [ int(i) for i in config[attr]])
                 else:
                     setattr(self, attr, config[attr])
-                    
+
+    def _get_all_default_fields(self) -> dict:
+        parent_class = type(self)
+        all_properties = parent_class.__annotations__
+        all_properties.update(type(self).__bases__[0].__annotations__)
+        return all_properties
+
     def save_values_in_template(self, path: pathlib.Path):
         result = dict()
-        parent_class = type(self)
-        for attr in parent_class.__annotations__.keys():
+        for attr in self._get_all_default_fields().keys():
             result.update({attr: getattr(self, attr)})
         self.save_file(path, result)
         
@@ -40,10 +78,15 @@ class config():
         return file
 
     def save_file(self, path: pathlib.Path, config):
-        path.write_text(yaml.dump(config, indent=2))
+        data = yaml.dump(config, indent=2, default_flow_style=False)
+        path.write_text(data)
 
     def make_table_all_avaliable_classes(self):
        pass
+
+
+    def make_input_body(self):
+        pass
 
 
 if __name__ == '__main__':

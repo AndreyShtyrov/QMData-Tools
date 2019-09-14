@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 from Source.BAGEL import bagel_config
+from Source.ORCA import orca_config
 import argparse
 
 parser = argparse.ArgumentParser(description= " generate input files")
+parser.add_argument("-pgp", type=str, default="BAGEL", help="set program available: BAGEL, ORCA")
 parser.add_argument("-method", type=str, default="casscf", help="set method of calc available : casscf, nevpt2, caspt2, hf")
 parser.add_argument("-basis", type=str, help="set basis of calculations")
 parser.add_argument("-type_job", type=str, default="force", help="set type of calc available: energy, force")
@@ -24,7 +26,9 @@ for atr_name in atributes:
     if hasattr(args, atr_name):
         if getattr(args, atr_name):
             config.update({atr_name: getattr(args, atr_name)})
-
-bg = bagel_config(config)
+if args.pgp == "BAGEL":
+    bg = bagel_config(config)
+elif args.pgp == "ORCA":
+    bg = orca_config(config)
 bg.make_input_body()
 
