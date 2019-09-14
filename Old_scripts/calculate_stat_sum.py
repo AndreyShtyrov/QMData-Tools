@@ -1,9 +1,8 @@
-import pathlib
 import numpy
 import sys
 import math
-from Constants.physics import CI, MASS_CONST
-from utils.molecul_property import read_coord, calcuate_inertion
+from Source.Constants.physics import CI, MASS_CONST
+from Source.Utils.molecul_property import read_coord, calcuate_inertion
 
 def read_freqs(file_name = "freq.txt"):
     result = []

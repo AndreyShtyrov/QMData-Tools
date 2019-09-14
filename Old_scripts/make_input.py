@@ -1,4 +1,4 @@
-from gaussian09 import g09_parser
+from Source.Gaussian09 import g09_parser
 from pathlib import Path
 def make_coords(charges, coords):
     result = []

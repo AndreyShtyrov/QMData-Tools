@@ -1,8 +1,6 @@
 import numpy as np
-from reanet import reanet_parser
-import json
-import pathlib
-from utils.listanalyser import ListAnalyser, get_first_number, ListReader
+from Source.ReaNet import reanet_parser
+from Source.Utils.listanalyser import ListReader
 import math
 def get_geometry_from_bagel(iterable):
     LR = ListReader(iterable)

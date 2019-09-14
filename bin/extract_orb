@@ -1,9 +1,7 @@
 #!/usr/bin/env python
-import os, sys
-from gaussian09 import g09_parser, gaussian_chk_parser
-from openmolcas import open_parser, molden_parser
-from termcolor import colored, cprint
-
+import sys
+from Source.Gaussian09 import g09_parser, gaussian_chk_parser
+from Source.OpenMolcas import open_parser, molden_parser
 
 if sys.argv[1] == "chk":
     text = input(" Write chk file\n")

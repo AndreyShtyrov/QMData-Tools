@@ -1,10 +1,10 @@
-from Constants.physics import *
-from common.QM_parser import ListReader
-from common.utils import *
+from Source.Constants.physics import *
+from Source.Utils.listanalyser import ListReader
+from common.General_Tools import *
+from common.Config import config
 import pathlib
 import numpy as np
 import json
-from types import ModuleType
 
 
 def convert_geom(charges: np.ndarray, coords: np.ndarray):
@@ -77,18 +77,20 @@ def get_section_with_grad_iter(path_to_file):
                 break
 
 
-class bagel_config():
+class bagel_config(config):
     """
     :param
     method : available casscf, caspt2, nevpt2, hf
     charge : charge of system
     mult : multiplecity of system
     """
-    method = "casscf"
-    charge = 0
-    mult = 1
+    method: int = "casscf"
+    charge : int = 0
+    mult : int = 1
+    active : str = "2:2"
 
-    def __init__(self, config: dict):
+
+    def __init__(self, config: dict = dict()):
         coord_file = pathlib.Path("coord.xyz")
         assert coord_file.is_file()
 
@@ -113,14 +115,14 @@ class bagel_config():
         path_to_default_settings = pathlib.Path.home()/".default_bagel_settings"
         if path_to_default_settings.is_file():
             config_from_file = self.convert_file_in_dict(path_to_default_settings)
-            self.load_value_from_template(config_from_file)
+            self.load_values_from_template(config_from_file)
             with open(pathlib.Path/"path_to_bagel_basis", "r") as f:
                 self.path_to_basis = str(next(f)).replace("\n", "")
 
         if pathlib.Path("template").is_file():
-            config_from_file = self.convert_file_in_dict((pathlib.Path("template")))
-            self.load_value_from_template(config_from_file)
-        self.load_value_from_template(config)
+            config_from_file = self.load_file((pathlib.Path("template")))
+            self.load_values_from_template(config_from_file)
+        self.load_values_from_template(config)
 
     def formate_basis(self):
         if not self.path_to_basis:
@@ -183,6 +185,7 @@ class bagel_config():
             "orbitals": True
         }
 
+
     def load_value_from_template(self, config: dict):
         if bool(config):
             for key, value in config.items():
@@ -215,7 +218,7 @@ class bagel_config():
                     self.alert = [ int(i) for i in value]
                 if "file" in key:
                     self.file = str(value).lower()
-
+                    
     def convert_file_in_dict(self, file_name)-> dict:
         result = dict()
         with open(file_name, "r") as f:
@@ -328,6 +331,7 @@ class bagel_config():
             inp_file["bagel"].append(self.save_orb())
             inp_file["bagel"].append(self.save_molden())
         self.save_json(inp_file, "opt.json")
+        self.save_values_in_template(pathlib.Path("pr_template"))
 
     @staticmethod
     def get_geom_from_bagel_input(file):
@@ -344,7 +348,10 @@ class bagel_config():
 
 
 if __name__ == '__main__':
-    ch, coor = bagel_config.get_geom_from_bagel_input("opt.json")
-    with open("coord.xyz", "w") as f:
-        save_geom_xyz(ch, coor)
+    bg = bagel_config()
+    get_hessian([])
+#    ch, coor = bagel_config.get_geom_from_bagel_input("opt.json")
+
+#    with open("coord.xyz", "w") as f:
+#        save_geom_xyz(ch, coor)
 

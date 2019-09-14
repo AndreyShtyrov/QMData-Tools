@@ -1,4 +1,4 @@
-from utils.parser import parser, ListAnalyser
+from Source.Utils.parser import parser
 import os
 class reanet_parser(parser):
 

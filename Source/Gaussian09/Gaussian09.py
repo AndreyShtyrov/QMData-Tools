@@ -1,4 +1,4 @@
-from utils.listanalyser import ListAnalyser, get_first_number, ListReader
+from Source.Utils.listanalyser import ListAnalyser, get_first_number, ListReader
 import numpy as np
 
 

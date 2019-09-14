@@ -1,1 +1,0 @@
-from .reanet_parser import reanet_parser

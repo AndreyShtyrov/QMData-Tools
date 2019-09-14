@@ -1,7 +1,5 @@
-import pathlib
-import numpy as np
-from utils.molecul_property import read_coord
-from Old_scripts.calc_hessian_from_bagel_freq import *
+from Source.Utils.molecul_property import read_coord
+
 with open("file.txt", "r") as f:
     _, grad = get_geometry_from_bagel(get_section_with_grad_iter(f))
 

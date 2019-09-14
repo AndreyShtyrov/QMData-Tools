@@ -1,8 +1,7 @@
-from utils.parser import parser, get_dir_tree
-from openmolcas.molden import geom_file_iters
+from Source.Utils.parser import parser
+from Source.OpenMolcas import geom_file_iters
 import pathlib
 import shutil
-import numpy as np
 
 
 class open_parser(parser):

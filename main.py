@@ -1,6 +1,5 @@
-from gaussian09.gaussian09 import g09_parser
+from Source.Gaussian09.Gaussian09 import g09_parser
 import sys, os
-from termcolor import colored, cprint
 
 if __name__ == '__main__':
     calc = g09_parser(sys.argv[1])

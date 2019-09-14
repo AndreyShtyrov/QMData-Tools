@@ -1,5 +1,5 @@
-from gaussian09.gaussian09 import g09_parser
-from utils.listanalyser import ListAnalyser, get_first_number, ListReader
+from Source.Gaussian09.Gaussian09 import g09_parser
+from Source.Utils.listanalyser import ListReader
 
 
 class parser(object):

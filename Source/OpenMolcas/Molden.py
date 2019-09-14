@@ -1,6 +1,6 @@
-from utils.parser import parser, get_dir_tree
+from Source.Utils.parser import parser, get_dir_tree
 import pathlib
-import numpy as np
+
 Name_Space_molden_read_function = []
 
 class molden_parser(parser):

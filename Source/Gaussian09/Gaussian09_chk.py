@@ -1,5 +1,4 @@
-from utils.parser import parser
-import numpy as np
+from Source.Utils.parser import parser
 
 
 class gaussian_chk_parser(parser):

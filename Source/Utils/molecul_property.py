@@ -1,9 +1,6 @@
-import pathlib
 import numpy as np
 import numpy.linalg as lg
-import scipy as sl
-import math
-from Constants.physics import CI, MASS_CONST
+from Source.Constants.physics import CI, MASS_CONST
 
 def read_coord():
     with open("coord.xyz", "r") as coord_file:

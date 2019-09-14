@@ -1,7 +1,7 @@
 import numpy as np
 import numpy.linalg as lg
 import math
-from Constants.physics import MASS_CONST
+from Source.Constants.physics import MASS_CONST
 
 
 def separete_basis(first_part):

@@ -1,10 +1,7 @@
-import pathlib
 import numpy as np
 import numpy.linalg as lg
-import scipy as sl
-from utils.listanalyser import ListAnalyser
-from utils.linalg import *
-from Constants.physics import MASS_CONST, CI
+from Source.Utils import *
+from Source.Constants.physics import MASS_CONST
 
 convector_const = 1.889725989
 MAU_CONST = 9.109389e-31

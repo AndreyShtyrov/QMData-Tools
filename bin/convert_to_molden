@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
-import os, sys
-from reanet import reanet_parser
-from openmolcas import molden_parser
+import sys
+from Source.ReaNet import reanet_parser
+from Source.OpenMolcas import molden_parser
 file_out = "opt.molden"
 if len(sys.argv) == 2:
     file_name = sys.argv[1]

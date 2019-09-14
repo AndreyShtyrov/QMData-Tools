@@ -4,11 +4,10 @@ import setuptools
 
 setuptools.setup(
     name='QMData-Tools',
-    version='v0.5.12.00015',
+    version='v0.5.12.00025',
     author='Andronet',
     author_email='',
-    packages=['bin', 'utils', 'gaussian09', 'reanet', 'openmolcas', 'Constants', 'orca', 'Old_scripts', 'BAGEL',
-              'common'],
+    packages = setuptools.find_packages(),
     url="https://github.com/AndreyShtyrov/QMData-Tools.git",
     scripts=['bin/check_optimization', 'bin/generate_input', 'bin/Convert_gauss_to_molcas', 'bin/extract_orb', 'bin/lqdel',
              'bin/reshape_hessian', 'bin/show_avaliable_ants', 'bin/convert_to_molden', 'bin/get_optimized_geom',
