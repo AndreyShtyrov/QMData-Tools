@@ -6,7 +6,6 @@
       <change beforePath="$PROJECT_DIR$/Source/BAGEL/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BAGEL/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Common/Config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Common/Config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ORCA/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ORCA/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/generate_input" beforeDir="false" afterPath="$PROJECT_DIR$/bin/generate_input" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,7 +44,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -145,14 +144,10 @@
       <workItem from="1568372135660" duration="1795000" />
       <workItem from="1568446814595" duration="6198000" />
       <workItem from="1568474405835" duration="2367000" />
-      <workItem from="1568476815685" duration="3985000" />
-    </task>
-    <task id="LOCAL-00002" summary="Setup">
-      <created>1561733640903</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1561733640903</updated>
+      <workItem from="1568476815685" duration="4099000" />
+      <workItem from="1568535868355" duration="217000" />
+      <workItem from="1568538476913" duration="566000" />
+      <workItem from="1568630814073" duration="2603000" />
     </task>
     <task id="LOCAL-00003" summary="Setup">
       <created>1561735786311</created>
@@ -490,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568449787522</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Make ORCA input generator">
+      <created>1568480903351</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1568480903353</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,7 +531,8 @@
     <MESSAGE value="add geom convertor" />
     <MESSAGE value="upgrate bagel input creater" />
     <MESSAGE value="Make some rafactors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make some rafactors" />
+    <MESSAGE value="Make ORCA input generator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make ORCA input generator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -581,48 +584,53 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>218</line>
+          <line>192</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>282</line>
+          <line>256</line>
           <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>274</line>
+          <line>248</line>
           <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>324</line>
+          <line>325</line>
           <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>325</line>
+          <line>326</line>
           <option name="timeStamp" value="96" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>69</line>
+          <line>70</line>
           <option name="timeStamp" value="97" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/Common/Config.py</url>
-          <line>89</line>
+          <line>102</line>
           <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/bin/generate_input</url>
-          <line>28</line>
+          <line>32</line>
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/ORCA/__init__.py</url>
-          <line>134</line>
+          <line>138</line>
           <option name="timeStamp" value="107" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Source/ORCA/__init__.py</url>
+          <line>176</line>
+          <option name="timeStamp" value="108" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

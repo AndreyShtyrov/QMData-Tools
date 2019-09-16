@@ -20,6 +20,10 @@ class orca_config(config):
 
     def __init__(self, config: dict = dict()):
         super().__init__(config)
+        if pathlib.Path("pr_orb.gbw").is_file() or pathlib.Path("pr_orb.mrci.nat").is_file():
+            self.load = True
+        else:
+            self.load = False
         self._coords = save_geom_xyz(self._ch, self._co)
 
     def generate_root_line(self):
@@ -190,3 +194,5 @@ class orca_config(config):
 
         with open("opt.inp", "w") as f:
             f.writelines(result)
+        self.save_values_in_template(pathlib.Path("pr_template"))
+        self.show_job_specification()

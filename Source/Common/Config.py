@@ -51,6 +51,19 @@ class config():
             self.load_values_from_template(config_from_file)
         self.load_values_from_template(config)
 
+    def show_job_specification(self):
+        print("+++++++++++++++++++++++++++++++++++++")
+        print("+ method : {:>23} +".format(self.method))
+        if hasattr(self, "charge"):
+            print("+ charge : {:>23} +".format(self.charge))
+        print("+ basis : {:>24} +".format(self.basis))
+        if hasattr(self, "active"):
+            print("+ active : {:>23} +".format(self.active))
+        print("+ mult : {:>25} +".format(self.mult))
+        print("+ n_state : {:>25} +".format(self.n_state))
+        print("+++++++++++++++++++++++++++++++++++++")
+
+
     def load_values_from_template(self, config: dict):
         for attr in config.keys():
             if attr in self._get_all_default_fields().keys():

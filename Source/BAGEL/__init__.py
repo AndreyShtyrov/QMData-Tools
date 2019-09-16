@@ -262,6 +262,33 @@ class bagel_config(config):
             "nopen": int(self.mult - 1)
         }
 
+    def make_opt_mosp(self, method):
+        if self.method == "opt_ts":
+            return {
+                "title": "optimize",
+                "opttype": "transition",
+                "target": self.target,
+                "method": method,
+                "hess_approx": False
+            }
+        elif self.method == "minimal":
+            return {
+                "title": "optimize",
+                "opttype": "energy",
+                "target": self.target,
+                "method": method
+            }
+        elif self.method == "conical":
+            return {
+                "title": "conical",
+                "opttype": "energy",
+                "target": self.target,
+                "target2": self.target + 1,
+                "method": method
+            }
+        print("unknowen type_job specified")
+        exit(2)
+
     def make_grads_mosp(self, method):
         return {
             "title": "force",
@@ -306,6 +333,7 @@ class bagel_config(config):
             inp_file["bagel"].append(self.save_molden())
         self.save_json(inp_file, "opt.json")
         self.save_values_in_template(pathlib.Path("pr_template"))
+        self.show_job_specification()
 
     @staticmethod
     def get_geom_from_bagel_input(file):
