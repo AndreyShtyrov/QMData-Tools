@@ -52,7 +52,7 @@ class config():
         self.load_values_from_template(config)
 
     def show_job_specification(self):
-        print("+++++++++++++++++++++++++++++++++++++")
+        print("++++++++++++++++++++++++++++++++++++")
         print("+ method : {:>23} +".format(self.method))
         if hasattr(self, "charge"):
             print("+ charge : {:>23} +".format(self.charge))
@@ -60,8 +60,8 @@ class config():
         if hasattr(self, "active"):
             print("+ active : {:>23} +".format(self.active))
         print("+ mult : {:>25} +".format(self.mult))
-        print("+ n_state : {:>25} +".format(self.n_state))
-        print("+++++++++++++++++++++++++++++++++++++")
+        print("+ n_state : {:>22} +".format(self.n_state))
+        print("++++++++++++++++++++++++++++++++++++")
 
 
     def load_values_from_template(self, config: dict):
