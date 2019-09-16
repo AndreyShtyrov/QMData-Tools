@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BAGEL/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BAGEL/__init__.py" afterDir="false" />
-    </list>
+    <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +99,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bin/generate_input" />
-      <option name="PARAMETERS" value="-pgp ORCA -active 6:6 -charge 2 -method cepa -type_job grads" />
+      <option name="PARAMETERS" value="-pgp BAGEL -method casscf -active 2:2 -type_job opt_ts -target 1" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -144,21 +141,7 @@
       <workItem from="1568476815685" duration="4099000" />
       <workItem from="1568535868355" duration="217000" />
       <workItem from="1568538476913" duration="566000" />
-      <workItem from="1568630814073" duration="3949000" />
-    </task>
-    <task id="LOCAL-00006" summary="Refactor g09_parser code">
-      <created>1561812171277</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1561812171277</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Refactor g09_parser code">
-      <created>1561815687070</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1561815687070</updated>
+      <workItem from="1568630814073" duration="4137000" />
     </task>
     <task id="LOCAL-00008" summary="Refactor g09_parser code">
       <created>1561816583480</created>
@@ -489,7 +472,21 @@
       <option name="project" value="LOCAL" />
       <updated>1568634407539</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Make ORCA input generator">
+      <created>1568635240224</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1568635240225</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Make ORCA input generator">
+      <created>1568635357300</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1568635357300</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -640,6 +637,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/QMData_Tools$gaussian09.coverage" NAME="gaussian09 Coverage Results" MODIFIED="1568480835818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/QMData_Tools$gaussian09.coverage" NAME="gaussian09 Coverage Results" MODIFIED="1568635436332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
 </project>

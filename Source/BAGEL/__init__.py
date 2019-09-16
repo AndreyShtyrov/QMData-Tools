@@ -329,11 +329,9 @@ class bagel_config(config):
         elif self.type_job == "energy":
             pass
         else:
-            self.make_opt_mosp(calc)
+            calc = self.make_opt_mosp(calc)
 
         inp_file["bagel"].append(calc)
-
-
 
 
         if self.save is True:

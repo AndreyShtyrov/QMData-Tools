@@ -4,7 +4,7 @@ import setuptools
 
 setuptools.setup(
     name='QMData-Tools',
-    version='v0.5.12.00030',
+    version='v0.5.12.00031',
     author='Andronet',
     author_email='',
     packages = setuptools.find_packages(),
