@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Source/Common/Config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Common/Config.py" afterDir="false" />
-    </list>
+    <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,14 +141,7 @@
       <workItem from="1568476815685" duration="4099000" />
       <workItem from="1568535868355" duration="217000" />
       <workItem from="1568538476913" duration="566000" />
-      <workItem from="1568630814073" duration="2853000" />
-    </task>
-    <task id="LOCAL-00004" summary="Setup">
-      <created>1561736193160</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1561736193160</updated>
+      <workItem from="1568630814073" duration="3100000" />
     </task>
     <task id="LOCAL-00005" summary="Refactor g09_parser code">
       <created>1561810303208</created>
@@ -488,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568633897434</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Make ORCA input generator">
+      <created>1568634373219</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1568634373219</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
