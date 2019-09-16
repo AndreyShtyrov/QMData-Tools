@@ -263,7 +263,7 @@ class bagel_config(config):
         }
 
     def make_opt_mosp(self, method):
-        if self.method == "opt_ts":
+        if self.type_job == "opt_ts":
             return {
                 "title": "optimize",
                 "opttype": "transition",
@@ -271,14 +271,14 @@ class bagel_config(config):
                 "method": method,
                 "hess_approx": False
             }
-        elif self.method == "minimal":
+        elif self.type_job == "minimal":
             return {
                 "title": "optimize",
                 "opttype": "energy",
                 "target": self.target,
                 "method": method
             }
-        elif self.method == "conical":
+        elif self.type_job == "conical":
             return {
                 "title": "conical",
                 "opttype": "energy",
@@ -329,7 +329,7 @@ class bagel_config(config):
         elif self.type_job == "energy":
             pass
         else:
-            self.make_opt_mosp(self.method)
+            self.make_opt_mosp(calc)
 
         inp_file["bagel"].append(calc)
 
