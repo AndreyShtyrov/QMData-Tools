@@ -326,7 +326,15 @@ class bagel_config(config):
 
         if self.type_job == "force":
             calc = self.make_grads_mosp(calc)
+        elif self.type_job == "energy":
+            pass
+        else:
+            self.make_opt_mosp(self.method)
+
         inp_file["bagel"].append(calc)
+
+
+
 
         if self.save is True:
             inp_file["bagel"].append(self.save_orb())
