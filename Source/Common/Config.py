@@ -68,6 +68,10 @@ class config():
     def load_values_from_template(self, config: dict):
         for attr in config.keys():
             if attr in self._get_all_default_fields().keys():
+                if attr == "active":
+                    setattr(self, attr, config[attr])
+                    self.n_el = int(config[attr].split(":")[0])
+                    self.n_act = int(config[attr].split(":")[1])
                 if isinstance(config[attr], list):
                     setattr(self, [ int(i) for i in config[attr]])
                 else:

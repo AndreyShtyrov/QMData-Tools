@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BAGEL/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BAGEL/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Common/Config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Common/Config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ORCA/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ORCA/__init__.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -148,14 +148,7 @@
       <workItem from="1568630814073" duration="6068000" />
       <workItem from="1568708506481" duration="269000" />
       <workItem from="1568709360689" duration="297000" />
-      <workItem from="1568715455634" duration="790000" />
-    </task>
-    <task id="LOCAL-00010" summary="Refactor g09_parser code">
-      <created>1563464821573</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1563464821573</updated>
+      <workItem from="1568715455634" duration="5676000" />
     </task>
     <task id="LOCAL-00011" summary="Refactor g09_parser code">
       <created>1565712806938</created>
@@ -493,7 +486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568708617536</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Make ORCA input generator">
+      <created>1568716254750</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1568716254750</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -615,7 +615,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/Common/Config.py</url>
-          <line>106</line>
+          <line>110</line>
           <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -625,17 +625,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/ORCA/__init__.py</url>
-          <line>138</line>
+          <line>146</line>
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/ORCA/__init__.py</url>
-          <line>176</line>
+          <line>184</line>
           <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/Common/Config.py</url>
-          <line>75</line>
+          <line>79</line>
           <option name="timeStamp" value="109" />
         </line-breakpoint>
       </breakpoints>

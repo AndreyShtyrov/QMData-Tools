@@ -118,9 +118,14 @@ class orca_config(config):
         result.append(line)
         return result
 
-    def make_plots(self):
-        def line_plot(number):
-            return "MO(\"O-" + str(number) + ".cube\"," + str(number) + ",0);\n"
+    def make_plots(self) -> str:
+        def line_plot(number, active: bool):
+            if number > -1:
+                if active:
+                    line = "MO(\"AO-" + str(number) + ".cube\"," + str(number) + ",0);\n"
+                else:
+                    line = "MO(\"O-" + str(number) + ".cube\"," + str(number) + ",0);\n"
+                return line
         result = []
         line = "%plots\n"
         result.append(line)
@@ -130,7 +135,10 @@ class orca_config(config):
         end_orb = start_orb + 8 + int(self.active.split(":")[1])
         for i in range(start_orb, end_orb + 1, 1):
             if i >= 0:
-                result.append(line_plot(i))
+                if self.n_orb - (self.n_el // 2) <= i <=  self.n_act + int(self.active.split(":")[1]) - (self.n_el // 2):
+                    result.append(line_plot(i, True))
+                else:
+                    result.append(line_plot(i, False))
         line = "end\n"
         result.append(line)
         return result
