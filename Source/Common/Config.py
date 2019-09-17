@@ -82,7 +82,10 @@ class config():
     def save_values_in_template(self, path: pathlib.Path):
         result = dict()
         for attr in self._get_all_default_fields().keys():
-            result.update({attr: getattr(self, attr)})
+            if type(getattr(self, attr)) is pathlib.Path:
+                result.update({attr: str(getattr(self, attr))})
+            else:
+                result.update({attr: getattr(self, attr)})
         self.save_file(path, result)
         
 

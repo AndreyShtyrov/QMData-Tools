@@ -268,7 +268,7 @@ class bagel_config(config):
                 "title": "optimize",
                 "opttype": "transition",
                 "target": self.target,
-                "method": method,
+                "method": [method],
                 "hess_approx": False
             }
         elif self.type_job == "minimal":
@@ -276,7 +276,7 @@ class bagel_config(config):
                 "title": "optimize",
                 "opttype": "energy",
                 "target": self.target,
-                "method": method
+                "method": [method]
             }
         elif self.type_job == "conical":
             return {
@@ -284,7 +284,7 @@ class bagel_config(config):
                 "opttype": "energy",
                 "target": self.target,
                 "target2": self.target + 1,
-                "method": method
+                "method": [method]
             }
         print("unknowen type_job specified")
         exit(2)
