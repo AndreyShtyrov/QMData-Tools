@@ -88,7 +88,7 @@ class bagel_config(config):
     method: int = "casscf"
     charge: int = 0
     mult: int = 1
-    active: str = "2:2"
+    active: str = "0:0"
     _path_to_default_settings: pathlib.Path = pathlib.Path.home() / ".default_bagel_settings"
 
     def __init__(self, config: dict = dict()):

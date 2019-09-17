@@ -52,6 +52,7 @@ class config():
         self.load_values_from_template(config)
 
     def show_job_specification(self):
+        print("")
         print("++++++++++++++++++++++++++++++++++++")
         print("+ method : {:>23} +".format(self.method))
         if hasattr(self, "charge"):
@@ -104,6 +105,4 @@ class config():
 
 if __name__ == '__main__':
     conf = config()
-
-
 
