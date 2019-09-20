@@ -205,18 +205,7 @@ class bagel_config(config):
         return result
 
     def make_casscf_molsp(self):
-        if self.alert:
-            self.save = True
-            return {
-                "title": "casscf",
-                "charge": self.charge,
-                "nact": self.n_act,
-                "active": self.alert,
-                "fci_algorithm": "knowles",
-                "nclosed": int(self.n_orb - (self.n_el // 2) - (self.charge // 2)),
-                "nstate": self.n_state
-            }
-        return {
+        result = {
             "title": "casscf",
             "charge": self.charge,
             "nact": self.n_act,
@@ -224,6 +213,12 @@ class bagel_config(config):
             "nclosed": int(self.n_orb - (self.n_el // 2) - (self.charge // 2)),
             "nstate": self.n_state
         }
+        if self.alert:
+            self.save = True
+            result.update({"active": self.alert})
+        if self.mult is not 1:
+            result.update({"nspin": int((self.mult - 1))})
+        return result
 
     def make_caspt_molsp(self):
         return {
