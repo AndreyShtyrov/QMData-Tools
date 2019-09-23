@@ -300,6 +300,8 @@ class bagel_config(config):
             inp_file["bagel"].append(self.make_make_molsp())
         if pathlib.Path("orb.archive").is_file():
             inp_file["bagel"].append(self.read_orb())
+        else:
+            inp_file["bagel"].append(self.make_scf())
 
         calc = None
         if self.method == "casscf":

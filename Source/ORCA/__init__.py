@@ -135,7 +135,7 @@ class orca_config(config):
         end_orb = start_orb + 8 + int(self.active.split(":")[1])
         for i in range(start_orb, end_orb + 1, 1):
             if i >= 0:
-                if self.n_orb - (self.n_el // 2) <= i <=  self.n_act + int(self.active.split(":")[1]) - (self.n_el // 2):
+                if self.n_orb - (self.n_el // 2) <= i <=  self.n_orb + int(self.active.split(":")[1]) - (self.n_el // 2):
                     result.append(line_plot(i, True))
                 else:
                     result.append(line_plot(i, False))
