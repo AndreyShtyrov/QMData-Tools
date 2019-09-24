@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Old_scripts/get_orca_time.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/analyse_outfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ORCA/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ORCA/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +41,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/WORK_SPACE/OneDrive/00-Projects/03-Tempory_Directory/20-Complex/Spectrum/09-min-FC/02-CASSCF/05-1010" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -155,14 +152,8 @@
       <workItem from="1568975119549" duration="2496000" />
       <workItem from="1568978295300" duration="170000" />
       <workItem from="1568979925838" duration="4992000" />
-      <workItem from="1569233195560" duration="2219000" />
-    </task>
-    <task id="LOCAL-00014" summary="Refactor g09_parser code">
-      <created>1566478075017</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1566478075017</updated>
+      <workItem from="1569233195560" duration="6093000" />
+      <workItem from="1569253215745" duration="897000" />
     </task>
     <task id="LOCAL-00015" summary="Refactor g09_parser code">
       <created>1566479867822</created>
@@ -500,7 +491,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568980695837</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Make ORCA input generator">
+      <created>1569240652496</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1569240652498</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -607,12 +605,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>349</line>
+          <line>351</line>
           <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>350</line>
+          <line>352</line>
           <option name="timeStamp" value="96" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

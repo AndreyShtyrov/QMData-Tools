@@ -45,10 +45,10 @@ class orca_config(config):
         result = ["%scf  maxiter=999\n"]
         if len(self._ch > 50):
             mem = 7500
-            diskmem = 24000
+            diskmem = 34000
         else:
-            mem = 2500
-            diskmem = 12000
+            mem = 5500
+            diskmem = 22000
         line = "maxintmem=" + str(999) + "\n"
         result.append(self.line_with_tab(line))
         line = "maxintmem=" + str(mem) + "\n"
@@ -135,7 +135,7 @@ class orca_config(config):
         end_orb = start_orb + 8 + int(self.active.split(":")[1])
         for i in range(start_orb, end_orb + 1, 1):
             if i >= 0:
-                if self.n_orb - (self.n_el // 2) <= i <=  self.n_orb + int(self.active.split(":")[1]) - (self.n_el // 2):
+                if start_orb + 4 <= i < start_orb + 4 + int(self.active.split(":")[1]):
                     result.append(line_plot(i, True))
                 else:
                     result.append(line_plot(i, False))
