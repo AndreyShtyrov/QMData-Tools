@@ -7,7 +7,7 @@ def get_spectrum(iterable, n_states):
     Es = []
     LR = ListReader(iterable)
     for i in range(n_states):
-        line = LR.go_by_keys("NEVPT2 state {0} total energy:".format(i))
+        line = LR.go_by_keys("NEVPT2 state {0} total energy:".format(i), "Total Energy (E0+dE)")
         Es.append(float(line.split()[-1]))
     return Es
 

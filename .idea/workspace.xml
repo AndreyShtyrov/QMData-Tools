@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Old_scripts/get_spectrum.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Common/Config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Common/Config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ORCA/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ORCA/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Old_scripts/get_spectrum.py" beforeDir="false" afterPath="$PROJECT_DIR$/Old_scripts/get_spectrum.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -157,14 +155,7 @@
       <workItem from="1569233195560" duration="6093000" />
       <workItem from="1569253215745" duration="897000" />
       <workItem from="1569335665156" duration="1467000" />
-      <workItem from="1569406440546" duration="7130000" />
-    </task>
-    <task id="LOCAL-00016" summary="Refactor g09_parser code">
-      <created>1566481792797</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1566481792797</updated>
+      <workItem from="1569406440546" duration="8872000" />
     </task>
     <task id="LOCAL-00017" summary="Refactor g09_parser code">
       <created>1566909696841</created>
@@ -502,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569335793392</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Make ORCA input generator">
+      <created>1569415611069</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1569415611069</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
