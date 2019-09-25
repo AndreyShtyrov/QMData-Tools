@@ -156,10 +156,9 @@ class orca_config(config):
             result.append(line)
         result.append("\n")
         if len(self._ch) > 60:
-            result.append("%MaxCore 25000\n")
+            result.append("%MaxCore 35000\n")
         else:
-            result.append("%MaxCore 12000\n")
-
+            result.append("%MaxCore 22000\n")
         result.append("\n")
         result.append("%pal\n")
         if self.method == "cepa":
@@ -170,10 +169,8 @@ class orca_config(config):
         result.append("\n")
         return result
 
-
     def make_alert(self):
         pass
-
 
     def make_input_body(self):
         result = []

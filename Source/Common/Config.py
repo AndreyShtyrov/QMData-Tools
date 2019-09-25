@@ -73,7 +73,7 @@ class config():
                     self.n_el = int(config[attr].split(":")[0])
                     self.n_act = int(config[attr].split(":")[1])
                 if isinstance(config[attr], list):
-                    setattr(self, [ int(i) for i in config[attr]])
+                    setattr(self, attr, [ int(i) for i in config[attr]])
                 else:
                     setattr(self, attr, config[attr])
 

@@ -210,7 +210,7 @@ class bagel_config(config):
             "charge": self.charge,
             "nact": self.n_act,
             "thresh": 1.0e-8,
-            "conv_ignore": False,
+            "conv_ignore": True,
             "maxiter": 50,
             "fci_algorithm": "knowles",
             "nclosed": int(self.n_orb - (self.n_el // 2) - (self.charge // 2)),
