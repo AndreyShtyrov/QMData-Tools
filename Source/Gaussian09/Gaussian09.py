@@ -18,7 +18,10 @@ class g09_parser(ListAnalyser):
                       "pop_end": {"Alpha  occ. eigenvalues --", "Alpha virt. eigenvalues --"},
                       "opt_cycl": {"start": {"Berny optimization."},
                                    "pre_key": {"Initialization pass."},
-                                   "end": {"GradGradGradGradGradGradGrad"}}
+                                   "end": {"GradGradGradGradGradGradGrad"}},
+                      "freq": {"start": {"Full mass-weighted force constant matrix:"},
+                               "end": {"Full mass-weighted force constant matrix:"}},
+                      "thermochemistry": {"start": "Zero-point correction"}
                       }
 
     def __init__(self, lines):
@@ -30,6 +33,16 @@ class g09_parser(ListAnalyser):
         self.emperic = False
         self.casscf = False
         self.define_methods(lines)
+
+    def is_properties_calculated(self, lines, properties_name):
+        LR = ListReader(lines)
+        if properties_name is "therm":
+            return bool(LR.go_by_keys(self.stop_keys["thermochemistry"]["start"]))
+        elif properties_name is "energy":
+            return bool(LR.go_by_keys("E(PMP2)=", "E2(B2PLYPD)", "SCF Done:", "Energy="))
+        elif properties_name is "force":
+            return bool(LR.go_by_keys(self.stop_keys["force"]))
+
 
     @classmethod
     def get_stop_key(cls, name):
