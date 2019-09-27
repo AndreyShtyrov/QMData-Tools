@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/Utils/io.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Gaussian09/Gaussian09.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Gaussian09/Gaussian09.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Common/Config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Common/Config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Utils/io.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Utils/io.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +42,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../python_chemistry" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -157,14 +157,8 @@
       <workItem from="1569253215745" duration="897000" />
       <workItem from="1569335665156" duration="1467000" />
       <workItem from="1569406440546" duration="12967000" />
-      <workItem from="1569488170869" duration="2167000" />
-    </task>
-    <task id="LOCAL-00019" summary="add geom convertor">
-      <created>1567078917790</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1567078917790</updated>
+      <workItem from="1569488170869" duration="2199000" />
+      <workItem from="1569573461549" duration="7305000" />
     </task>
     <task id="LOCAL-00020" summary="add geom convertor">
       <created>1567249911133</created>
@@ -502,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569417897556</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Make ORCA input generator">
+      <created>1569514312268</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1569514312268</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -676,6 +677,16 @@
           <url>file://$PROJECT_DIR$/Source/Gaussian09/Gaussian09.py</url>
           <line>6</line>
           <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Source/Gaussian09/Gaussian09.py</url>
+          <line>368</line>
+          <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Source/Common/Config.py</url>
+          <line>50</line>
+          <option name="timeStamp" value="126" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

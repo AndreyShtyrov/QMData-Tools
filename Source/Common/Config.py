@@ -1,5 +1,6 @@
 import pathlib
 import yaml
+from Source.Utils.io import search_file_with_template_in_name
 
 from Source.Common.General_Tools import *
 
@@ -41,6 +42,11 @@ class config():
         self.basis = "3-21g"
         self.method = "casscf"
         self.type_job = "force"
+
+        self.project_settings = search_file_with_template_in_name(pathlib.Path.cwd().parent, "project_settings")
+        if bool(self.project_settings):
+            config_from_file = self.load_file(self.project_settings)
+            self.load_values_from_template(config_from_file)
 
         if self._path_to_default_settings.is_file():
             config_from_file = self.convert_file_in_dict(self._path_to_default_settings)
@@ -91,7 +97,7 @@ class config():
             else:
                 result.update({attr: getattr(self, attr)})
         self.save_file(path, result)
-        
+
 
     def load_file(self, path):
         with open(path, "r") as steam:
