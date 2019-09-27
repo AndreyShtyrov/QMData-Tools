@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Common/Config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Common/Config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Utils/io.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Utils/io.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -158,21 +156,7 @@
       <workItem from="1569335665156" duration="1467000" />
       <workItem from="1569406440546" duration="12967000" />
       <workItem from="1569488170869" duration="2199000" />
-      <workItem from="1569573461549" duration="7305000" />
-    </task>
-    <task id="LOCAL-00020" summary="add geom convertor">
-      <created>1567249911133</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1567249911133</updated>
-    </task>
-    <task id="LOCAL-00021" summary="add geom convertor">
-      <created>1567249929757</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1567249929757</updated>
+      <workItem from="1569573461549" duration="8140000" />
     </task>
     <task id="LOCAL-00022" summary="add geom convertor">
       <created>1567250204820</created>
@@ -503,7 +487,21 @@
       <option name="project" value="LOCAL" />
       <updated>1569514312268</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="add project settings loader&#10;add first part for clusters sync">
+      <created>1569591532003</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1569591532003</updated>
+    </task>
+    <task id="LOCAL-00070" summary="add project settings loader&#10;add first part for clusters sync">
+      <created>1569591556023</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1569591556023</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -543,7 +541,8 @@
     <MESSAGE value="upgrate bagel input creater" />
     <MESSAGE value="Make some rafactors" />
     <MESSAGE value="Make ORCA input generator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make ORCA input generator" />
+    <MESSAGE value="add project settings loader&#10;add first part for clusters sync" />
+    <option name="LAST_COMMIT_MESSAGE" value="add project settings loader&#10;add first part for clusters sync" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -687,6 +686,11 @@
           <url>file://$PROJECT_DIR$/Source/Common/Config.py</url>
           <line>50</line>
           <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Source/Utils/io.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="127" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

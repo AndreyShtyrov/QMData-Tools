@@ -1,0 +1,5 @@
+#!/usr/bin/env python
+from Source.Common.Config import config
+
+d_c = config()
+d_c.show_job_specification()
