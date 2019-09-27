@@ -80,6 +80,18 @@ class orca_config(config):
         result.append(line)
         return result
 
+    def make_rotate(self):
+        result = ["%scf\n"]
+        iter_orbs = super().make_rotate()
+        orbs = next(iter_orbs)
+        line = "rotate{"+ str(orbs[0]) + "," + str(orbs[1]) + ",90}\n"
+        result.append(line)
+        for orbs in iter_orbs:
+            result.append("{"+ str(orbs[0]) + "," + str(orbs[1]) + ",90}\n")
+        result.append("end end\n")
+        result.append("\n")
+        return result
+
     def make_cepa(self):
         result = []
         line = "%mrci citype cepa2\n"
@@ -120,7 +132,7 @@ class orca_config(config):
 
     def make_plots(self) -> str:
         def line_plot(number, active: bool):
-            if number > -1:
+            if number > 0:
                 if active:
                     line = "MO(\"AO-" + str(number) + ".cube\"," + str(number) + ",0);\n"
                 else:
@@ -134,7 +146,7 @@ class orca_config(config):
         start_orb = int(self.n_orb - (self.n_el // 2) - (self.charge // 2)) - 4
         end_orb = start_orb + 8 + int(self.active.split(":")[1])
         for i in range(start_orb, end_orb + 1, 1):
-            if i >= 0:
+            if i > 0:
                 if start_orb + 4 <= i < start_orb + 4 + int(self.active.split(":")[1]):
                     result.append(line_plot(i, True))
                 else:
@@ -169,8 +181,6 @@ class orca_config(config):
         result.append("\n")
         return result
 
-    def make_alert(self):
-        pass
 
     def make_input_body(self):
         result = []
@@ -178,7 +188,8 @@ class orca_config(config):
         result.append("\n")
 
         result.extend(self.make_add_sp())
-
+        if bool(self.active):
+            result.extend(self.make_rotate())
         if self.method == "casscf":
             result.extend(self.make_casscf())
         elif self.method == "nevpt2":

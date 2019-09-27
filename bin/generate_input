@@ -3,6 +3,15 @@ from Source.BAGEL import bagel_config
 from Source.ORCA import orca_config
 import argparse
 
+def get_tuple_list(string: str)->list:
+    spl_str = string.split()
+    try:
+        for spl in spl_str:
+            result = tuple([int(spl.split(",")[0]), int(spl.split(",")[1])])
+    except IndexError:
+        print("you need to put at least two value in tuple")
+        exit(2)
+    return result
 parser = argparse.ArgumentParser(description= " generate input files")
 parser.add_argument("-pgp", type=str, default="BAGEL", help="set program available: BAGEL, ORCA")
 parser.add_argument("-method", type=str, default="casscf", help="set method of calc available : casscf, nevpt2, caspt2, hf, cepa")
@@ -14,8 +23,8 @@ parser.add_argument("-mult", type=int, help="set custom mult")
 parser.add_argument("-save", type=bool, help="set it is should save orbitals in the end of calc")
 parser.add_argument("-n_state", type=int, help="set number of states in SA or MS calc")
 parser.add_argument("-target", type=int, help="set root of interest, numeration start from 0")
-parser.add_argument("-alert", metavar='N', type=int, nargs='+', help="orbitals in acitve space"
-                                                                     ", in such format : 1 2 3")
+parser.add_argument("-alert", type=get_tuple_list, nargs='+', help="orbitals in acitve space that would be rotate"
+                                                                     ", in such format : 1,2 3,4")
 parser.add_argument("-file", type=str, help="file from that would start program: molden, archive")
 
 
@@ -24,7 +33,7 @@ config = dict()
 args = parser.parse_args()
 for atr_name in atributes:
     if hasattr(args, atr_name):
-        if getattr(args, atr_name):
+        if getattr(args, atr_name) or getattr(args, atr_name) == 0:
             config.update({atr_name: getattr(args, atr_name)})
 if args.pgp == "BAGEL":
     bg = bagel_config(config)

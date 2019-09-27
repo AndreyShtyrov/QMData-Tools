@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="">
+    <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="add project settings loader&#10;add first part for clusters sync">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/BAGEL/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BAGEL/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Common/Config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Common/Config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ORCA/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ORCA/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/generate_input" beforeDir="false" afterPath="$PROJECT_DIR$/bin/generate_input" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,7 +45,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../python_chemistry" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -95,13 +100,13 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="E:/WORK_SPACE/OneDrive/00-Projects/03-Tempory_Directory/20-Complex/Spectrum/10-interm-1/02-CASSCF/15-1010/02-FC" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Old_scripts/get_spectrum.py" />
-      <option name="PARAMETERS" value="5 -c_state 1" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bin/generate_input" />
+      <option name="PARAMETERS" value="-pgp ORCA -alert 1,5 2,4 -charge 0" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -156,21 +161,9 @@
       <workItem from="1569335665156" duration="1467000" />
       <workItem from="1569406440546" duration="12967000" />
       <workItem from="1569488170869" duration="2199000" />
-      <workItem from="1569573461549" duration="8393000" />
-    </task>
-    <task id="LOCAL-00023" summary="add geom convertor">
-      <created>1567250385528</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1567250385528</updated>
-    </task>
-    <task id="LOCAL-00024" summary="add geom convertor">
-      <created>1567250650130</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1567250650130</updated>
+      <workItem from="1569573461549" duration="12335000" />
+      <workItem from="1569596667800" duration="1648000" />
+      <workItem from="1569598450482" duration="283000" />
     </task>
     <task id="LOCAL-00025" summary="add geom convertor">
       <created>1567250833579</created>
@@ -501,7 +494,21 @@
       <option name="project" value="LOCAL" />
       <updated>1569592348703</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="add project settings loader&#10;add first part for clusters sync">
+      <created>1569592499559</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1569592499559</updated>
+    </task>
+    <task id="LOCAL-00073" summary="add project settings loader&#10;add first part for clusters sync">
+      <created>1569592681684</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1569592681684</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -623,18 +630,13 @@
           <option name="timeStamp" value="97" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/bin/generate_input</url>
-          <line>32</line>
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/ORCA/__init__.py</url>
-          <line>154</line>
+          <line>166</line>
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/ORCA/__init__.py</url>
-          <line>189</line>
+          <line>200</line>
           <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -649,7 +651,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/ORCA/__init__.py</url>
-          <line>187</line>
+          <line>198</line>
           <option name="timeStamp" value="113" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -683,14 +685,14 @@
           <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Source/Common/Config.py</url>
-          <line>50</line>
-          <option name="timeStamp" value="126" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/Utils/io.py</url>
           <line>34</line>
           <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Source/Common/Config.py</url>
+          <line>79</line>
+          <option name="timeStamp" value="139" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -703,6 +705,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/QMData_Tools$gaussian09.coverage" NAME="gaussian09 Coverage Results" MODIFIED="1569592485058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="E:/WORK_SPACE/OneDrive/00-Projects/03-Tempory_Directory/20-Complex/Spectrum/10-interm-1/02-CASSCF/15-1010/02-FC" />
+    <SUITE FILE_PATH="coverage/QMData_Tools$gaussian09.coverage" NAME="gaussian09 Coverage Results" MODIFIED="1569598737406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
   </component>
 </project>

@@ -91,7 +91,7 @@ class bagel_config(config):
     active: str = "0:0"
     _path_to_default_settings: pathlib.Path = pathlib.Path.home() / ".default_bagel_settings"
 
-    def __init__(self, config: dict = dict()):
+    def __init__(self, config: dict):
         super().__init__(config)
         self._coords = convert_geom(self._ch, self._co)
 
@@ -218,7 +218,7 @@ class bagel_config(config):
         }
         if self.alert:
             self.save = True
-            result.update({"active": self.alert})
+            result.update({"active": self.make_active_swap()})
         if self.mult is not 1:
             result.update({"nspin": int((self.mult - 1))})
         return result

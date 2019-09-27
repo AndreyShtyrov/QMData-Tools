@@ -31,8 +31,8 @@ class config():
         self.alert = None
         self.n_orb = int(n_el // 2)
         self.mult = int((n_el % 2) + 1)
-        self.n_el = 2
-        self.n_act = 2
+        self.n_el = 0
+        self.n_act = 0
         self.file = None
         self.n_state = 2
         self.target = 1
@@ -46,10 +46,6 @@ class config():
         self.project_settings = search_file_with_template_in_name(pathlib.Path.cwd().parent, "project_settings")
         if bool(self.project_settings):
             config_from_file = self.load_file(self.project_settings)
-            self.load_values_from_template(config_from_file)
-
-        if self._path_to_default_settings.is_file():
-            config_from_file = self.convert_file_in_dict(self._path_to_default_settings)
             self.load_values_from_template(config_from_file)
 
         if pathlib.Path("template").is_file():
@@ -70,6 +66,29 @@ class config():
         print("+ n_state : {:>22} +".format(self.n_state))
         print("++++++++++++++++++++++++++++++++++++")
 
+    def check_in(self,key, iterable):
+        for item in iterable:
+            if key is item:
+                return True
+        return False
+
+    def make_active_swap(self):
+        start_orb = self.n_orb - self.n_el // 2 - self.charge // 2
+        end_orb = start_orb + self.n_act
+        active = []
+        for i in range(start_orb, end_orb + 1, 1):
+            add = i
+            for pair in self.alert:
+                if pair[0] == i:
+                    add = pair[1]
+                elif pair[1] == i:
+                    add = pair[0]
+            active.append(add)
+        return active
+
+    def make_rotate(self):
+        for i in self.alert:
+            yield i
 
     def load_values_from_template(self, config: dict):
         for attr in config.keys():
@@ -78,8 +97,6 @@ class config():
                     setattr(self, attr, config[attr])
                     self.n_el = int(config[attr].split(":")[0])
                     self.n_act = int(config[attr].split(":")[1])
-                if isinstance(config[attr], list):
-                    setattr(self, attr, [ int(i) for i in config[attr]])
                 else:
                     setattr(self, attr, config[attr])
 
