@@ -1,5 +1,14 @@
 #!/usr/bin/env python
-from Source.Common.Config import config
+from Source.BAGEL import bagel_config
+from Source.ORCA import orca_config
+import argparse
 
-d_c = config()
-d_c.show_job_specification()
+parser = argparse.ArgumentParser(description= " generate input files")
+parser.add_argument("-pgp", type=str, default="BAGEL", help="set program available: BAGEL, ORCA")
+
+args = parser.parse_args()
+if args.pgp == "BAGEL":
+    bg = bagel_config()
+elif args.pgp == "ORCA":
+    bg = orca_config()
+bg.show_job_specification()
