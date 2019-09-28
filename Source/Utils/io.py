@@ -3,6 +3,7 @@ import pathlib
 from typing import Union
 import shutil
 import hashlib
+from Source.Common.Data import data
 
 import os
 import time
@@ -17,6 +18,12 @@ def get_dir_tree(curr_path: pathlib.Path):
         elif file.is_file():
             yield file
     return
+
+def treatment_exception(error: Exception):
+    if error is PermissionError:
+        return False
+
+
 
 
 def make_dir_forced(curr_dir: pathlib.Path)-> None:
@@ -50,14 +57,14 @@ def _search_file_with_template_in_name(curr_path: pathlib.Path, template: str) -
     return False
 
 
-class dir_cash():
+class dir_cash(data):
     def __init__(self, dir: pathlib.Path):
         self.name = str(dir.absolute())
         self.dir = dir
         self.cash_file = dir / "cash.json"
         self.path_saved = dir / ".prev_states"
         if self.cash_file.is_file():
-            self.cash = self.load_json(self.cash_file)
+            self.cash = self._load_json(self.cash_file)
         else:
             shutil.rmtree(str(self.path_saved))
             self.cash = list
@@ -67,19 +74,23 @@ class dir_cash():
         hash = hashlib.md5(self.name)
         t = time.clock()
         changes = self.zip_files(str(hash) + str(t) + ".zip", self.dir)
-        state = { "id": hash, "time": t, "changes": changes, "machine": self.get_cluster_name()}
+        state = {"id": hash,
+                 "time": t,
+                 "changes": changes,
+                 "machine": self.get_cluster_name()}
         self.cash.append(state)
 
-    def load(self)->list:
-        return self.load_json(self.cash_file)
+    def load(self) -> list:
+        return self._load_json(self.cash_file)
 
     def save(self):
-        self.save_json(self.cash_file, self.cash)
+        self._save_json(self.cash_file, self.cash)
 
     def get_cluster_name(self):
-        pass
+        cluster = self._load_json(pathlib.Path.home() / ".cluster_data")
+        return cluster["name"]
 
-    def zip_files(self,name ,dir: pathlib.Path):
+    def zip_files(self, name, dir: pathlib.Path):
         changes = dict
         archive = zipfile.ZipFile(name, 'w', zipfile.ZIP_DEFLATED)
         for file in dir.iterdir():
@@ -92,10 +103,5 @@ class dir_cash():
     def unzip_files(self, name):
         zipfile.ZipFile.extract(name)
 
-    def load_json(self, file: pathlib.Path)-> list:
-        return json.load(open(file, "r"))
-
-    def save_json(self, file: pathlib.Path, data: dict):
-        js_data = json.dumps(data, indent=2)
-        file.write_text(js_data)
+    def
 
