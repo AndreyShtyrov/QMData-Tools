@@ -104,4 +104,7 @@ class dir_cash(data):
         zipfile.ZipFile.extract(name)
 
 
+def changes(data):
+    def __init__(self, load_data):
+        self.name = load_data['name']
 

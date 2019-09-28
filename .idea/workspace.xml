@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/Common/Data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Utils/io.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Utils/io.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -190,20 +188,8 @@
       <workItem from="1569598450482" duration="402000" />
       <workItem from="1569600807170" duration="24000" />
       <workItem from="1569662883526" duration="9607000" />
-    </task>
-    <task id="LOCAL-00027" summary="upgrate bagel input creater">
-      <created>1567252716377</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1567252716377</updated>
-    </task>
-    <task id="LOCAL-00028" summary="upgrate bagel input creater">
-      <created>1567252858552</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1567252858552</updated>
+      <workItem from="1569682442094" duration="157000" />
+      <workItem from="1569682782624" duration="352000" />
     </task>
     <task id="LOCAL-00029" summary="upgrate bagel input creater">
       <created>1567256055081</created>
@@ -534,7 +520,21 @@
       <option name="project" value="LOCAL" />
       <updated>1569671969745</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="add project settings loader&#10;add first part for clusters sync">
+      <created>1569682463640</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1569682463640</updated>
+    </task>
+    <task id="LOCAL-00077" summary="add project settings loader&#10;add first part for clusters sync">
+      <created>1569682587332</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1569682587332</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
