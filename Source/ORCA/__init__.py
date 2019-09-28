@@ -188,7 +188,7 @@ class orca_config(config):
         result.append("\n")
 
         result.extend(self.make_add_sp())
-        if bool(self.active):
+        if bool(self.alert):
             result.extend(self.make_rotate())
         if self.method == "casscf":
             result.extend(self.make_casscf())

@@ -12,6 +12,27 @@ def get_spectrum(iterable, n_states):
     return Es
 
 
+def get_program_name(iterable)->str:
+    LR=ListReader(iterable)
+    if LR.go_by_keys("* O   R   C   A *"):
+        return "ORCA"
+    else:
+        return "BAGEL"
+
+
+def get_CAS_os_ORCA(iterable, n_sstates, c_state):
+    if c_state != 0:
+        raise IndexError
+    LR = ListReader(iterable)
+    LR.go_by_keys("------------------------------------------------------------------------------------------")
+    LR.get_next_lines(5)
+    part = LR.get_all_by_keys("------------------------------------------------------------------------------------------")
+    result = ["-"]
+    for i in range(n_sstates-1):
+        result.append(float(part[i].split()[-5]))
+    return result
+
+
 def get_CAS_os(iterable, n_states, c_state):
     result = []
     LR = ListReader(iterable)
@@ -45,9 +66,14 @@ if __name__ == '__main__':
     parser.add_argument("-c_state", type=int, default=0, help="root of interest")
     args = parser.parse_args()
     with open("opt.out", "r") as f:
+        prorgam_name = get_program_name(f)
+    with open("opt.out", "r") as f:
         sp_list = np.array(get_spectrum(f, args.n_states))
         try:
-            ss_list = get_CAS_os(f, args.n_states, args.c_state)
+            if prorgam_name == "ORCA":
+                ss_list = get_CAS_os_ORCA(f, args.n_states, args.c_state)
+            else:
+                ss_list = get_CAS_os(f, args.n_states, args.c_state)
         except:
             ss_list = None
     sp_list = convert_hartee_nm(sp_list, args.c_state)

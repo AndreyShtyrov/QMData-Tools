@@ -9,6 +9,7 @@ import time
 import zipfile
 
 
+
 def get_dir_tree(curr_path: pathlib.Path):
     for file in curr_path.iterdir():
         if file.is_dir():
@@ -31,8 +32,13 @@ def get_dir_tree_list(curr_path: pathlib.Path):
         result.append(file)
     return result
 
-
 def search_file_with_template_in_name(curr_path: pathlib.Path, template: str) -> Union[pathlib.Path, bool]:
+    try:
+        return _search_file_with_template_in_name(curr_path, template)
+    except PermissionError:
+        return False
+
+def _search_file_with_template_in_name(curr_path: pathlib.Path, template: str) -> Union[pathlib.Path, bool]:
     main_dir = pathlib.Path.home()
     for file in curr_path.iterdir():
         if file.is_file():
