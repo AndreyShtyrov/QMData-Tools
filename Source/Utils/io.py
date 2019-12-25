@@ -3,12 +3,13 @@ import pathlib
 from typing import Union
 import shutil
 import hashlib
+import yaml
 from Source.Common.Data import data
 
+import clipboard
 import os
 import time
 import zipfile
-
 
 
 def get_dir_tree(curr_path: pathlib.Path):
@@ -19,11 +20,39 @@ def get_dir_tree(curr_path: pathlib.Path):
             yield file
     return
 
+
 def treatment_exception(error: Exception):
     if error is PermissionError:
         return False
 
 
+def load_from_clipboard(path: pathlib.Path):
+    data = clipboard.paste()
+    data: dict = json.load(data)
+    if "coordinate" in data.keys():
+        coord = data["coordinate"]
+        with open(path/"coord.xyz", "w") as outfile:
+            outfile.writelines(coord)
+    if "orbitale" in data.keys():
+        prev_path: str = data["orbitale"]
+        extension = prev_path.split(".")[-1]
+        shutil.copy(prev_path, str(path / ("pr_orb." + extension)))
+
+
+def save_in_clipboard(path: pathlib.Path):
+    result = dict()
+    for file in path.iterdir():
+        if file.is_file():
+            if file.name == "coord.xyz":
+                coord = {"coordinate": []}
+                with open(file, "r") as input_file:
+                    for line in input_file:
+                        coord["coordinate"].append(line)
+                result.update(coord)
+            elif ".gbw" in file.name or "RasOrb" in file.name:
+                result.update({"orbitale": str(file.absolute())})
+    res = json.dumps(result, indent=2)
+    clipboard.copy(res)
 
 
 def make_dir_forced(curr_dir: pathlib.Path)-> None:
@@ -39,11 +68,13 @@ def get_dir_tree_list(curr_path: pathlib.Path):
         result.append(file)
     return result
 
+
 def search_file_with_template_in_name(curr_path: pathlib.Path, template: str) -> Union[pathlib.Path, bool]:
     try:
         return _search_file_with_template_in_name(curr_path, template)
     except PermissionError:
         return False
+
 
 def _search_file_with_template_in_name(curr_path: pathlib.Path, template: str) -> Union[pathlib.Path, bool]:
     main_dir = pathlib.Path.home()
@@ -102,6 +133,17 @@ class dir_cash(data):
 
     def unzip_files(self, name):
         zipfile.ZipFile.extract(name)
+
+
+class config_file():
+    def load_file(self, path):
+        with open(path, "r") as steam:
+            file = yaml.load(steam)
+        return file
+
+    def save_file(self, path: pathlib.Path, config):
+        data = yaml.dump(config, indent=2, default_flow_style=False)
+        path.write_text(data)
 
 
 def changes(data):

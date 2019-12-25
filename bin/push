@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+from Source.Utils.io import save_in_clipboard, load_from_clipboard
+import sys
+from pathlib import Path
+
+
+try:
+    type_job = sys.argv[1]
+    if type_job != "pop" and type_job != "push":
+        raise IndexError
+except IndexError:
+    print("Please type what do with data: push or pop in clipboard")
+    exit(1)
+if type_job == "push":
+    save_in_clipboard(Path.cwd())
+elif type_job == "pop":
+    load_from_clipboard(Path.cwd())
+
+
+
+

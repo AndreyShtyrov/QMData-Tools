@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def read_xyz(file):
     """
 
@@ -26,6 +27,7 @@ def read_xyz(file):
 
         return np.array(charges), np.array(coords)
 
+
 def save_geom_xyz(charges: list, coords, comment = ""):
     result = []
     n_atoms = len(charges)
@@ -38,5 +40,16 @@ def save_geom_xyz(charges: list, coords, comment = ""):
         line = line + "{:>15.7f}".format(coords[3 * j + 1])
         line = line + "{:>15.7f}".format(coords[3 * j + 2])
         line = line + "\n"
+        result.append(line)
+    return result
+
+
+def save_simple_geom_xyz(charges: list, coords):
+    result = []
+    for j in range(len(charges)):
+        line = str(charges[j]) + " "
+        line = line + "{:>13.6f}".format(coords[3 * j])
+        line = line + "{:>13.6f}".format(coords[3 * j + 1])
+        line = line + "{:>13.6f}".format(coords[3 * j + 2])
         result.append(line)
     return result

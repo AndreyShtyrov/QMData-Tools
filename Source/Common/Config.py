@@ -1,11 +1,12 @@
 import pathlib
 import yaml
-from Source.Utils.io import search_file_with_template_in_name
+
+from Source.Utils.io import search_file_with_template_in_name, config_file
 
 from Source.Common.General_Tools import *
 
 
-class config():
+class config(config_file):
     alert: list = None
     mult: int = 1
     n_act: int = 2
@@ -116,14 +117,7 @@ class config():
         self.save_file(path, result)
 
 
-    def load_file(self, path):
-        with open(path, "r") as steam:
-            file = yaml.load(steam)
-        return file
 
-    def save_file(self, path: pathlib.Path, config):
-        data = yaml.dump(config, indent=2, default_flow_style=False)
-        path.write_text(data)
 
     def make_table_all_avaliable_classes(self):
        pass

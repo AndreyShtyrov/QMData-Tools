@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Old_scripts/start_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/push" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/QMData-Tools.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/QMData-Tools.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Old_scripts/Calc_freq.py" beforeDir="false" afterPath="$PROJECT_DIR$/Old_scripts/Calc_freq.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Old_scripts/delete_files" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/BAGEL/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BAGEL/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Common/Config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Common/Config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Common/General_Tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Common/General_Tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Utils/io.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Utils/io.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/get_optimized_geom" beforeDir="false" afterPath="$PROJECT_DIR$/bin/get_optimized_geom" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,10 +46,15 @@
   </component>
   <component name="ProjectId" id="1PVOlWMiTNYQcj5eylvOr48fx0r" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../python_chemistry" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -54,18 +66,6 @@
       <recent name="C:\Users\Andronet\PycharmProjects\QMData-Tools\bin" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="Python.Old_scripts">
     <configuration name="Old_scripts" type="PythonConfigurationType" factoryName="Python">
       <module name="QMData-Tools" />
@@ -74,7 +74,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\Andronet\AppData\Local\Programs\Python\Python37-32\python.exe" />
+      <option name="SDK_HOME" value="wsl://UBUNTU/home/workplace/miniconda3/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Old_scripts" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -144,13 +144,15 @@
     </recent_temporary>
   </component>
   <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <treeState>
-          <expand />
-          <select />
-        </treeState>
-      </serviceView>
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
     </option>
   </component>
   <component name="SvnConfiguration">
@@ -200,14 +202,30 @@
       <workItem from="1570013475515" duration="1641000" />
       <workItem from="1570015158717" duration="49000" />
       <workItem from="1570015297769" duration="779000" />
-      <workItem from="1570094420229" duration="1304000" />
-    </task>
-    <task id="LOCAL-00030" summary="upgrate bagel input creater">
-      <created>1567260348813</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1567260348813</updated>
+      <workItem from="1570094420229" duration="2787000" />
+      <workItem from="1570180065701" duration="6208000" />
+      <workItem from="1570272016807" duration="1355000" />
+      <workItem from="1570450905225" duration="2354000" />
+      <workItem from="1570523936916" duration="3114000" />
+      <workItem from="1570629379815" duration="1196000" />
+      <workItem from="1570710016913" duration="596000" />
+      <workItem from="1570797791389" duration="1337000" />
+      <workItem from="1570879679544" duration="13000" />
+      <workItem from="1571060719953" duration="1876000" />
+      <workItem from="1571138814348" duration="588000" />
+      <workItem from="1571140034056" duration="1538000" />
+      <workItem from="1571232858603" duration="1248000" />
+      <workItem from="1571246428972" duration="1000" />
+      <workItem from="1571485838145" duration="941000" />
+      <workItem from="1571486908715" duration="158000" />
+      <workItem from="1572017086856" duration="73000" />
+      <workItem from="1572017388361" duration="235000" />
+      <workItem from="1572018746325" duration="1197000" />
+      <workItem from="1572342502224" duration="528000" />
+      <workItem from="1572522021208" duration="141000" />
+      <workItem from="1573556880504" duration="896000" />
+      <workItem from="1574167246702" duration="2431000" />
+      <workItem from="1577281419945" duration="3973000" />
     </task>
     <task id="LOCAL-00031" summary="upgrate bagel input creater">
       <created>1567260465667</created>
@@ -545,7 +563,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569683145067</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="add project settings loader&#10;add first part for clusters sync">
+      <created>1570118241072</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1570118241072</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,6 +612,28 @@
     <MESSAGE value="Make ORCA input generator" />
     <MESSAGE value="add project settings loader&#10;add first part for clusters sync" />
     <option name="LAST_COMMIT_MESSAGE" value="add project settings loader&#10;add first part for clusters sync" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="4" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577281438604">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="4" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577281438604" />
+    <state x="319" y="91" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577281611256">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="319" y="91" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577281611256" />
+    <state x="329" y="43" key="FileChooserDialogImpl" timestamp="1577281432657">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="329" y="43" key="FileChooserDialogImpl/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577281432657" />
+    <state x="58" y="0" key="SettingsEditor" timestamp="1577282014933">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="58" y="0" key="SettingsEditor/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577282014933" />
+    <state x="211" y="-1" width="672" height="678" key="search.everywhere.popup" timestamp="1577288056603">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="211" y="-1" width="672" height="678" key="search.everywhere.popup/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577288056603" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -633,32 +680,32 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Old_scripts/Calc_freq.py</url>
-          <line>23</line>
+          <line>24</line>
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>192</line>
+          <line>194</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>249</line>
+          <line>254</line>
           <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>241</line>
+          <line>246</line>
           <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>354</line>
+          <line>361</line>
           <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>355</line>
+          <line>362</line>
           <option name="timeStamp" value="96" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -668,12 +715,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/ORCA/__init__.py</url>
-          <line>166</line>
+          <line>177</line>
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/ORCA/__init__.py</url>
-          <line>200</line>
+          <line>208</line>
           <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -683,12 +730,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
-          <line>247</line>
+          <line>252</line>
           <option name="timeStamp" value="111" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/ORCA/__init__.py</url>
-          <line>198</line>
+          <line>206</line>
           <option name="timeStamp" value="113" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -713,17 +760,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/Gaussian09/Gaussian09.py</url>
-          <line>368</line>
+          <line>381</line>
           <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/Utils/io.py</url>
-          <line>47</line>
+          <line>78</line>
           <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/Common/Config.py</url>
-          <line>79</line>
+          <line>104</line>
           <option name="timeStamp" value="139" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -736,6 +783,11 @@
           <line>126</line>
           <option name="timeStamp" value="164" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Source/Common/Config.py</url>
+          <line>59</line>
+          <option name="timeStamp" value="165" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -747,7 +799,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/QMData_Tools$Old_scripts.coverage" NAME="Old_scripts Coverage Results" MODIFIED="1570015163714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Old_scripts" />
     <SUITE FILE_PATH="coverage/QMData_Tools$gaussian09.coverage" NAME="gaussian09 Coverage Results" MODIFIED="1569598737406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
+    <SUITE FILE_PATH="coverage/QMData_Tools$Old_scripts.coverage" NAME="Old_scripts Coverage Results" MODIFIED="1570015163714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Old_scripts" />
   </component>
 </project>

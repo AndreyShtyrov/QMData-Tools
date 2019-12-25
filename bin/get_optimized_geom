@@ -1,33 +1,27 @@
 #!/usr/bin/env python
 import sys
+from Source.Common.General_Tools import save_simple_geom_xyz
 from Source.Gaussian09 import g09_parser
 
 
-def find_and_and_write(outfile):
-    calc = g09_parser(outfile)
+def find_and_write(coordfile):
+    calc = g09_parser(coordfile)
     generator_get_opt_inter = calc.get_optimazed_geom()
-    acc = 0
+    xyz = []
     while True:
         try:
-            charges, coord = next(generator_get_opt_inter)
-            with open("./coord.xyz", "w") as write_file:
-                iter_charge = iter(charges)
-                iter_coord = iter(coord)
-                for ch in iter_charge:
-                    line = str(ch) + "  " + str(next(iter_coord)) + " " + str(next(iter_coord)) + " " + str(
-                        next(iter_coord))
-                    write_file.write(line + "\n")
-                acc = acc + 1
+            charges, coords = next(generator_get_opt_inter)
+            xyz = save_simple_geom_xyz(charges, coords)
         except StopIteration:
             print("End_of_Opt")
             break
+    if bool(xyz):
+        with open("coord.xyz", "w")  as coordfile:
+            coordfile.writelines(xyz)
 
-def read_geom(inputfile):
-    result = []
-    with open(inputfile) as line_mass:
-        for line in line_mass:
-            result.append()
 
 if len(sys.argv) > 1:
     output_file = sys.argv[1]
-find_and_and_write(output_file)
+else:
+    output_file = "opt.out"
+find_and_write(output_file)

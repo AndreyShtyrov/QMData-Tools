@@ -132,6 +132,7 @@ class bagel_config(config):
             return {
                 "title": "molecule",
                 "basis": "molden",
+                "molden_file": "save.molden",
                 "df_basis": df_basis
             }
         elif self.file == "archive":
