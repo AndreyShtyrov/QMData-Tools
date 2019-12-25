@@ -40,17 +40,25 @@ def load_from_clipboard(path: pathlib.Path):
     if "orb" in data.keys():
         prev_path: str = data["orbitale"]
         extension = prev_path.split(".")[-1]
+        if extension == "nat":
+            extension = "mrci.nat"
         shutil.copy(prev_path, str(path / ("pr_orb." + extension)))
 
 
 def save_in_clipboard(path: pathlib.Path):
     result = ""
+    gbw_trigger = True
     for file in path.iterdir():
         if file.is_file():
             if file.name == "coord.xyz":
-                result = "geom:" + str(file.absolute()) + ";"
-            elif ".gbw" in file.name or "RasOrb" in file.name:
-                result.update("orb:" + str(file.absolute()) + ";")
+                result += "geom:" + str(file.absolute()) + ";"
+            elif ".gbw" in file.name and gbw_trigger:
+                result += ("orb:" + str(file.absolute()) + ";")
+            elif ".RasOrb" in file.name:
+                result += ("orb:" + str(file.absolute()) + ";")
+            elif ".mrci.nat" in file.name:
+                result += ("orb:" + str(file.absolute()) + ";")
+                gbw_trigger = False
     clipboard.copy(result)
 
 
