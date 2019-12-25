@@ -6,17 +6,11 @@ from Source.Gaussian09 import g09_parser
 
 def find_and_write(coordfile):
     calc = g09_parser(coordfile)
-    generator_get_opt_inter = calc.get_optimazed_geom()
-    xyz = []
-    while True:
-        try:
-            charges, coords = next(generator_get_opt_inter)
-            xyz = save_simple_geom_xyz(charges, coords)
-        except StopIteration:
-            print("End_of_Opt")
-            break
+    with open(coordfile, "r") as iterable:
+        charges, coords = calc.get_last_geom(iterable)
+    xyz = save_simple_geom_xyz(charges, coords)
     if bool(xyz):
-        with open("coord.xyz", "w")  as coordfile:
+        with open("coord.xyz", "w") as coordfile:
             coordfile.writelines(xyz)
 
 

@@ -24,7 +24,7 @@ class g09_parser(ListAnalyser):
                       "thermochemistry": {"start": "Zero-point correction"}
                       }
 
-    def __init__(self, lines):
+    def __init__(self, file):
         super().__init__()
         self.main_method = None
         self.nroots = 1
@@ -32,7 +32,8 @@ class g09_parser(ListAnalyser):
         self.root = 0
         self.emperic = False
         self.casscf = False
-        self.define_methods(lines)
+        with open(file, "r") as lines:
+            self.define_methods(lines)
 
     def is_properties_calculated(self, lines, properties_name):
         LR = ListReader(lines)
@@ -367,6 +368,7 @@ class g09_parser(ListAnalyser):
             return [0.0, 0.0]
 
     def get_geom(self, iterable):
+
         _ = self._go_by_keys(iterable, "Input orientation:", "Standard orientation:", "Z-Matrix orientation:")
         iterable = self._skip_lines(iterable, 4)
         lines = self._get_all_by_keys(iterable, "----------------------------------------------")

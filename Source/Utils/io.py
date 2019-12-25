@@ -25,34 +25,33 @@ def treatment_exception(error: Exception):
     if error is PermissionError:
         return False
 
+def convert_str_to_dict(line: str) -> dict:
+    result = dict()
+    for part in line.split(";")[:-1]:
+        result.update({part.split(":")[0]: part.split(":")[1]})
+    return result
 
 def load_from_clipboard(path: pathlib.Path):
     data = clipboard.paste()
-    data: dict = json.load(data)
-    if "coordinate" in data.keys():
-        coord = data["coordinate"]
-        with open(path/"coord.xyz", "w") as outfile:
-            outfile.writelines(coord)
-    if "orbitale" in data.keys():
+    data = convert_str_to_dict(data)
+    if "geom" in data.keys():
+        prev_geom: str = data["geom"]
+        shutil.copy(prev_geom, str(path.absolute()))
+    if "orb" in data.keys():
         prev_path: str = data["orbitale"]
         extension = prev_path.split(".")[-1]
         shutil.copy(prev_path, str(path / ("pr_orb." + extension)))
 
 
 def save_in_clipboard(path: pathlib.Path):
-    result = dict()
+    result = ""
     for file in path.iterdir():
         if file.is_file():
             if file.name == "coord.xyz":
-                coord = {"coordinate": []}
-                with open(file, "r") as input_file:
-                    for line in input_file:
-                        coord["coordinate"].append(line)
-                result.update(coord)
+                result = "geom:" + str(file.absolute()) + ";"
             elif ".gbw" in file.name or "RasOrb" in file.name:
-                result.update({"orbitale": str(file.absolute())})
-    res = json.dumps(result, indent=2)
-    clipboard.copy(res)
+                result.update("orb:" + str(file.absolute()) + ";")
+    clipboard.copy(result)
 
 
 def make_dir_forced(curr_dir: pathlib.Path)-> None:

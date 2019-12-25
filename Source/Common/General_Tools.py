@@ -51,5 +51,5 @@ def save_simple_geom_xyz(charges: list, coords):
         line = line + "{:>13.6f}".format(coords[3 * j])
         line = line + "{:>13.6f}".format(coords[3 * j + 1])
         line = line + "{:>13.6f}".format(coords[3 * j + 2])
-        result.append(line)
+        result.append(line + "\n")
     return result
