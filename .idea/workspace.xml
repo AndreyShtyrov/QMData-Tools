@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9178ff5f-5d8c-48e5-be7c-34b2e321a5ee" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -264,13 +262,7 @@
       <workItem from="1577281419945" duration="8599000" />
       <workItem from="1577293779752" duration="141000" />
       <workItem from="1577354828561" duration="681000" />
-    </task>
-    <task id="LOCAL-00035" summary="upgrate bagel input creater">
-      <created>1567423612438</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1567423612438</updated>
+      <workItem from="1577551013927" duration="243000" />
     </task>
     <task id="LOCAL-00036" summary="upgrate bagel input creater">
       <created>1567423817540</created>
@@ -608,7 +600,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577293920568</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="correct type_job description">
+      <created>1577551241482</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1577551241483</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -650,7 +649,8 @@
     <MESSAGE value="Make ORCA input generator" />
     <MESSAGE value="add project settings loader&#10;add first part for clusters sync" />
     <MESSAGE value="add project settings loader&#10;add first part for clusters sync&#10;correct buffer push buffer load methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="add project settings loader&#10;add first part for clusters sync&#10;correct buffer push buffer load methods" />
+    <MESSAGE value="correct type_job description" />
+    <option name="LAST_COMMIT_MESSAGE" value="correct type_job description" />
   </component>
   <component name="WindowStateProjectService">
     <state x="4" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577293858331">
@@ -665,10 +665,10 @@
       <screen x="0" y="0" width="1097" height="577" />
     </state>
     <state x="139" y="0" width="540" height="577" key="#xdebugger.evaluate/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577292960478" />
-    <state x="173" y="0" key="CommitChangelistDialog2" timestamp="1577293918643">
+    <state x="173" y="0" key="CommitChangelistDialog2" timestamp="1577551239886">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state x="173" y="0" key="CommitChangelistDialog2/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577293918643" />
+    <state x="173" y="0" key="CommitChangelistDialog2/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577551239886" />
     <state x="329" y="43" key="FileChooserDialogImpl" timestamp="1577290967827">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
@@ -733,10 +733,10 @@
       <screen x="0" y="0" width="1097" height="577" />
     </state>
     <state width="555" height="295" key="XDebugger.FullValuePopup/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577292557794" />
-    <state x="245" y="112" key="com.intellij.ide.util.TipDialog" timestamp="1577354859294">
+    <state x="245" y="112" key="com.intellij.ide.util.TipDialog" timestamp="1577551487960">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state x="245" y="112" key="com.intellij.ide.util.TipDialog/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577354859294" />
+    <state x="245" y="112" key="com.intellij.ide.util.TipDialog/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577551487960" />
     <state x="211" y="-1" width="672" height="678" key="search.everywhere.popup" timestamp="1577288056603">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
