@@ -36,14 +36,15 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="E:/Work/get20/03-Tempory_Directory/70-PES/05-wt/23-66-casscf1" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -54,7 +55,51 @@
       <recent name="C:\Users\Andronet\PycharmProjects\QMData-Tools\bin" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.popopus">
+  <component name="RunManager" selected="Python.tracks_parametrs">
+    <configuration name="Calc_freq" type="PythonConfigurationType" factoryName="Python">
+      <module name="QMData-Tools" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="E:/Work/03-Tempory_Directory/42-Freq/01-SCF/03-freq-NC" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Old_scripts/Calc_freq.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Expand_Jobs" type="PythonConfigurationType" factoryName="Python">
+      <module name="QMData-Tools" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="E:/Work/03-Tempory_Directory/conformers-SCF" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Old_scripts/expand_job_row_for_rhodopsin.py" />
+      <option name="PARAMETERS" value="-type charge" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Old_scripts" type="PythonConfigurationType" factoryName="Python">
       <module name="QMData-Tools" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -91,6 +136,50 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gaussian09/gaussian09.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="calc_dG" type="PythonConfigurationType" factoryName="Python">
+      <module name="QMData-Tools" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="E:/Work/03-Tempory_Directory/42-Freq/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Old_scripts/calculate_stat_sum.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="diff_hess" type="PythonConfigurationType" factoryName="Python">
+      <module name="QMData-Tools" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="E:/Work/03-Tempory_Directory/42-Freq/01-SCF/03-freq-NC" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Old_scripts/diff_hessian.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -165,10 +254,37 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="tracks_parametrs" type="PythonConfigurationType" factoryName="Python">
+      <module name="QMData-Tools" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="E:/Work/get20/03-Tempory_Directory/70-PES/05-wt/23-66-casscf1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Old_scripts/Oniom_graph.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.Old_scripts" />
+      <item itemvalue="Python.Expand_Jobs" />
       <item itemvalue="Python.get_optimized_geom" />
       <item itemvalue="Python.popopus" />
+      <item itemvalue="Python.Calc_freq" />
+      <item itemvalue="Python.calc_dG" />
+      <item itemvalue="Python.diff_hess" />
+      <item itemvalue="Python.tracks_parametrs" />
       <item itemvalue="Python.gaussian09" />
     </list>
     <recent_temporary>
@@ -176,18 +292,6 @@
         <item itemvalue="Python.gaussian09" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -263,6 +367,40 @@
       <workItem from="1577293779752" duration="141000" />
       <workItem from="1577354828561" duration="681000" />
       <workItem from="1577551013927" duration="243000" />
+      <workItem from="1591877009177" duration="10271000" />
+      <workItem from="1591962606999" duration="6004000" />
+      <workItem from="1592230891906" duration="8571000" />
+      <workItem from="1592567746695" duration="647000" />
+      <workItem from="1593087304645" duration="647000" />
+      <workItem from="1593272897807" duration="2248000" />
+      <workItem from="1593614035048" duration="7570000" />
+      <workItem from="1593781226910" duration="322000" />
+      <workItem from="1593788140076" duration="793000" />
+      <workItem from="1593804311564" duration="693000" />
+      <workItem from="1593975616963" duration="1270000" />
+      <workItem from="1594043268091" duration="197000" />
+      <workItem from="1594920794961" duration="3684000" />
+      <workItem from="1595019233788" duration="1459000" />
+      <workItem from="1595078597713" duration="13665000" />
+      <workItem from="1595163173566" duration="4087000" />
+      <workItem from="1595225405291" duration="240000" />
+      <workItem from="1595513059231" duration="1306000" />
+      <workItem from="1595855081913" duration="2577000" />
+      <workItem from="1595932482805" duration="746000" />
+      <workItem from="1595943320122" duration="525000" />
+      <workItem from="1596120848004" duration="3716000" />
+      <workItem from="1596192498010" duration="1153000" />
+      <workItem from="1596207529180" duration="3836000" />
+      <workItem from="1596274313750" duration="26000" />
+      <workItem from="1596407475173" duration="1199000" />
+      <workItem from="1596542252194" duration="906000" />
+      <workItem from="1596548231328" duration="724000" />
+      <workItem from="1596907010288" duration="7728000" />
+      <workItem from="1599073412969" duration="57000" />
+      <workItem from="1599485021248" duration="984000" />
+      <workItem from="1609153792469" duration="1998000" />
+      <workItem from="1609335447932" duration="1049000" />
+      <workItem from="1614600973494" duration="602000" />
     </task>
     <task id="LOCAL-00036" summary="upgrate bagel input creater">
       <created>1567423817540</created>
@@ -611,16 +749,14 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -639,6 +775,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Setup" />
@@ -653,103 +790,50 @@
     <option name="LAST_COMMIT_MESSAGE" value="correct type_job description" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="4" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577293858331">
-      <screen x="0" y="0" width="1097" height="577" />
+    <state x="406" y="144" width="1107" height="785" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609335849736">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="4" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577293858331" />
-    <state x="319" y="91" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577281611256">
-      <screen x="0" y="0" width="1097" height="577" />
+    <state x="406" y="144" width="1107" height="785" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1609335849736" />
+    <state x="633" y="171" key="FileChooserDialogImpl" timestamp="1609335848338">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="319" y="91" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577281611256" />
-    <state x="139" y="0" width="540" height="577" key="#xdebugger.evaluate" timestamp="1577292960478">
-      <screen x="0" y="0" width="1097" height="577" />
+    <state x="633" y="171" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1609335848338" />
+    <state width="1223" height="250" key="GridCell.Tab.0.bottom" timestamp="1609346968880">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="139" y="0" width="540" height="577" key="#xdebugger.evaluate/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577292960478" />
-    <state x="173" y="0" key="CommitChangelistDialog2" timestamp="1577551239886">
-      <screen x="0" y="0" width="1097" height="577" />
+    <state width="1223" height="250" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1609346968880" />
+    <state width="1223" height="250" key="GridCell.Tab.0.center" timestamp="1609346968880">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="173" y="0" key="CommitChangelistDialog2/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577551239886" />
-    <state x="329" y="43" key="FileChooserDialogImpl" timestamp="1577290967827">
-      <screen x="0" y="0" width="1097" height="577" />
+    <state width="1223" height="250" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1609346968880" />
+    <state width="1223" height="250" key="GridCell.Tab.0.left" timestamp="1609346968880">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="329" y="43" key="FileChooserDialogImpl/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577290967827" />
-    <state width="1054" height="270" key="GridCell.Tab.-1.bottom" timestamp="1577291259077">
-      <screen x="0" y="0" width="1097" height="577" />
+    <state width="1223" height="250" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1609346968880" />
+    <state width="1223" height="250" key="GridCell.Tab.0.right" timestamp="1609346968880">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1054" height="270" key="GridCell.Tab.-1.bottom/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577291259077" />
-    <state width="1054" height="270" key="GridCell.Tab.-1.center" timestamp="1577291259077">
-      <screen x="0" y="0" width="1097" height="577" />
+    <state width="1223" height="250" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1609346968880" />
+    <state width="1392" height="303" key="GridCell.Tab.1.bottom" timestamp="1609190804583">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1054" height="270" key="GridCell.Tab.-1.center/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577291259077" />
-    <state width="1054" height="270" key="GridCell.Tab.-1.left" timestamp="1577291259077">
-      <screen x="0" y="0" width="1097" height="577" />
+    <state width="1392" height="303" key="GridCell.Tab.1.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1609190804583" />
+    <state width="1392" height="303" key="GridCell.Tab.1.center" timestamp="1609190804583">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1054" height="270" key="GridCell.Tab.-1.left/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577291259077" />
-    <state width="1054" height="270" key="GridCell.Tab.-1.right" timestamp="1577291259077">
-      <screen x="0" y="0" width="1097" height="577" />
+    <state width="1392" height="303" key="GridCell.Tab.1.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1609190804583" />
+    <state width="1392" height="303" key="GridCell.Tab.1.left" timestamp="1609190804583">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1054" height="270" key="GridCell.Tab.-1.right/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577291259077" />
-    <state width="1054" height="141" key="GridCell.Tab.0.bottom" timestamp="1577293922043">
-      <screen x="0" y="0" width="1097" height="577" />
+    <state width="1392" height="303" key="GridCell.Tab.1.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1609190804583" />
+    <state width="1392" height="303" key="GridCell.Tab.1.right" timestamp="1609190804583">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1054" height="141" key="GridCell.Tab.0.bottom/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577293922043" />
-    <state width="1054" height="141" key="GridCell.Tab.0.center" timestamp="1577293922043">
-      <screen x="0" y="0" width="1097" height="577" />
-    </state>
-    <state width="1054" height="141" key="GridCell.Tab.0.center/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577293922043" />
-    <state width="1054" height="141" key="GridCell.Tab.0.left" timestamp="1577293922043">
-      <screen x="0" y="0" width="1097" height="577" />
-    </state>
-    <state width="1054" height="141" key="GridCell.Tab.0.left/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577293922043" />
-    <state width="1054" height="141" key="GridCell.Tab.0.right" timestamp="1577293922043">
-      <screen x="0" y="0" width="1097" height="577" />
-    </state>
-    <state width="1054" height="141" key="GridCell.Tab.0.right/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577293922043" />
-    <state width="854" height="586" key="GridCell.Tab.1.bottom" timestamp="1577293748410">
-      <screen x="0" y="0" width="1097" height="577" />
-    </state>
-    <state width="854" height="586" key="GridCell.Tab.1.bottom/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577293748410" />
-    <state width="854" height="586" key="GridCell.Tab.1.center" timestamp="1577293748410">
-      <screen x="0" y="0" width="1097" height="577" />
-    </state>
-    <state width="854" height="586" key="GridCell.Tab.1.center/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577293748410" />
-    <state width="854" height="586" key="GridCell.Tab.1.left" timestamp="1577293748410">
-      <screen x="0" y="0" width="1097" height="577" />
-    </state>
-    <state width="854" height="586" key="GridCell.Tab.1.left/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577293748410" />
-    <state width="854" height="586" key="GridCell.Tab.1.right" timestamp="1577293748410">
-      <screen x="0" y="0" width="1097" height="577" />
-    </state>
-    <state width="854" height="586" key="GridCell.Tab.1.right/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577293748410" />
-    <state x="58" y="0" key="SettingsEditor" timestamp="1577282014933">
-      <screen x="0" y="0" width="1097" height="577" />
-    </state>
-    <state x="58" y="0" key="SettingsEditor/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577282014933" />
-    <state x="141" y="21" key="Vcs.Push.Dialog.v2" timestamp="1577293688494">
-      <screen x="0" y="0" width="1097" height="577" />
-    </state>
-    <state x="141" y="21" key="Vcs.Push.Dialog.v2/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577293688494" />
-    <state width="555" height="295" key="XDebugger.FullValuePopup" timestamp="1577292557794">
-      <screen x="0" y="0" width="1097" height="577" />
-    </state>
-    <state width="555" height="295" key="XDebugger.FullValuePopup/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577292557794" />
-    <state x="245" y="112" key="com.intellij.ide.util.TipDialog" timestamp="1577551487960">
-      <screen x="0" y="0" width="1097" height="577" />
-    </state>
-    <state x="245" y="112" key="com.intellij.ide.util.TipDialog/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577551487960" />
-    <state x="211" y="-1" width="672" height="678" key="search.everywhere.popup" timestamp="1577288056603">
-      <screen x="0" y="0" width="1097" height="577" />
-    </state>
-    <state x="211" y="-1" width="672" height="678" key="search.everywhere.popup/0.0.1097.577/-1280.0.853.643@0.0.1097.577" timestamp="1577288056603" />
+    <state width="1392" height="303" key="GridCell.Tab.1.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1609190804583" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Source/Utils/linalg.py</url>
-          <line>123</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/Common/QM_parser.py</url>
           <line>86</line>
@@ -784,11 +868,6 @@
           <url>file://$PROJECT_DIR$/Old_scripts/calc_hessian_from_bagel_freq.py</url>
           <line>68</line>
           <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Old_scripts/Calc_freq.py</url>
-          <line>24</line>
-          <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/BAGEL/__init__.py</url>
@@ -881,11 +960,6 @@
           <option name="timeStamp" value="142" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Source/Utils/linalg.py</url>
-          <line>126</line>
-          <option name="timeStamp" value="164" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Source/Common/Config.py</url>
           <line>59</line>
           <option name="timeStamp" value="165" />
@@ -910,6 +984,46 @@
           <line>29</line>
           <option name="timeStamp" value="181" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Old_scripts/diff_hessian.py</url>
+          <line>20</line>
+          <option name="timeStamp" value="186" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Old_scripts/calculate_stat_sum.py</url>
+          <line>95</line>
+          <option name="timeStamp" value="193" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Old_scripts/calculate_stat_sum.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="194" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Old_scripts/calculate_stat_sum.py</url>
+          <line>41</line>
+          <option name="timeStamp" value="195" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Old_scripts/calculate_stat_sum.py</url>
+          <line>47</line>
+          <option name="timeStamp" value="196" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Old_scripts/expand_job_row_for_rhodopsin.py</url>
+          <line>48</line>
+          <option name="timeStamp" value="200" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Old_scripts/expand_job_row_for_rhodopsin.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="202" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Old_scripts/Oniom_graph.py</url>
+          <line>19</line>
+          <option name="timeStamp" value="203" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -921,9 +1035,15 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/QMData_Tools$gaussian09.coverage" NAME="gaussian09 Coverage Results" MODIFIED="1569598737406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
     <SUITE FILE_PATH="coverage/QMData_Tools$get_optimized_geom.coverage" NAME="get_optimized_geom Coverage Results" MODIFIED="1577290842343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="E:/WORK_SPACE/OneDrive/00-Projects/01-Final_Results/04-photo_active_switches_AQ/50-DENAQ-ts/35-M11-VDZ/cis" />
+    <SUITE FILE_PATH="coverage/QMData_Tools$diff_hess.coverage" NAME="diff_hess Coverage Results" MODIFIED="1591893290951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="E:/Work/03-Tempory_Directory/42-Freq/01-SCF/03-freq-NC" />
+    <SUITE FILE_PATH="coverage/QMData_Tools$Calc_hessian.coverage" NAME="Calc_freq Coverage Results" MODIFIED="1591893344572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="E:/Work/03-Tempory_Directory/42-Freq/01-SCF/03-freq-NC" />
     <SUITE FILE_PATH="coverage/QMData_Tools$Old_scripts.coverage" NAME="Old_scripts Coverage Results" MODIFIED="1570015163714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Old_scripts" />
+    <SUITE FILE_PATH="coverage/QMData_Tools$Expand_Jobs.coverage" NAME="Expand_Jobs Coverage Results" MODIFIED="1595165799123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="E:/Work/03-Tempory_Directory/conformers-SCF" />
+    <SUITE FILE_PATH="coverage/QMData_Tools$gaussian09.coverage" NAME="gaussian09 Coverage Results" MODIFIED="1569598737406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
     <SUITE FILE_PATH="coverage/QMData_Tools$popopus.coverage" NAME="popopus Coverage Results" MODIFIED="1577293886243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="E:/WORK_SPACE/OneDrive/00-Projects/01-Final_Results/04-photo_active_switches_AQ/50-DENAQ-ts/35-M11-VDZ/cis" />
+    <SUITE FILE_PATH="coverage/QMData_Tools$calc_freq.coverage" NAME="calc_dG Coverage Results" MODIFIED="1591893446621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="E:/Work/03-Tempory_Directory/42-Freq/01-SCF/03-freq-NC" />
+    <SUITE FILE_PATH="coverage/QMData_Tools$tracks_parametrs.coverage" NAME="tracks_parametrs Coverage Results" MODIFIED="1609335850717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="E:/Work/get20/03-Tempory_Directory/70-PES/05-wt/23-66-casscf1" />
+    <SUITE FILE_PATH="coverage/QMData_Tools$calc_dG.coverage" NAME="calc_dG Coverage Results" MODIFIED="1591966377334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="E:/Work/03-Tempory_Directory/42-Freq/test" />
   </component>
 </project>

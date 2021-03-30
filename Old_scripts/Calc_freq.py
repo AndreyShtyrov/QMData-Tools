@@ -2,7 +2,9 @@ import numpy as np
 import math
 import numpy.linalg as lg
 from Source.Utils import *
-from Source.Constants.physics import MASS_CONST
+from Source.Common.General_Tools import *
+
+from Source.Constants.physics import *
 
 convector_const = 1.889725989
 MAU_CONST = 9.109389e-31
@@ -10,29 +12,23 @@ HART_CONST = 627.5
 
 
 def read_coord():
-    with open("coord.xyz", "r") as coord_file:
-        n_atoms = int(next(coord_file).replace("\n", ""))
-        _ = next(coord_file)
-        charges = []
-        coords = []
-        for line in coord_file:
-            charges.append(line.split()[0].upper())
-            coords.extend(map(float, line.replace("\n", "").split()[1:]))
-        return charges, np.array(coords) * convector_const
+    charges, coords = read_xyz("coord.xyz")
+    return charges, np.array(coords) * convector_const
 
 def read_hessian(charges):
     listanalizer = ListAnalyser()
-    with open("freq.fchk", "r") as freq_file:
+    with open("hess.txt", "r") as freq_file:
         iterable = iter(freq_file)
-        listanalizer._go_by_keys(iterable, "Cartesian Force Constants")
-        hess_file = iter(listanalizer._get_all_by_keys(iterable, "Dipole Moment"))
-
+        # listanalizer._go_by_keys(iterable, "Cartesian Force Constants")
+        # hess_file = iter(listanalizer._get_all_by_keys(iterable, "Dipole Moment"))
+        hess_file = iterable
         hess_values = []
         while len(hess_values) != 3 * len(charges) * (3 * len(charges) + 1) // 2:
             s = next(hess_file)
             hess_values.extend(map(float, s.split()))
 
         hess_values_iter = iter(hess_values)
+
 
         hess = np.zeros((3 * len(charges), 3 * len(charges)))
         for i in range(3 * len(charges)):
@@ -43,6 +39,7 @@ def read_hessian(charges):
 if __name__ == '__main__':
 
     charges, coords = read_coord()
+    charges = [CHARGES_TO_SYMBOLS[i] for i in charges]
     hessian = read_hessian(charges)
     hessian = hessian
 
@@ -88,9 +85,9 @@ if __name__ == '__main__':
         factor = sum(map(lambda x: x ** 2, normal_modes[:, i]))
         factor = 1 / factor
         factor_list.append(factor)
-        normal_modes = normal_modes[:, i] * math.sqrt(factor)
-        print(normal_modes[:, i] * math.sqrt(factor))
-        print(factor)
+        normal_modes[:, i] = normal_modes[:, i] * math.sqrt(factor) * math.sqrt(factor)
+        print(normal_modes[:, i])
+        # print(factor)
         print(freq[i])
         print("***")
 

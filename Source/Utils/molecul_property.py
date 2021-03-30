@@ -1,17 +1,10 @@
 import numpy as np
 import numpy.linalg as lg
 from Source.Constants.physics import CI, MASS_CONST
-
+from Source.Common.General_Tools import *
 def read_coord():
-    with open("coord.xyz", "r") as coord_file:
-        n_atoms = int(next(coord_file).replace("\n", ""))
-        _ = next(coord_file)
-        charges = []
-        coords = []
-        for line in coord_file:
-            charges.append(line.split()[0].upper())
-            coords.extend(map(float, line.replace("\n", "").split()[1:]))
-        return charges, np.array(coords) * CI.A_in_Bh
+    charges, coords = read_xyz("coord.xyz")
+    return charges, np.array(coords) * CI.A_in_Bh
 
 def get_arrays_by_components(coords):
     X = np.array([coords[i*3] for i in range(int(len(coords)/3))])

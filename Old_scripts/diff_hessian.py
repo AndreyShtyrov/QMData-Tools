@@ -1,11 +1,13 @@
+import numpy as np
 from Source.Utils.molecul_property import read_coord
+from Source.Common.General_Tools import *
+import pathlib
+# with open("file.txt", "r") as f:
+#     _, grad = get_geometry_from_bagel(get_section_with_grad_iter(f))
 
-with open("file.txt", "r") as f:
-    _, grad = get_geometry_from_bagel(get_section_with_grad_iter(f))
 
 
-
-charges, coords = read_coord()
+charges, coords = read_xyz("coord.xyz")
 n_dims = len(charges) * 3
 
 def read_force(file, ndims):
@@ -22,6 +24,7 @@ def read_force(file, ndims):
             result.extend(map(float, line.replace("\n", "").split()[1:]))
     return np.array(result)
 
+# n_dims = 41
 t_shift = 0.02
 template = "hessian_step"
 hessian = np.zeros((n_dims, n_dims))

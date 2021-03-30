@@ -1,7 +1,7 @@
 import numpy
 import sys
 import math
-from Source.Constants.physics import CI, MASS_CONST
+from Source.Constants.physics import *
 from Source.Utils.molecul_property import read_coord, calcuate_inertion
 
 def read_freqs(file_name = "freq.txt"):
@@ -32,7 +32,7 @@ def calculate_B(eig):
 
 def calculate_Srot(T, eigv_inertion, sigma=1):
     result = 1
-    is_line_mol = False
+    is_line_mol = True
     for i in eigv_inertion:
         _value = (CI.Kb * T / (calculate_B(i) * CI.h * CI.light_speed)) ** 0.5
         if _value == 0:
@@ -117,16 +117,16 @@ if __name__ == '__main__':
 #    print(calculate_H_correction(freqs, 298.15, False)/2625.5/1000)
     freqs = read_freqs("freq.txt")
     charges, coords = read_coord()
+    charges = [CHARGES_TO_SYMBOLS[i] for i in charges]
     eignv, _ = calcuate_inertion(charges, coords)
     freqs = delete_negative_freqs(freqs)
-    T = 308.15
-    try:
-        coeff = float(sys.argv[1])
-    except:
-        coeff = 1
-    coeff = 0.90
+    T = 298.15
+    # try:
+    #     coeff = float(sys.argv[1])
+    # except:
+    #     coeff = 1
+    # coeff = 0.90
+    coeff = 1
     freqs = numpy.array(freqs)
-    print("H " + str(calculate_H_correction(freqs,298.15, False)/2625.5/1000))
-    for i in range(15):
-        coeff1 = coeff + i * 0.01
-        print(calc_g(charges, eignv, freqs, coeff1, T) /2625.5/1000)
+    print("H " + str(calculate_H_correction(freqs, 298.15, False)/2625.5/1000))
+    print(calc_g(charges, eignv, freqs, coeff, T) /2625.5/1000)
